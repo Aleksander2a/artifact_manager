@@ -9,7 +9,7 @@ using manager_artefaktow.Data;
 namespace manager_artefaktow.Migrations
 {
     [DbContext(typeof(ManagerContext))]
-    [Migration("20220511112104_ArtifactManagerDatabase")]
+    [Migration("20220511173053_ArtifactManagerDatabase")]
     partial class ArtifactManagerDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,33 +67,33 @@ namespace manager_artefaktow.Migrations
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.User", b =>
                 {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
+                    b.HasKey("UserName");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.UserRole", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
-                    b.HasKey("UserId", "RoleId");
+                    b.Property<string>("UserName1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserName", "RoleId");
 
                     b.HasIndex("RoleId");
+
+                    b.HasIndex("UserName1");
 
                     b.ToTable("UserRoles");
                 });
@@ -123,9 +123,7 @@ namespace manager_artefaktow.Migrations
 
                     b.HasOne("manager_artefaktow.Data.Models.User", null)
                         .WithMany("Roles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserName1");
                 });
 #pragma warning restore 612, 618
         }

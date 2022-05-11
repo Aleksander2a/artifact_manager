@@ -57,10 +57,14 @@ namespace manager_artefaktow.BusinessLogic
             {
                 using (var dbContext = new ManagerContext())
                 {
+                    /*
                     var user = (from u in dbContext.Users
                                 where u.UserName == name
                                 select u);
-                    if ((user.ToList()).Count>0)
+                    */
+                    // (user.ToList()).Count>0
+                    User user = dbContext.Users.Find(name);
+                    if (user != null)
                     {
                         return true;
                     }
