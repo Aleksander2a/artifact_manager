@@ -33,6 +33,7 @@ namespace manager_artefaktow.Data
         {
             modelBuilder.Entity<UserRole>().HasKey(vf => new { vf.UserId, vf.RoleId });
             modelBuilder.Entity<RolePermition>().HasKey(vf => new { vf.RoleId, vf.PermitionId });
+            //modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
         }
     }
 }
