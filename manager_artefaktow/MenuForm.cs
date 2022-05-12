@@ -24,14 +24,16 @@ namespace manager_artefaktow
 
         private void Login_button_Click(object sender, EventArgs e)
         {
-
+            this.FindForm().Hide();
+            Form loginForm = new LoginForm();
+            loginForm.ShowDialog();
         }
 
         private void Register_button_Click(object sender, EventArgs e)
         {
             this.FindForm().Hide();
-            Form register_form = new RegisterForm();
-            register_form.ShowDialog();
+            Form registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
 
         private void Top_Artifacts_button_Click(object sender, EventArgs e)

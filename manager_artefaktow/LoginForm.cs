@@ -12,14 +12,14 @@ using manager_artefaktow.BusinessLogic;
 
 namespace manager_artefaktow
 {
-    public partial class RegisterForm : Form
+    public partial class LoginForm : Form
     {
-        public RegisterForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -31,16 +31,15 @@ namespace manager_artefaktow
             menuForm.ShowDialog();
         }
 
-        private void Register_button_Click(object sender, EventArgs e)
+        private void Login_button_Click(object sender, EventArgs e)
         {
             string username = (UserName_textBox.Text).Trim();
             string password = (Password_textBox.Text).Trim();
-            string confirmPassword = (Confirm_Password_textBox.Text).Trim();
-            string registrationMessage = Registration.Register(username, password, confirmPassword);
-            if (registrationMessage == Registration.SuccessMessage)
+            string loggingInMessage = LoggingIn.LogIn(username, password);
+            if (loggingInMessage == LoggingIn.SuccessMessage)
             {
-                MessageBox.Show(registrationMessage);
-                if (username == "Admin")
+                MessageBox.Show(loggingInMessage);
+                if(username == "Admin")
                 {
                     // navigate to home page
                     this.FindForm().Hide();
@@ -61,20 +60,19 @@ namespace manager_artefaktow
             {
                 UserName_textBox.Clear();
                 Password_textBox.Clear();
-                Confirm_Password_textBox.Clear();
-                MessageBox.Show(registrationMessage);
+                MessageBox.Show(loggingInMessage);
                 return;
             }
         }
 
-        private void Login_button_Click(object sender, EventArgs e)
+        private void Register_button_Click(object sender, EventArgs e)
         {
             this.FindForm().Hide();
-            Form loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            Form registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
 
-        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace manager_artefaktow.Data.Models
 {
-    public class RolePermition
+    public class RolePermission
     {
-        public int RoleId { get; set; }
-        public int PermitionId { get; set; }
+        public string RoleName { get; set; }
+        public string PermissionName { get; set; }
     }
 }

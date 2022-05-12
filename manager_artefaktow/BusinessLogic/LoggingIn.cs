@@ -11,44 +11,31 @@ using manager_artefaktow.Data.Models;
 
 namespace manager_artefaktow.BusinessLogic
 {
-    public static class Registration
+    public static class LoggingIn
     {
-        public static readonly string SuccessMessage = "You registered successfully!";
-        public static readonly string InvalidFormMessage = "Incorectly completed form, try again";
-        public static readonly string UserAlreadyExistsMessage = "User with this name already exists";
+        public static readonly string SuccessMessage = "You loggd in successfully!";
+        public static readonly string UserDoesNotExistMessage = "User with this name does not exist";
+        public static readonly string IncorrectPasswordMessage = "The password is incorrect for this user";
 
 
-        public static string Register(string name, string password, string confirmPassword)
+        public static string LogIn(string name, string password)
         {
-            if(FormIsValid(name, password, confirmPassword))
+            if (UserExists(name))
             {
-                if(!UserExists(name))
+                if (UserPasswordIsCorrect(name, password))
                 {
-                    AddUser(name, password);
                     LoggedUser.UserName = name;
                     return SuccessMessage;
                 }
                 else
                 {
-                    return UserAlreadyExistsMessage;
+                    return IncorrectPasswordMessage;
                 }
             }
             else
             {
-                return InvalidFormMessage;
+                return UserDoesNotExistMessage;
             }
-        }
-
-        public static bool FormIsValid(string name, string password, string confirmPassword)
-        {
-            if ((password == confirmPassword) && (name!="") && (password!=""))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }           
         }
 
         public static bool UserExists(string name)
@@ -75,22 +62,34 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
-        private static void AddUser(string name, string password)
+        public static bool UserPasswordIsCorrect(string name, string password)
         {
-            User user = new User();
-            user.UserName = name;
-            user.Password = BCrypt.Net.BCrypt.HashPassword(password);
             try
             {
                 using (var dbContext = new ManagerContext())
                 {
-                    dbContext.Users.Add(user);
-                    dbContext.SaveChanges();
+                    User user = dbContext.Users.Find(name);
+                    if (user != null)
+                    {
+                        if (BCrypt.Net.BCrypt.Verify(password, user.Password))
+                        {
+                            return true;
+                        }
+                        else 
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine(ex.Message);
+                throw new Exception("Exception while checking if user exists");
             }
         }
     }

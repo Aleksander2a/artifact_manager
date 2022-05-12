@@ -15,10 +15,10 @@ namespace manager_artefaktow.Data
     public class ManagerContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
+        //public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<RolePermition> RolePermitions { get; set; }
-        public DbSet<Permition> Permitions { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,8 +31,8 @@ namespace manager_artefaktow.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserRole>().HasKey(vf => new { vf.UserName, vf.RoleId });
-            modelBuilder.Entity<RolePermition>().HasKey(vf => new { vf.RoleId, vf.PermitionId });
+            //modelBuilder.Entity<UserRole>().HasKey(vf => new { vf.UserName, vf.RoleId });
+            modelBuilder.Entity<RolePermission>().HasKey(vf => new { vf.RoleName, vf.PermissionName });
             //modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
         }
     }

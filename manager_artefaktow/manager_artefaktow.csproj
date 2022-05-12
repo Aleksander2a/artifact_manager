@@ -276,23 +276,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanelForm.Designer.cs">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArtifactManagerDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BusinessLogic\LoggedUser.cs" />
+    <Compile Include="BusinessLogic\LoggingIn.cs" />
     <Compile Include="BusinessLogic\Registration.cs" />
+    <Compile Include="BusinessLogic\RoleManagement.cs" />
+    <Compile Include="BusinessLogic\UserManagement.cs" />
     <Compile Include="Data\ManagerContext.cs" />
-    <Compile Include="Data\Models\Permition.cs" />
+    <Compile Include="Data\Models\Permission.cs" />
     <Compile Include="Data\Models\Role.cs" />
-    <Compile Include="Data\Models\RolePermition.cs" />
+    <Compile Include="Data\Models\RolePermission.cs" />
     <Compile Include="Data\Models\User.cs" />
     <Compile Include="Data\Models\UserRole.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220511173053_ArtifactManagerDatabase.cs" />
-    <Compile Include="Migrations\20220511173053_ArtifactManagerDatabase.designer.cs">
-      <DependentUpon>20220511173053_ArtifactManagerDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\20220512184740_ArtifactManagerDatabase.cs" />
+    <Compile Include="Migrations\20220512184740_ArtifactManagerDatabase.designer.cs">
+      <DependentUpon>20220512184740_ArtifactManagerDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ManagerContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -303,6 +323,30 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RolesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RolesForm.Designer.cs">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserHomePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserHomePageForm.Designer.cs">
+      <DependentUpon>UserHomePageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPanelForm.resx">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +362,26 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RolesForm.resx">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserHomePageForm.resx">
+      <DependentUpon>UserHomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ArtifactManagerDatabaseDataSet.xsc">
+      <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ArtifactManagerDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ArtifactManagerDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ArtifactManagerDatabaseDataSet.xss">
+      <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

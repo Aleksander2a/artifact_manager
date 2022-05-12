@@ -8,12 +8,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace manager_artefaktow.Data.Models
 {
-    public class Role
+    public class Permission
     {
+        //public int PermitionId { get; set; }
         [Key]
-        [MinLength(1)]
-        public string RoleName { get; set; }
-        //public ICollection<UserRole> Users { get; set; }
-        public ICollection<RolePermission> Permissions { get; set; }
+        public string PermissionName { get; set; }
+        public string Description { get; set; }
+        public ICollection<RolePermission> Roles { get; set; }
     }
 }
