@@ -96,7 +96,7 @@ namespace manager_artefaktow.Migrations
             modelBuilder.Entity("manager_artefaktow.Data.Models.User", b =>
                 {
                     b.HasOne("manager_artefaktow.Data.Models.Role", "Role")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("RoleName");
                 });
 #pragma warning restore 612, 618

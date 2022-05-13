@@ -29,16 +29,23 @@ namespace manager_artefaktow
             rolesForm.ShowDialog();
         }
 
-        private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Users_button_Click(object sender, EventArgs e)
         {
             this.FindForm().Hide();
             Form usersForm = new UsersForm();
             usersForm.ShowDialog();
+        }
+
+        private void Permissions_button_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Hide();
+            Form permissionForm = new PermissionForm();
+            permissionForm.ShowDialog();
+        }
+
+        private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -19,9 +19,10 @@ namespace manager_artefaktow
 
         private void RolesForm_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Roles' . Możesz go przenieść lub usunąć.
-            this.rolesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Roles);
-
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Permissions' . Możesz go przenieść lub usunąć.
+            this.permissionsTableAdapter1.Fill(this.artifactManagerDatabaseDataSet2.Permissions);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Roles' . Możesz go przenieść lub usunąć.
+            this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
         }
 
         private void Roles_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -41,7 +42,7 @@ namespace manager_artefaktow
         {
             //Update button update dataset after insertion,upadtion or deletion
             DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            
+            /*
             string message = "OK";
             for (int i = 0; i < Roles_dataGridView.Columns.Count; i++)
             {
@@ -57,20 +58,19 @@ namespace manager_artefaktow
                     }
                 }
             }
-            
+            */
             if (dr == DialogResult.Yes)
             {
-                if(message == "OK")
-                {
-                    this.rolesTableAdapter.Update(artifactManagerDatabaseDataSet.Roles);
+                //if(message == "OK")
+                //{
+                    this.rolesTableAdapter2.Update(artifactManagerDatabaseDataSet2.Roles);
                     Roles_dataGridView.Refresh();
                     MessageBox.Show("Changes Saved");
-                }
-                else
-                {
-                    MessageBox.Show(message);
-
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show(message);
+                //}
             }
         }
 

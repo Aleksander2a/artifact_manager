@@ -9,7 +9,7 @@ using manager_artefaktow.Data;
 namespace manager_artefaktow.Migrations
 {
     [DbContext(typeof(ManagerContext))]
-    [Migration("20220512184740_ArtifactManagerDatabase")]
+    [Migration("20220513080129_ArtifactManagerDatabase")]
     partial class ArtifactManagerDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,7 @@ namespace manager_artefaktow.Migrations
             modelBuilder.Entity("manager_artefaktow.Data.Models.User", b =>
                 {
                     b.HasOne("manager_artefaktow.Data.Models.Role", "Role")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("RoleName");
                 });
 #pragma warning restore 612, 618

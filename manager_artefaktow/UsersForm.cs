@@ -27,39 +27,65 @@ namespace manager_artefaktow
             Application.Exit();
         }
 
-        private void Menu_button_Click(object sender, EventArgs e)
-        {
-            this.FindForm().Hide();
-            Form adminPanelForm = new AdminPanelForm();
-            adminPanelForm.ShowDialog();
-            return;
-        }
-
         private void SaveChanges_button_Click(object sender, EventArgs e)
         {
             //Update button update dataset after insertion,upadtion or deletion
             DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            /*
+            string message = "OK";
+            for (int i = 0; i < Users_dataGridView.Columns.Count; i++)
+            {
+                for (int j = 0; j < Users_dataGridView.Rows.Count - 1; j++)
+                {
+                    string cell = Users_dataGridView.Rows[j].Cells[i].Value as string;
+                    if (cell == null || (cell.Trim()).Length == 0)
+                    {
+                        //MessageBox.Show("Wrong input values. Press ESC to discard or input new value");
+                        message = "An error occured\nrow " + j + ", column " + i;
+                        Users_dataGridView.Rows[j].Cells[i].Value = "Wrong!"; // WORKS !!!!
+
+                    }
+                    else
+                    {
+                        if (i==1)
+                        {
+                            Users_dataGridView.Rows[j].Cells[i].Value = UserManagement.encryptPassword(cell);
+                        }
+                    }
+                }
+            }
+            */
             if (dr == DialogResult.Yes)
             {
-                this.usersTableAdapter.Update(artifactManagerDatabaseDataSet.Users);
-                Users_dataGridView.Refresh();
-                MessageBox.Show("Changes Saved");
+                //if (message == "OK")
+                //{
+                    this.usersTableAdapter2.Update(artifactManagerDatabaseDataSet2.Users);
+                    Users_dataGridView.Refresh();
+                    MessageBox.Show("Changes Saved");
+                //}
+                //else
+                //{
+                //    MessageBox.Show(message);
+                //}
             }
         }
 
         private void UsersForm_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Users' . Możesz go przenieść lub usunąć.
-            this.usersTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Users);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Roles' . Możesz go przenieść lub usunąć.
+            this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Users' . Możesz go przenieść lub usunąć.
+            this.usersTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Users);
         }
 
         private void Users_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("An error occured");
+            MessageBox.Show("DataError: An error occured\n" + e.Exception.Message + "\nrow " + e.RowIndex + ", column " + e.ColumnIndex);
         }
 
         private void Users_dataGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
         {
+            /*
             if (e.ColumnIndex == 1 && e.RowIndex >= 0)
             {
                 string username = Users_dataGridView.Rows[e.RowIndex].Cells[0].Value as string;
@@ -85,6 +111,20 @@ namespace manager_artefaktow
                     }
                 }
             }
+            */
+        }
+
+        private void AdminPanel_button_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Hide();
+            Form adminPanelForm = new AdminPanelForm();
+            adminPanelForm.ShowDialog();
+            return;
+        }
+
+        private void Encrypt_button_Click(object sender, EventArgs e)
+        {
+            Encrypt_textBox.Text = UserManagement.encryptPassword(Encrypt_textBox.Text);
         }
     }
 }

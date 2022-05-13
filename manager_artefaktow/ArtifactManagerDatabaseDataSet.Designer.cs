@@ -26,17 +26,17 @@ namespace manager_artefaktow {
         
         private @__EFMigrationsHistoryDataTable table__EFMigrationsHistory;
         
-        private PermitionsDataTable tablePermitions;
+        private PermissionsDataTable tablePermissions;
         
-        private RolePermitionsDataTable tableRolePermitions;
+        private RolePermissionsDataTable tableRolePermissions;
         
         private RolesDataTable tableRoles;
         
         private UsersDataTable tableUsers;
         
-        private global::System.Data.DataRelation relationFK_RolePermitions_Permitions_PermitionName1;
+        private global::System.Data.DataRelation relationFK_RolePermissions_Permissions_PermissionName1;
         
-        private global::System.Data.DataRelation relationFK_RolePermitions_Roles_RoleName1;
+        private global::System.Data.DataRelation relationFK_RolePermissions_Roles_RoleName1;
         
         private global::System.Data.DataRelation relationFK_Users_Roles_RoleName;
         
@@ -71,11 +71,11 @@ namespace manager_artefaktow {
                 if ((ds.Tables["__EFMigrationsHistory"] != null)) {
                     base.Tables.Add(new @__EFMigrationsHistoryDataTable(ds.Tables["__EFMigrationsHistory"]));
                 }
-                if ((ds.Tables["Permitions"] != null)) {
-                    base.Tables.Add(new PermitionsDataTable(ds.Tables["Permitions"]));
+                if ((ds.Tables["Permissions"] != null)) {
+                    base.Tables.Add(new PermissionsDataTable(ds.Tables["Permissions"]));
                 }
-                if ((ds.Tables["RolePermitions"] != null)) {
-                    base.Tables.Add(new RolePermitionsDataTable(ds.Tables["RolePermitions"]));
+                if ((ds.Tables["RolePermissions"] != null)) {
+                    base.Tables.Add(new RolePermissionsDataTable(ds.Tables["RolePermissions"]));
                 }
                 if ((ds.Tables["Roles"] != null)) {
                     base.Tables.Add(new RolesDataTable(ds.Tables["Roles"]));
@@ -115,9 +115,9 @@ namespace manager_artefaktow {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PermitionsDataTable Permitions {
+        public PermissionsDataTable Permissions {
             get {
-                return this.tablePermitions;
+                return this.tablePermissions;
             }
         }
         
@@ -125,9 +125,9 @@ namespace manager_artefaktow {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RolePermitionsDataTable RolePermitions {
+        public RolePermissionsDataTable RolePermissions {
             get {
-                return this.tableRolePermitions;
+                return this.tableRolePermissions;
             }
         }
         
@@ -221,11 +221,11 @@ namespace manager_artefaktow {
                 if ((ds.Tables["__EFMigrationsHistory"] != null)) {
                     base.Tables.Add(new @__EFMigrationsHistoryDataTable(ds.Tables["__EFMigrationsHistory"]));
                 }
-                if ((ds.Tables["Permitions"] != null)) {
-                    base.Tables.Add(new PermitionsDataTable(ds.Tables["Permitions"]));
+                if ((ds.Tables["Permissions"] != null)) {
+                    base.Tables.Add(new PermissionsDataTable(ds.Tables["Permissions"]));
                 }
-                if ((ds.Tables["RolePermitions"] != null)) {
-                    base.Tables.Add(new RolePermitionsDataTable(ds.Tables["RolePermitions"]));
+                if ((ds.Tables["RolePermissions"] != null)) {
+                    base.Tables.Add(new RolePermissionsDataTable(ds.Tables["RolePermissions"]));
                 }
                 if ((ds.Tables["Roles"] != null)) {
                     base.Tables.Add(new RolesDataTable(ds.Tables["Roles"]));
@@ -272,16 +272,16 @@ namespace manager_artefaktow {
                     this.table__EFMigrationsHistory.InitVars();
                 }
             }
-            this.tablePermitions = ((PermitionsDataTable)(base.Tables["Permitions"]));
+            this.tablePermissions = ((PermissionsDataTable)(base.Tables["Permissions"]));
             if ((initTable == true)) {
-                if ((this.tablePermitions != null)) {
-                    this.tablePermitions.InitVars();
+                if ((this.tablePermissions != null)) {
+                    this.tablePermissions.InitVars();
                 }
             }
-            this.tableRolePermitions = ((RolePermitionsDataTable)(base.Tables["RolePermitions"]));
+            this.tableRolePermissions = ((RolePermissionsDataTable)(base.Tables["RolePermissions"]));
             if ((initTable == true)) {
-                if ((this.tableRolePermitions != null)) {
-                    this.tableRolePermitions.InitVars();
+                if ((this.tableRolePermissions != null)) {
+                    this.tableRolePermissions.InitVars();
                 }
             }
             this.tableRoles = ((RolesDataTable)(base.Tables["Roles"]));
@@ -296,8 +296,8 @@ namespace manager_artefaktow {
                     this.tableUsers.InitVars();
                 }
             }
-            this.relationFK_RolePermitions_Permitions_PermitionName1 = this.Relations["FK_RolePermitions_Permitions_PermitionName1"];
-            this.relationFK_RolePermitions_Roles_RoleName1 = this.Relations["FK_RolePermitions_Roles_RoleName1"];
+            this.relationFK_RolePermissions_Permissions_PermissionName1 = this.Relations["FK_RolePermissions_Permissions_PermissionName1"];
+            this.relationFK_RolePermissions_Roles_RoleName1 = this.Relations["FK_RolePermissions_Roles_RoleName1"];
             this.relationFK_Users_Roles_RoleName = this.Relations["FK_Users_Roles_RoleName"];
         }
         
@@ -311,22 +311,22 @@ namespace manager_artefaktow {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.table__EFMigrationsHistory = new @__EFMigrationsHistoryDataTable();
             base.Tables.Add(this.table__EFMigrationsHistory);
-            this.tablePermitions = new PermitionsDataTable();
-            base.Tables.Add(this.tablePermitions);
-            this.tableRolePermitions = new RolePermitionsDataTable();
-            base.Tables.Add(this.tableRolePermitions);
+            this.tablePermissions = new PermissionsDataTable();
+            base.Tables.Add(this.tablePermissions);
+            this.tableRolePermissions = new RolePermissionsDataTable();
+            base.Tables.Add(this.tableRolePermissions);
             this.tableRoles = new RolesDataTable();
             base.Tables.Add(this.tableRoles);
             this.tableUsers = new UsersDataTable();
             base.Tables.Add(this.tableUsers);
-            this.relationFK_RolePermitions_Permitions_PermitionName1 = new global::System.Data.DataRelation("FK_RolePermitions_Permitions_PermitionName1", new global::System.Data.DataColumn[] {
-                        this.tablePermitions.PermitionNameColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRolePermitions.PermitionName1Column}, false);
-            this.Relations.Add(this.relationFK_RolePermitions_Permitions_PermitionName1);
-            this.relationFK_RolePermitions_Roles_RoleName1 = new global::System.Data.DataRelation("FK_RolePermitions_Roles_RoleName1", new global::System.Data.DataColumn[] {
+            this.relationFK_RolePermissions_Permissions_PermissionName1 = new global::System.Data.DataRelation("FK_RolePermissions_Permissions_PermissionName1", new global::System.Data.DataColumn[] {
+                        this.tablePermissions.PermissionNameColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRolePermissions.PermissionName1Column}, false);
+            this.Relations.Add(this.relationFK_RolePermissions_Permissions_PermissionName1);
+            this.relationFK_RolePermissions_Roles_RoleName1 = new global::System.Data.DataRelation("FK_RolePermissions_Roles_RoleName1", new global::System.Data.DataColumn[] {
                         this.tableRoles.RoleNameColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRolePermitions.RoleName1Column}, false);
-            this.Relations.Add(this.relationFK_RolePermitions_Roles_RoleName1);
+                        this.tableRolePermissions.RoleName1Column}, false);
+            this.Relations.Add(this.relationFK_RolePermissions_Roles_RoleName1);
             this.relationFK_Users_Roles_RoleName = new global::System.Data.DataRelation("FK_Users_Roles_RoleName", new global::System.Data.DataColumn[] {
                         this.tableRoles.RoleNameColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsers.RoleNameColumn}, false);
@@ -341,13 +341,13 @@ namespace manager_artefaktow {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializePermitions() {
+        private bool ShouldSerializePermissions() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeRolePermitions() {
+        private bool ShouldSerializeRolePermissions() {
             return false;
         }
         
@@ -422,10 +422,10 @@ namespace manager_artefaktow {
         public delegate void @__EFMigrationsHistoryRowChangeEventHandler(object sender, @__EFMigrationsHistoryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void PermitionsRowChangeEventHandler(object sender, PermitionsRowChangeEvent e);
+        public delegate void PermissionsRowChangeEventHandler(object sender, PermissionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void RolePermitionsRowChangeEventHandler(object sender, RolePermitionsRowChangeEvent e);
+        public delegate void RolePermissionsRowChangeEventHandler(object sender, RolePermissionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void RolesRowChangeEventHandler(object sender, RolesRowChangeEvent e);
@@ -713,16 +713,16 @@ namespace manager_artefaktow {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PermitionsDataTable : global::System.Data.TypedTableBase<PermitionsRow> {
+        public partial class PermissionsDataTable : global::System.Data.TypedTableBase<PermissionsRow> {
             
-            private global::System.Data.DataColumn columnPermitionName;
+            private global::System.Data.DataColumn columnPermissionName;
             
             private global::System.Data.DataColumn columnDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsDataTable() {
-                this.TableName = "Permitions";
+            public PermissionsDataTable() {
+                this.TableName = "Permissions";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -730,7 +730,7 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PermitionsDataTable(global::System.Data.DataTable table) {
+            internal PermissionsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -747,16 +747,16 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected PermitionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PermissionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PermitionNameColumn {
+            public global::System.Data.DataColumn PermissionNameColumn {
                 get {
-                    return this.columnPermitionName;
+                    return this.columnPermissionName;
                 }
             }
             
@@ -779,53 +779,53 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow this[int index] {
+            public PermissionsRow this[int index] {
                 get {
-                    return ((PermitionsRow)(this.Rows[index]));
+                    return ((PermissionsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PermitionsRowChangeEventHandler PermitionsRowChanging;
+            public event PermissionsRowChangeEventHandler PermissionsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PermitionsRowChangeEventHandler PermitionsRowChanged;
+            public event PermissionsRowChangeEventHandler PermissionsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PermitionsRowChangeEventHandler PermitionsRowDeleting;
+            public event PermissionsRowChangeEventHandler PermissionsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event PermitionsRowChangeEventHandler PermitionsRowDeleted;
+            public event PermissionsRowChangeEventHandler PermissionsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddPermitionsRow(PermitionsRow row) {
+            public void AddPermissionsRow(PermissionsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow AddPermitionsRow(string PermitionName, string Description) {
-                PermitionsRow rowPermitionsRow = ((PermitionsRow)(this.NewRow()));
+            public PermissionsRow AddPermissionsRow(string PermissionName, string Description) {
+                PermissionsRow rowPermissionsRow = ((PermissionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        PermitionName,
+                        PermissionName,
                         Description};
-                rowPermitionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPermitionsRow);
-                return rowPermitionsRow;
+                rowPermissionsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPermissionsRow);
+                return rowPermissionsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow FindByPermitionName(string PermitionName) {
-                return ((PermitionsRow)(this.Rows.Find(new object[] {
-                            PermitionName})));
+            public PermissionsRow FindByPermissionName(string PermissionName) {
+                return ((PermissionsRow)(this.Rows.Find(new object[] {
+                            PermissionName})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PermitionsDataTable cln = ((PermitionsDataTable)(base.Clone()));
+                PermissionsDataTable cln = ((PermissionsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -833,55 +833,55 @@ namespace manager_artefaktow {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PermitionsDataTable();
+                return new PermissionsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnPermitionName = base.Columns["PermitionName"];
+                this.columnPermissionName = base.Columns["PermissionName"];
                 this.columnDescription = base.Columns["Description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnPermitionName = new global::System.Data.DataColumn("PermitionName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPermitionName);
+                this.columnPermissionName = new global::System.Data.DataColumn("PermissionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPermissionName);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPermitionName}, true));
-                this.columnPermitionName.AllowDBNull = false;
-                this.columnPermitionName.Unique = true;
-                this.columnPermitionName.MaxLength = 450;
+                                this.columnPermissionName}, true));
+                this.columnPermissionName.AllowDBNull = false;
+                this.columnPermissionName.Unique = true;
+                this.columnPermissionName.MaxLength = 450;
                 this.columnDescription.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow NewPermitionsRow() {
-                return ((PermitionsRow)(this.NewRow()));
+            public PermissionsRow NewPermissionsRow() {
+                return ((PermissionsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PermitionsRow(builder);
+                return new PermissionsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PermitionsRow);
+                return typeof(PermissionsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PermitionsRowChanged != null)) {
-                    this.PermitionsRowChanged(this, new PermitionsRowChangeEvent(((PermitionsRow)(e.Row)), e.Action));
+                if ((this.PermissionsRowChanged != null)) {
+                    this.PermissionsRowChanged(this, new PermissionsRowChangeEvent(((PermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -889,8 +889,8 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PermitionsRowChanging != null)) {
-                    this.PermitionsRowChanging(this, new PermitionsRowChangeEvent(((PermitionsRow)(e.Row)), e.Action));
+                if ((this.PermissionsRowChanging != null)) {
+                    this.PermissionsRowChanging(this, new PermissionsRowChangeEvent(((PermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -898,8 +898,8 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PermitionsRowDeleted != null)) {
-                    this.PermitionsRowDeleted(this, new PermitionsRowChangeEvent(((PermitionsRow)(e.Row)), e.Action));
+                if ((this.PermissionsRowDeleted != null)) {
+                    this.PermissionsRowDeleted(this, new PermissionsRowChangeEvent(((PermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -907,14 +907,14 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PermitionsRowDeleting != null)) {
-                    this.PermitionsRowDeleting(this, new PermitionsRowChangeEvent(((PermitionsRow)(e.Row)), e.Action));
+                if ((this.PermissionsRowDeleting != null)) {
+                    this.PermissionsRowDeleting(this, new PermissionsRowChangeEvent(((PermissionsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovePermitionsRow(PermitionsRow row) {
+            public void RemovePermissionsRow(PermissionsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -941,7 +941,7 @@ namespace manager_artefaktow {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PermitionsDataTable";
+                attribute2.FixedValue = "PermissionsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -987,20 +987,20 @@ namespace manager_artefaktow {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RolePermitionsDataTable : global::System.Data.TypedTableBase<RolePermitionsRow> {
+        public partial class RolePermissionsDataTable : global::System.Data.TypedTableBase<RolePermissionsRow> {
             
             private global::System.Data.DataColumn columnRoleName;
             
-            private global::System.Data.DataColumn columnPermitionName;
+            private global::System.Data.DataColumn columnPermissionName;
             
-            private global::System.Data.DataColumn columnPermitionName1;
+            private global::System.Data.DataColumn columnPermissionName1;
             
             private global::System.Data.DataColumn columnRoleName1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsDataTable() {
-                this.TableName = "RolePermitions";
+            public RolePermissionsDataTable() {
+                this.TableName = "RolePermissions";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1008,7 +1008,7 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal RolePermitionsDataTable(global::System.Data.DataTable table) {
+            internal RolePermissionsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1025,7 +1025,7 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected RolePermitionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected RolePermissionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1040,17 +1040,17 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PermitionNameColumn {
+            public global::System.Data.DataColumn PermissionNameColumn {
                 get {
-                    return this.columnPermitionName;
+                    return this.columnPermissionName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PermitionName1Column {
+            public global::System.Data.DataColumn PermissionName1Column {
                 get {
-                    return this.columnPermitionName1;
+                    return this.columnPermissionName1;
                 }
             }
             
@@ -1073,62 +1073,62 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow this[int index] {
+            public RolePermissionsRow this[int index] {
                 get {
-                    return ((RolePermitionsRow)(this.Rows[index]));
+                    return ((RolePermissionsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event RolePermitionsRowChangeEventHandler RolePermitionsRowChanging;
+            public event RolePermissionsRowChangeEventHandler RolePermissionsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event RolePermitionsRowChangeEventHandler RolePermitionsRowChanged;
+            public event RolePermissionsRowChangeEventHandler RolePermissionsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event RolePermitionsRowChangeEventHandler RolePermitionsRowDeleting;
+            public event RolePermissionsRowChangeEventHandler RolePermissionsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event RolePermitionsRowChangeEventHandler RolePermitionsRowDeleted;
+            public event RolePermissionsRowChangeEventHandler RolePermissionsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddRolePermitionsRow(RolePermitionsRow row) {
+            public void AddRolePermissionsRow(RolePermissionsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow AddRolePermitionsRow(string RoleName, string PermitionName, PermitionsRow parentPermitionsRowByFK_RolePermitions_Permitions_PermitionName1, RolesRow parentRolesRowByFK_RolePermitions_Roles_RoleName1) {
-                RolePermitionsRow rowRolePermitionsRow = ((RolePermitionsRow)(this.NewRow()));
+            public RolePermissionsRow AddRolePermissionsRow(string RoleName, string PermissionName, PermissionsRow parentPermissionsRowByFK_RolePermissions_Permissions_PermissionName1, RolesRow parentRolesRowByFK_RolePermissions_Roles_RoleName1) {
+                RolePermissionsRow rowRolePermissionsRow = ((RolePermissionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         RoleName,
-                        PermitionName,
+                        PermissionName,
                         null,
                         null};
-                if ((parentPermitionsRowByFK_RolePermitions_Permitions_PermitionName1 != null)) {
-                    columnValuesArray[2] = parentPermitionsRowByFK_RolePermitions_Permitions_PermitionName1[0];
+                if ((parentPermissionsRowByFK_RolePermissions_Permissions_PermissionName1 != null)) {
+                    columnValuesArray[2] = parentPermissionsRowByFK_RolePermissions_Permissions_PermissionName1[0];
                 }
-                if ((parentRolesRowByFK_RolePermitions_Roles_RoleName1 != null)) {
-                    columnValuesArray[3] = parentRolesRowByFK_RolePermitions_Roles_RoleName1[0];
+                if ((parentRolesRowByFK_RolePermissions_Roles_RoleName1 != null)) {
+                    columnValuesArray[3] = parentRolesRowByFK_RolePermissions_Roles_RoleName1[0];
                 }
-                rowRolePermitionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRolePermitionsRow);
-                return rowRolePermitionsRow;
+                rowRolePermissionsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRolePermissionsRow);
+                return rowRolePermissionsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow FindByRoleNamePermitionName(string RoleName, string PermitionName) {
-                return ((RolePermitionsRow)(this.Rows.Find(new object[] {
+            public RolePermissionsRow FindByRoleNamePermissionName(string RoleName, string PermissionName) {
+                return ((RolePermissionsRow)(this.Rows.Find(new object[] {
                             RoleName,
-                            PermitionName})));
+                            PermissionName})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                RolePermitionsDataTable cln = ((RolePermitionsDataTable)(base.Clone()));
+                RolePermissionsDataTable cln = ((RolePermissionsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1136,15 +1136,15 @@ namespace manager_artefaktow {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new RolePermitionsDataTable();
+                return new RolePermissionsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnRoleName = base.Columns["RoleName"];
-                this.columnPermitionName = base.Columns["PermitionName"];
-                this.columnPermitionName1 = base.Columns["PermitionName1"];
+                this.columnPermissionName = base.Columns["PermissionName"];
+                this.columnPermissionName1 = base.Columns["PermissionName1"];
                 this.columnRoleName1 = base.Columns["RoleName1"];
             }
             
@@ -1153,47 +1153,47 @@ namespace manager_artefaktow {
             private void InitClass() {
                 this.columnRoleName = new global::System.Data.DataColumn("RoleName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoleName);
-                this.columnPermitionName = new global::System.Data.DataColumn("PermitionName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPermitionName);
-                this.columnPermitionName1 = new global::System.Data.DataColumn("PermitionName1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPermitionName1);
+                this.columnPermissionName = new global::System.Data.DataColumn("PermissionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPermissionName);
+                this.columnPermissionName1 = new global::System.Data.DataColumn("PermissionName1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPermissionName1);
                 this.columnRoleName1 = new global::System.Data.DataColumn("RoleName1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoleName1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRoleName,
-                                this.columnPermitionName}, true));
+                                this.columnPermissionName}, true));
                 this.columnRoleName.AllowDBNull = false;
                 this.columnRoleName.MaxLength = 450;
-                this.columnPermitionName.AllowDBNull = false;
-                this.columnPermitionName.MaxLength = 450;
-                this.columnPermitionName1.MaxLength = 450;
+                this.columnPermissionName.AllowDBNull = false;
+                this.columnPermissionName.MaxLength = 450;
+                this.columnPermissionName1.MaxLength = 450;
                 this.columnRoleName1.MaxLength = 450;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow NewRolePermitionsRow() {
-                return ((RolePermitionsRow)(this.NewRow()));
+            public RolePermissionsRow NewRolePermissionsRow() {
+                return ((RolePermissionsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RolePermitionsRow(builder);
+                return new RolePermissionsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(RolePermitionsRow);
+                return typeof(RolePermissionsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.RolePermitionsRowChanged != null)) {
-                    this.RolePermitionsRowChanged(this, new RolePermitionsRowChangeEvent(((RolePermitionsRow)(e.Row)), e.Action));
+                if ((this.RolePermissionsRowChanged != null)) {
+                    this.RolePermissionsRowChanged(this, new RolePermissionsRowChangeEvent(((RolePermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1201,8 +1201,8 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.RolePermitionsRowChanging != null)) {
-                    this.RolePermitionsRowChanging(this, new RolePermitionsRowChangeEvent(((RolePermitionsRow)(e.Row)), e.Action));
+                if ((this.RolePermissionsRowChanging != null)) {
+                    this.RolePermissionsRowChanging(this, new RolePermissionsRowChangeEvent(((RolePermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1210,8 +1210,8 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.RolePermitionsRowDeleted != null)) {
-                    this.RolePermitionsRowDeleted(this, new RolePermitionsRowChangeEvent(((RolePermitionsRow)(e.Row)), e.Action));
+                if ((this.RolePermissionsRowDeleted != null)) {
+                    this.RolePermissionsRowDeleted(this, new RolePermissionsRowChangeEvent(((RolePermissionsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1219,14 +1219,14 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.RolePermitionsRowDeleting != null)) {
-                    this.RolePermitionsRowDeleting(this, new RolePermitionsRowChangeEvent(((RolePermitionsRow)(e.Row)), e.Action));
+                if ((this.RolePermissionsRowDeleting != null)) {
+                    this.RolePermissionsRowDeleting(this, new RolePermissionsRowChangeEvent(((RolePermissionsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveRolePermitionsRow(RolePermitionsRow row) {
+            public void RemoveRolePermissionsRow(RolePermissionsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1253,7 +1253,7 @@ namespace manager_artefaktow {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RolePermitionsDataTable";
+                attribute2.FixedValue = "RolePermissionsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1885,25 +1885,25 @@ namespace manager_artefaktow {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PermitionsRow : global::System.Data.DataRow {
+        public partial class PermissionsRow : global::System.Data.DataRow {
             
-            private PermitionsDataTable tablePermitions;
+            private PermissionsDataTable tablePermissions;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal PermitionsRow(global::System.Data.DataRowBuilder rb) : 
+            internal PermissionsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePermitions = ((PermitionsDataTable)(this.Table));
+                this.tablePermissions = ((PermissionsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PermitionName {
+            public string PermissionName {
                 get {
-                    return ((string)(this[this.tablePermitions.PermitionNameColumn]));
+                    return ((string)(this[this.tablePermissions.PermissionNameColumn]));
                 }
                 set {
-                    this[this.tablePermitions.PermitionNameColumn] = value;
+                    this[this.tablePermissions.PermissionNameColumn] = value;
                 }
             }
             
@@ -1912,37 +1912,37 @@ namespace manager_artefaktow {
             public string Description {
                 get {
                     try {
-                        return ((string)(this[this.tablePermitions.DescriptionColumn]));
+                        return ((string)(this[this.tablePermissions.DescriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Description\' w tabeli \'Permitions\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Description\' w tabeli \'Permissions\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePermitions.DescriptionColumn] = value;
+                    this[this.tablePermissions.DescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDescriptionNull() {
-                return this.IsNull(this.tablePermitions.DescriptionColumn);
+                return this.IsNull(this.tablePermissions.DescriptionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDescriptionNull() {
-                this[this.tablePermitions.DescriptionColumn] = global::System.Convert.DBNull;
+                this[this.tablePermissions.DescriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow[] GetRolePermitionsRows() {
-                if ((this.Table.ChildRelations["FK_RolePermitions_Permitions_PermitionName1"] == null)) {
-                    return new RolePermitionsRow[0];
+            public RolePermissionsRow[] GetRolePermissionsRows() {
+                if ((this.Table.ChildRelations["FK_RolePermissions_Permissions_PermissionName1"] == null)) {
+                    return new RolePermissionsRow[0];
                 }
                 else {
-                    return ((RolePermitionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RolePermitions_Permitions_PermitionName1"])));
+                    return ((RolePermissionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RolePermissions_Permissions_PermissionName1"])));
                 }
             }
         }
@@ -1950,52 +1950,52 @@ namespace manager_artefaktow {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class RolePermitionsRow : global::System.Data.DataRow {
+        public partial class RolePermissionsRow : global::System.Data.DataRow {
             
-            private RolePermitionsDataTable tableRolePermitions;
+            private RolePermissionsDataTable tableRolePermissions;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal RolePermitionsRow(global::System.Data.DataRowBuilder rb) : 
+            internal RolePermissionsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableRolePermitions = ((RolePermitionsDataTable)(this.Table));
+                this.tableRolePermissions = ((RolePermissionsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string RoleName {
                 get {
-                    return ((string)(this[this.tableRolePermitions.RoleNameColumn]));
+                    return ((string)(this[this.tableRolePermissions.RoleNameColumn]));
                 }
                 set {
-                    this[this.tableRolePermitions.RoleNameColumn] = value;
+                    this[this.tableRolePermissions.RoleNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PermitionName {
+            public string PermissionName {
                 get {
-                    return ((string)(this[this.tableRolePermitions.PermitionNameColumn]));
+                    return ((string)(this[this.tableRolePermissions.PermissionNameColumn]));
                 }
                 set {
-                    this[this.tableRolePermitions.PermitionNameColumn] = value;
+                    this[this.tableRolePermissions.PermissionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PermitionName1 {
+            public string PermissionName1 {
                 get {
                     try {
-                        return ((string)(this[this.tableRolePermitions.PermitionName1Column]));
+                        return ((string)(this[this.tableRolePermissions.PermissionName1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PermitionName1\' w tabeli \'RolePermitions\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PermissionName1\' w tabeli \'RolePermissions\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolePermitions.PermitionName1Column] = value;
+                    this[this.tableRolePermissions.PermissionName1Column] = value;
                 }
             }
             
@@ -2004,25 +2004,25 @@ namespace manager_artefaktow {
             public string RoleName1 {
                 get {
                     try {
-                        return ((string)(this[this.tableRolePermitions.RoleName1Column]));
+                        return ((string)(this[this.tableRolePermissions.RoleName1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'RoleName1\' w tabeli \'RolePermitions\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'RoleName1\' w tabeli \'RolePermissions\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolePermitions.RoleName1Column] = value;
+                    this[this.tableRolePermissions.RoleName1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow PermitionsRow {
+            public PermissionsRow PermissionsRow {
                 get {
-                    return ((PermitionsRow)(this.GetParentRow(this.Table.ParentRelations["FK_RolePermitions_Permitions_PermitionName1"])));
+                    return ((PermissionsRow)(this.GetParentRow(this.Table.ParentRelations["FK_RolePermissions_Permissions_PermissionName1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_RolePermitions_Permitions_PermitionName1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_RolePermissions_Permissions_PermissionName1"]);
                 }
             }
             
@@ -2030,35 +2030,35 @@ namespace manager_artefaktow {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RolesRow RolesRow {
                 get {
-                    return ((RolesRow)(this.GetParentRow(this.Table.ParentRelations["FK_RolePermitions_Roles_RoleName1"])));
+                    return ((RolesRow)(this.GetParentRow(this.Table.ParentRelations["FK_RolePermissions_Roles_RoleName1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_RolePermitions_Roles_RoleName1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_RolePermissions_Roles_RoleName1"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPermitionName1Null() {
-                return this.IsNull(this.tableRolePermitions.PermitionName1Column);
+            public bool IsPermissionName1Null() {
+                return this.IsNull(this.tableRolePermissions.PermissionName1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPermitionName1Null() {
-                this[this.tableRolePermitions.PermitionName1Column] = global::System.Convert.DBNull;
+            public void SetPermissionName1Null() {
+                this[this.tableRolePermissions.PermissionName1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsRoleName1Null() {
-                return this.IsNull(this.tableRolePermitions.RoleName1Column);
+                return this.IsNull(this.tableRolePermissions.RoleName1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRoleName1Null() {
-                this[this.tableRolePermitions.RoleName1Column] = global::System.Convert.DBNull;
+                this[this.tableRolePermissions.RoleName1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -2089,12 +2089,12 @@ namespace manager_artefaktow {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow[] GetRolePermitionsRows() {
-                if ((this.Table.ChildRelations["FK_RolePermitions_Roles_RoleName1"] == null)) {
-                    return new RolePermitionsRow[0];
+            public RolePermissionsRow[] GetRolePermissionsRows() {
+                if ((this.Table.ChildRelations["FK_RolePermissions_Roles_RoleName1"] == null)) {
+                    return new RolePermissionsRow[0];
                 }
                 else {
-                    return ((RolePermitionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RolePermitions_Roles_RoleName1"])));
+                    return ((RolePermissionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RolePermissions_Roles_RoleName1"])));
                 }
             }
             
@@ -2241,22 +2241,22 @@ namespace manager_artefaktow {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class PermitionsRowChangeEvent : global::System.EventArgs {
+        public class PermissionsRowChangeEvent : global::System.EventArgs {
             
-            private PermitionsRow eventRow;
+            private PermissionsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRowChangeEvent(PermitionsRow row, global::System.Data.DataRowAction action) {
+            public PermissionsRowChangeEvent(PermissionsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PermitionsRow Row {
+            public PermissionsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2275,22 +2275,22 @@ namespace manager_artefaktow {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class RolePermitionsRowChangeEvent : global::System.EventArgs {
+        public class RolePermissionsRowChangeEvent : global::System.EventArgs {
             
-            private RolePermitionsRow eventRow;
+            private RolePermissionsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRowChangeEvent(RolePermitionsRow row, global::System.Data.DataRowAction action) {
+            public RolePermissionsRowChangeEvent(RolePermissionsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RolePermitionsRow Row {
+            public RolePermissionsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2726,7 +2726,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PermitionsTableAdapter : global::System.ComponentModel.Component {
+    public partial class PermissionsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2740,7 +2740,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PermitionsTableAdapter() {
+        public PermissionsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2837,33 +2837,34 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Permitions";
-            tableMapping.ColumnMappings.Add("PermitionName", "PermitionName");
+            tableMapping.DataSetTable = "Permissions";
+            tableMapping.ColumnMappings.Add("PermissionName", "PermissionName");
             tableMapping.ColumnMappings.Add("Description", "Description");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Permitions] WHERE (([PermitionName] = @Original_PermitionName)" +
-                ")";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Permissions] WHERE (([PermissionName] = @Original_PermissionNa" +
+                "me))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permitions] ([PermitionName], [Description]) VALUES (@Permitio" +
-                "nName, @Description);\r\nSELECT PermitionName, Description FROM Permitions WHERE (" +
-                "PermitionName = @PermitionName)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permissions] ([PermissionName], [Description]) VALUES (@Permis" +
+                "sionName, @Description);\r\nSELECT PermissionName, Description FROM Permissions WH" +
+                "ERE (PermissionName = @PermissionName)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Permitions] SET [PermitionName] = @PermitionName, [Description] = @" +
-                "Description WHERE (([PermitionName] = @Original_PermitionName));\r\nSELECT Permiti" +
-                "onName, Description FROM Permitions WHERE (PermitionName = @PermitionName)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Permissions] SET [PermissionName] = @PermissionName, [Description] " +
+                "= @Description WHERE (([PermissionName] = @Original_PermissionName));\r\nSELECT Pe" +
+                "rmissionName, Description FROM Permissions WHERE (PermissionName = @PermissionNa" +
+                "me)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2879,7 +2880,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PermitionName, Description FROM dbo.Permitions";
+            this._commandCollection[0].CommandText = "SELECT PermissionName, Description FROM dbo.Permissions";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2887,7 +2888,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ArtifactManagerDatabaseDataSet.PermitionsDataTable dataTable) {
+        public virtual int Fill(ArtifactManagerDatabaseDataSet.PermissionsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2900,9 +2901,9 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ArtifactManagerDatabaseDataSet.PermitionsDataTable GetData() {
+        public virtual ArtifactManagerDatabaseDataSet.PermissionsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ArtifactManagerDatabaseDataSet.PermitionsDataTable dataTable = new ArtifactManagerDatabaseDataSet.PermitionsDataTable();
+            ArtifactManagerDatabaseDataSet.PermissionsDataTable dataTable = new ArtifactManagerDatabaseDataSet.PermissionsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2910,7 +2911,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ArtifactManagerDatabaseDataSet.PermitionsDataTable dataTable) {
+        public virtual int Update(ArtifactManagerDatabaseDataSet.PermissionsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -2918,7 +2919,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ArtifactManagerDatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Permitions");
+            return this.Adapter.Update(dataSet, "Permissions");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2940,12 +2941,12 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_PermitionName) {
-            if ((Original_PermitionName == null)) {
-                throw new global::System.ArgumentNullException("Original_PermitionName");
+        public virtual int Delete(string Original_PermissionName) {
+            if ((Original_PermissionName == null)) {
+                throw new global::System.ArgumentNullException("Original_PermissionName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_PermitionName));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_PermissionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2967,12 +2968,12 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PermitionName, string Description) {
-            if ((PermitionName == null)) {
-                throw new global::System.ArgumentNullException("PermitionName");
+        public virtual int Insert(string PermissionName, string Description) {
+            if ((PermissionName == null)) {
+                throw new global::System.ArgumentNullException("PermissionName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PermitionName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PermissionName));
             }
             if ((Description == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3000,12 +3001,12 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PermitionName, string Description, string Original_PermitionName) {
-            if ((PermitionName == null)) {
-                throw new global::System.ArgumentNullException("PermitionName");
+        public virtual int Update(string PermissionName, string Description, string Original_PermissionName) {
+            if ((PermissionName == null)) {
+                throw new global::System.ArgumentNullException("PermissionName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PermitionName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PermissionName));
             }
             if ((Description == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3013,11 +3014,11 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
             }
-            if ((Original_PermitionName == null)) {
-                throw new global::System.ArgumentNullException("Original_PermitionName");
+            if ((Original_PermissionName == null)) {
+                throw new global::System.ArgumentNullException("Original_PermissionName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_PermitionName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_PermissionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3039,8 +3040,8 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Description, string Original_PermitionName) {
-            return this.Update(Original_PermitionName, Description, Original_PermitionName);
+        public virtual int Update(string Description, string Original_PermissionName) {
+            return this.Update(Original_PermissionName, Description, Original_PermissionName);
         }
     }
     
@@ -3053,7 +3054,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RolePermitionsTableAdapter : global::System.ComponentModel.Component {
+    public partial class RolePermissionsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3067,7 +3068,7 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public RolePermitionsTableAdapter() {
+        public RolePermissionsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3164,44 +3165,44 @@ SELECT MigrationId, ProductVersion FROM __EFMigrationsHistory WHERE (MigrationId
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "RolePermitions";
+            tableMapping.DataSetTable = "RolePermissions";
             tableMapping.ColumnMappings.Add("RoleName", "RoleName");
-            tableMapping.ColumnMappings.Add("PermitionName", "PermitionName");
-            tableMapping.ColumnMappings.Add("PermitionName1", "PermitionName1");
+            tableMapping.ColumnMappings.Add("PermissionName", "PermissionName");
+            tableMapping.ColumnMappings.Add("PermissionName1", "PermissionName1");
             tableMapping.ColumnMappings.Add("RoleName1", "RoleName1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RolePermitions] WHERE (([RoleName] = @Original_RoleName) AND ([PermitionName] = @Original_PermitionName) AND ((@IsNull_PermitionName1 = 1 AND [PermitionName1] IS NULL) OR ([PermitionName1] = @Original_PermitionName1)) AND ((@IsNull_RoleName1 = 1 AND [RoleName1] IS NULL) OR ([RoleName1] = @Original_RoleName1)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RolePermissions] WHERE (([RoleName] = @Original_RoleName) AND ([PermissionName] = @Original_PermissionName) AND ((@IsNull_PermissionName1 = 1 AND [PermissionName1] IS NULL) OR ([PermissionName1] = @Original_PermissionName1)) AND ((@IsNull_RoleName1 = 1 AND [RoleName1] IS NULL) OR ([RoleName1] = @Original_RoleName1)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PermitionName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PermissionName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RoleName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RolePermitions] ([RoleName], [PermitionName], [PermitionName1], [RoleName1]) VALUES (@RoleName, @PermitionName, @PermitionName1, @RoleName1);
-SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WHERE (PermitionName = @PermitionName) AND (RoleName = @RoleName)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RolePermissions] ([RoleName], [PermissionName], [PermissionName1], [RoleName1]) VALUES (@RoleName, @PermissionName, @PermissionName1, @RoleName1);
+SELECT RoleName, PermissionName, PermissionName1, RoleName1 FROM RolePermissions WHERE (PermissionName = @PermissionName) AND (RoleName = @RoleName)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RolePermitions] SET [RoleName] = @RoleName, [PermitionName] = @PermitionName, [PermitionName1] = @PermitionName1, [RoleName1] = @RoleName1 WHERE (([RoleName] = @Original_RoleName) AND ([PermitionName] = @Original_PermitionName) AND ((@IsNull_PermitionName1 = 1 AND [PermitionName1] IS NULL) OR ([PermitionName1] = @Original_PermitionName1)) AND ((@IsNull_RoleName1 = 1 AND [RoleName1] IS NULL) OR ([RoleName1] = @Original_RoleName1)));
-SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WHERE (PermitionName = @PermitionName) AND (RoleName = @RoleName)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RolePermissions] SET [RoleName] = @RoleName, [PermissionName] = @PermissionName, [PermissionName1] = @PermissionName1, [RoleName1] = @RoleName1 WHERE (([RoleName] = @Original_RoleName) AND ([PermissionName] = @Original_PermissionName) AND ((@IsNull_PermissionName1 = 1 AND [PermissionName1] IS NULL) OR ([PermissionName1] = @Original_PermissionName1)) AND ((@IsNull_RoleName1 = 1 AND [RoleName1] IS NULL) OR ([RoleName1] = @Original_RoleName1)));
+SELECT RoleName, PermissionName, PermissionName1, RoleName1 FROM RolePermissions WHERE (PermissionName = @PermissionName) AND (RoleName = @RoleName)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermitionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PermitionName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermitionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermitionName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PermissionName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RoleName1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -3219,8 +3220,8 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM dbo.RolePermitions" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT RoleName, PermissionName, PermissionName1, RoleName1 FROM dbo.RolePermissi" +
+                "ons";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3228,7 +3229,7 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ArtifactManagerDatabaseDataSet.RolePermitionsDataTable dataTable) {
+        public virtual int Fill(ArtifactManagerDatabaseDataSet.RolePermissionsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3241,9 +3242,9 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ArtifactManagerDatabaseDataSet.RolePermitionsDataTable GetData() {
+        public virtual ArtifactManagerDatabaseDataSet.RolePermissionsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ArtifactManagerDatabaseDataSet.RolePermitionsDataTable dataTable = new ArtifactManagerDatabaseDataSet.RolePermitionsDataTable();
+            ArtifactManagerDatabaseDataSet.RolePermissionsDataTable dataTable = new ArtifactManagerDatabaseDataSet.RolePermissionsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3251,7 +3252,7 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ArtifactManagerDatabaseDataSet.RolePermitionsDataTable dataTable) {
+        public virtual int Update(ArtifactManagerDatabaseDataSet.RolePermissionsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3259,7 +3260,7 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ArtifactManagerDatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "RolePermitions");
+            return this.Adapter.Update(dataSet, "RolePermissions");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3281,26 +3282,26 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_RoleName, string Original_PermitionName, string Original_PermitionName1, string Original_RoleName1) {
+        public virtual int Delete(string Original_RoleName, string Original_PermissionName, string Original_PermissionName1, string Original_RoleName1) {
             if ((Original_RoleName == null)) {
                 throw new global::System.ArgumentNullException("Original_RoleName");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_RoleName));
             }
-            if ((Original_PermitionName == null)) {
-                throw new global::System.ArgumentNullException("Original_PermitionName");
+            if ((Original_PermissionName == null)) {
+                throw new global::System.ArgumentNullException("Original_PermissionName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_PermitionName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_PermissionName));
             }
-            if ((Original_PermitionName1 == null)) {
+            if ((Original_PermissionName1 == null)) {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_PermitionName1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_PermissionName1));
             }
             if ((Original_RoleName1 == null)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
@@ -3330,24 +3331,24 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string RoleName, string PermitionName, string PermitionName1, string RoleName1) {
+        public virtual int Insert(string RoleName, string PermissionName, string PermissionName1, string RoleName1) {
             if ((RoleName == null)) {
                 throw new global::System.ArgumentNullException("RoleName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(RoleName));
             }
-            if ((PermitionName == null)) {
-                throw new global::System.ArgumentNullException("PermitionName");
+            if ((PermissionName == null)) {
+                throw new global::System.ArgumentNullException("PermissionName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PermitionName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PermissionName));
             }
-            if ((PermitionName1 == null)) {
+            if ((PermissionName1 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PermitionName1));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PermissionName1));
             }
             if ((RoleName1 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3375,24 +3376,24 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string RoleName, string PermitionName, string PermitionName1, string RoleName1, string Original_RoleName, string Original_PermitionName, string Original_PermitionName1, string Original_RoleName1) {
+        public virtual int Update(string RoleName, string PermissionName, string PermissionName1, string RoleName1, string Original_RoleName, string Original_PermissionName, string Original_PermissionName1, string Original_RoleName1) {
             if ((RoleName == null)) {
                 throw new global::System.ArgumentNullException("RoleName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(RoleName));
             }
-            if ((PermitionName == null)) {
-                throw new global::System.ArgumentNullException("PermitionName");
+            if ((PermissionName == null)) {
+                throw new global::System.ArgumentNullException("PermissionName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PermitionName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PermissionName));
             }
-            if ((PermitionName1 == null)) {
+            if ((PermissionName1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PermitionName1));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PermissionName1));
             }
             if ((RoleName1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -3406,19 +3407,19 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_RoleName));
             }
-            if ((Original_PermitionName == null)) {
-                throw new global::System.ArgumentNullException("Original_PermitionName");
+            if ((Original_PermissionName == null)) {
+                throw new global::System.ArgumentNullException("Original_PermissionName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_PermitionName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_PermissionName));
             }
-            if ((Original_PermitionName1 == null)) {
+            if ((Original_PermissionName1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_PermitionName1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_PermissionName1));
             }
             if ((Original_RoleName1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
@@ -3448,8 +3449,8 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PermitionName1, string RoleName1, string Original_RoleName, string Original_PermitionName, string Original_PermitionName1, string Original_RoleName1) {
-            return this.Update(Original_RoleName, Original_PermitionName, PermitionName1, RoleName1, Original_RoleName, Original_PermitionName, Original_PermitionName1, Original_RoleName1);
+        public virtual int Update(string PermissionName1, string RoleName1, string Original_RoleName, string Original_PermissionName, string Original_PermissionName1, string Original_RoleName1) {
+            return this.Update(Original_RoleName, Original_PermissionName, PermissionName1, RoleName1, Original_RoleName, Original_PermissionName, Original_PermissionName1, Original_RoleName1);
         }
     }
     
@@ -3889,24 +3890,24 @@ SELECT RoleName, PermitionName, PermitionName1, RoleName1 FROM RolePermitions WH
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Users] WHERE (([UserName] = @Original_UserName) AND ((@IsNull_RoleNa" +
-                "me = 1 AND [RoleName] IS NULL) OR ([RoleName] = @Original_RoleName)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Users] WHERE (([UserName] = @Original_UserName) AND ((@IsNull_" +
+                "RoleName = 1 AND [RoleName] IS NULL) OR ([RoleName] = @Original_RoleName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RoleName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Users] ([UserName], [Password], [RoleName]) VALUES (@UserName, @Pass" +
-                "word, @RoleName);\r\nSELECT UserName, Password, RoleName FROM Users WHERE (UserNam" +
-                "e = @UserName)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([UserName], [Password], [RoleName]) VALUES (@UserName," +
+                " @Password, @RoleName);\r\nSELECT UserName, Password, RoleName FROM Users WHERE (U" +
+                "serName = @UserName)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [UserName] = @UserName, [Password] = @Password, [RoleName] = @RoleName WHERE (([UserName] = @Original_UserName) AND ((@IsNull_RoleName = 1 AND [RoleName] IS NULL) OR ([RoleName] = @Original_RoleName)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [UserName] = @UserName, [Password] = @Password, [RoleName] = @RoleName WHERE (([UserName] = @Original_UserName) AND ((@IsNull_RoleName = 1 AND [RoleName] IS NULL) OR ([RoleName] = @Original_RoleName)));
 SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3930,7 +3931,7 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserName, Password, RoleName\r\nFROM   Users";
+            this._commandCollection[0].CommandText = "SELECT UserName, Password, RoleName FROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4137,9 +4138,9 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
         
         private @__EFMigrationsHistoryTableAdapter ___EFMigrationsHistoryTableAdapter;
         
-        private PermitionsTableAdapter _permitionsTableAdapter;
+        private PermissionsTableAdapter _permissionsTableAdapter;
         
-        private RolePermitionsTableAdapter _rolePermitionsTableAdapter;
+        private RolePermissionsTableAdapter _rolePermissionsTableAdapter;
         
         private RolesTableAdapter _rolesTableAdapter;
         
@@ -4179,12 +4180,12 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PermitionsTableAdapter PermitionsTableAdapter {
+        public PermissionsTableAdapter PermissionsTableAdapter {
             get {
-                return this._permitionsTableAdapter;
+                return this._permissionsTableAdapter;
             }
             set {
-                this._permitionsTableAdapter = value;
+                this._permissionsTableAdapter = value;
             }
         }
         
@@ -4193,12 +4194,12 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public RolePermitionsTableAdapter RolePermitionsTableAdapter {
+        public RolePermissionsTableAdapter RolePermissionsTableAdapter {
             get {
-                return this._rolePermitionsTableAdapter;
+                return this._rolePermissionsTableAdapter;
             }
             set {
-                this._rolePermitionsTableAdapter = value;
+                this._rolePermissionsTableAdapter = value;
             }
         }
         
@@ -4253,13 +4254,13 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                             && (this.___EFMigrationsHistoryTableAdapter.Connection != null))) {
                     return this.___EFMigrationsHistoryTableAdapter.Connection;
                 }
-                if (((this._permitionsTableAdapter != null) 
-                            && (this._permitionsTableAdapter.Connection != null))) {
-                    return this._permitionsTableAdapter.Connection;
+                if (((this._permissionsTableAdapter != null) 
+                            && (this._permissionsTableAdapter.Connection != null))) {
+                    return this._permissionsTableAdapter.Connection;
                 }
-                if (((this._rolePermitionsTableAdapter != null) 
-                            && (this._rolePermitionsTableAdapter.Connection != null))) {
-                    return this._rolePermitionsTableAdapter.Connection;
+                if (((this._rolePermissionsTableAdapter != null) 
+                            && (this._rolePermissionsTableAdapter.Connection != null))) {
+                    return this._rolePermissionsTableAdapter.Connection;
                 }
                 if (((this._rolesTableAdapter != null) 
                             && (this._rolesTableAdapter.Connection != null))) {
@@ -4285,10 +4286,10 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                 if ((this.___EFMigrationsHistoryTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._permitionsTableAdapter != null)) {
+                if ((this._permissionsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._rolePermitionsTableAdapter != null)) {
+                if ((this._rolePermissionsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._rolesTableAdapter != null)) {
@@ -4308,12 +4309,12 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(ArtifactManagerDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._permitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._permissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Permissions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._permitionsTableAdapter.Update(updatedRows));
+                    result = (result + this._permissionsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4335,12 +4336,12 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rolePermitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RolePermitions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._rolePermissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RolePermissions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rolePermitionsTableAdapter.Update(updatedRows));
+                    result = (result + this._rolePermissionsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4363,11 +4364,11 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(ArtifactManagerDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._permitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._permissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Permissions.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._permitionsTableAdapter.Update(addedRows));
+                    result = (result + this._permissionsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4387,11 +4388,11 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rolePermitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RolePermitions.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._rolePermissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RolePermissions.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rolePermitionsTableAdapter.Update(addedRows));
+                    result = (result + this._rolePermissionsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4421,11 +4422,11 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rolePermitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RolePermitions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._rolePermissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RolePermissions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rolePermitionsTableAdapter.Update(deletedRows));
+                    result = (result + this._rolePermissionsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4445,11 +4446,11 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._permitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._permissionsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Permissions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._permitionsTableAdapter.Update(deletedRows));
+                    result = (result + this._permissionsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4497,13 +4498,13 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
-            if (((this._permitionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._permitionsTableAdapter.Connection) == false))) {
+            if (((this._permissionsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._permissionsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
-            if (((this._rolePermitionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._rolePermitionsTableAdapter.Connection) == false))) {
+            if (((this._rolePermissionsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._rolePermissionsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Dla wszystkich obiektów TableAdapter, którymi zarządza obiekt TableAdapterManager" +
                         ", muszą być używane te same parametry połączenia.");
             }
@@ -4559,22 +4560,22 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this.___EFMigrationsHistoryTableAdapter.Adapter);
                     }
                 }
-                if ((this._permitionsTableAdapter != null)) {
-                    revertConnections.Add(this._permitionsTableAdapter, this._permitionsTableAdapter.Connection);
-                    this._permitionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._permitionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._permitionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._permitionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._permitionsTableAdapter.Adapter);
+                if ((this._permissionsTableAdapter != null)) {
+                    revertConnections.Add(this._permissionsTableAdapter, this._permissionsTableAdapter.Connection);
+                    this._permissionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._permissionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._permissionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._permissionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._permissionsTableAdapter.Adapter);
                     }
                 }
-                if ((this._rolePermitionsTableAdapter != null)) {
-                    revertConnections.Add(this._rolePermitionsTableAdapter, this._rolePermitionsTableAdapter.Connection);
-                    this._rolePermitionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._rolePermitionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._rolePermitionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._rolePermitionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._rolePermitionsTableAdapter.Adapter);
+                if ((this._rolePermissionsTableAdapter != null)) {
+                    revertConnections.Add(this._rolePermissionsTableAdapter, this._rolePermissionsTableAdapter.Connection);
+                    this._rolePermissionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._rolePermissionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._rolePermissionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._rolePermissionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._rolePermissionsTableAdapter.Adapter);
                     }
                 }
                 if ((this._rolesTableAdapter != null)) {
@@ -4657,13 +4658,13 @@ SELECT UserName, Password, RoleName FROM Users WHERE (UserName = @UserName)";
                     this.___EFMigrationsHistoryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this.___EFMigrationsHistoryTableAdapter]));
                     this.___EFMigrationsHistoryTableAdapter.Transaction = null;
                 }
-                if ((this._permitionsTableAdapter != null)) {
-                    this._permitionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._permitionsTableAdapter]));
-                    this._permitionsTableAdapter.Transaction = null;
+                if ((this._permissionsTableAdapter != null)) {
+                    this._permissionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._permissionsTableAdapter]));
+                    this._permissionsTableAdapter.Transaction = null;
                 }
-                if ((this._rolePermitionsTableAdapter != null)) {
-                    this._rolePermitionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rolePermitionsTableAdapter]));
-                    this._rolePermitionsTableAdapter.Transaction = null;
+                if ((this._rolePermissionsTableAdapter != null)) {
+                    this._rolePermissionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rolePermissionsTableAdapter]));
+                    this._rolePermissionsTableAdapter.Transaction = null;
                 }
                 if ((this._rolesTableAdapter != null)) {
                     this._rolesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rolesTableAdapter]));

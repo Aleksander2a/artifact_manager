@@ -82,6 +82,7 @@
             this.Permissions_button.TabIndex = 20;
             this.Permissions_button.Text = "Permission";
             this.Permissions_button.UseVisualStyleBackColor = false;
+            this.Permissions_button.Click += new System.EventHandler(this.Permissions_button_Click);
             // 
             // Browse_Artifacts_button
             // 
