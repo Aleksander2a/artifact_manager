@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using manager_artefaktow.BusinessLogic;
+
 namespace manager_artefaktow
 {
     public partial class RolesForm : Form
@@ -19,10 +22,10 @@ namespace manager_artefaktow
 
         private void RolesForm_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Permissions' . Możesz go przenieść lub usunąć.
-            this.permissionsTableAdapter1.Fill(this.artifactManagerDatabaseDataSet2.Permissions);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Roles' . Możesz go przenieść lub usunąć.
-            this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Permissions' . Możesz go przenieść lub usunąć.
+            this.permissionsTableAdapter2.Fill(this.artifactManagerDatabaseDataSet3.Permissions);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Roles' . Możesz go przenieść lub usunąć.
+            this.rolesTableAdapter3.Fill(this.artifactManagerDatabaseDataSet3.Roles);
         }
 
         private void Roles_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -63,7 +66,7 @@ namespace manager_artefaktow
             {
                 //if(message == "OK")
                 //{
-                    this.rolesTableAdapter2.Update(artifactManagerDatabaseDataSet2.Roles);
+                    this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
                     Roles_dataGridView.Refresh();
                     MessageBox.Show("Changes Saved");
                 //}
@@ -96,6 +99,33 @@ namespace manager_artefaktow
                 }
             */
             //}
+        }
+
+        private void Roles_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int column = e.ColumnIndex;
+            if(row >= 0 && row < Roles_dataGridView.RowCount-1)
+            {
+                RoleName_textBox.Text = Roles_dataGridView.Rows[row].Cells[0].Value.ToString();
+                string roleName = RoleName_textBox.Text;
+
+                var allPermissions = PermissionManagement.getAllPermissionsNames();
+                var rolePermissions = RoleManagement.findPermissionsForRoleName(roleName);
+
+                Permissions_checkedListBox.Items.Clear();
+                int index = 0;
+                foreach(var permission in allPermissions)
+                {
+                    Permissions_checkedListBox.Items.Add(permission);
+                    if (rolePermissions.Contains(permission))
+                    {
+                        Permissions_checkedListBox.SetItemChecked(index, true);
+                    }
+                    index++;
+                }
+                
+            }
         }
     }
 }

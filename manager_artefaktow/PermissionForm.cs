@@ -70,7 +70,7 @@ namespace manager_artefaktow
 
         private void Permissions_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("DataError: An error occured\nrow " + e.RowIndex + ", column " + e.ColumnIndex);
+            MessageBox.Show("DataError: An error occured\n" + e.Exception.Message + "\nrow " + e.RowIndex + ", column " + e.ColumnIndex);
         }
     }
 }
