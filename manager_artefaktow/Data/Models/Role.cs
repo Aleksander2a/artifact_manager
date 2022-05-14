@@ -10,9 +10,7 @@ namespace manager_artefaktow.Data.Models
 {
     public class Role
     {
-        [Key]
-        [MinLength(1)]
-        public string RoleName { get; set; }
+        public string RoleName { get; set; } // PK
         public ICollection<User> Users { get; set; }
         public ICollection<RolePermission> Permissions { get; set; }
     }

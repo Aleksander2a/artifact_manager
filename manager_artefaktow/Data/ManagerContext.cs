@@ -31,9 +31,30 @@ namespace manager_artefaktow.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<UserRole>().HasKey(vf => new { vf.UserName, vf.RoleId });
+            // Define Primary Keys
+            modelBuilder.Entity<User>().HasKey(vf => new { vf.UserName });
+            modelBuilder.Entity<Role>().HasKey(vf => new { vf.RoleName });
+            modelBuilder.Entity<Permission>().HasKey(vf => new { vf.PermissionName });
             modelBuilder.Entity<RolePermission>().HasKey(vf => new { vf.RoleName, vf.PermissionName });
-            //modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
+
+            // Define relations between tables
+            modelBuilder.Entity<Role>()
+                .HasMany<User>(r => r.Users)
+                .WithOne(u => u.Role)
+                .HasForeignKey(u => u.RoleName)
+                .OnDelete(DeleteBehavior.Cascade);
+           
+
+            modelBuilder.Entity<RolePermission>()
+                .HasOne<Role>(rp => rp.Role)
+                .WithMany(r => r.Permissions)
+                .HasForeignKey(rp => rp.RoleName);
+
+            modelBuilder.Entity<RolePermission>()
+                .HasOne<Permission>(rp => rp.Permission)
+                .WithMany(p => p.Roles)
+                .HasForeignKey(rp => rp.PermissionName);
+
         }
     }
 }

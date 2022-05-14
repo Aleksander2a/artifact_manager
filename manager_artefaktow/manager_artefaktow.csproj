@@ -311,9 +311,9 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220513080129_ArtifactManagerDatabase.cs" />
-    <Compile Include="Migrations\20220513080129_ArtifactManagerDatabase.designer.cs">
-      <DependentUpon>20220513080129_ArtifactManagerDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\20220514092002_ArtifactManagerDatabase.cs" />
+    <Compile Include="Migrations\20220514092002_ArtifactManagerDatabase.designer.cs">
+      <DependentUpon>20220514092002_ArtifactManagerDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ManagerContextModelSnapshot.cs" />
     <Compile Include="PermissionForm.cs">

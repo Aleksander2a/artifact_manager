@@ -34,25 +34,23 @@ namespace manager_artefaktow.Migrations
                 columns: table => new
                 {
                     RoleName = table.Column<string>(nullable: false),
-                    PermissionName = table.Column<string>(nullable: false),
-                    PermissionName1 = table.Column<string>(nullable: true),
-                    RoleName1 = table.Column<string>(nullable: true)
+                    PermissionName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RolePermissions", x => new { x.RoleName, x.PermissionName });
                     table.ForeignKey(
-                        name: "FK_RolePermissions_Permissions_PermissionName1",
-                        column: x => x.PermissionName1,
+                        name: "FK_RolePermissions_Permissions_PermissionName",
+                        column: x => x.PermissionName,
                         principalTable: "Permissions",
                         principalColumn: "PermissionName",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RolePermissions_Roles_RoleName1",
-                        column: x => x.RoleName1,
+                        name: "FK_RolePermissions_Roles_RoleName",
+                        column: x => x.RoleName,
                         principalTable: "Roles",
                         principalColumn: "RoleName",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -71,18 +69,13 @@ namespace manager_artefaktow.Migrations
                         column: x => x.RoleName,
                         principalTable: "Roles",
                         principalColumn: "RoleName",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolePermissions_PermissionName1",
+                name: "IX_RolePermissions_PermissionName",
                 table: "RolePermissions",
-                column: "PermissionName1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RolePermissions_RoleName1",
-                table: "RolePermissions",
-                column: "RoleName1");
+                column: "PermissionName");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_RoleName",

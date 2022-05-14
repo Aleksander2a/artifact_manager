@@ -49,17 +49,9 @@ namespace manager_artefaktow.Migrations
                     b.Property<string>("PermissionName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PermissionName1")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("RoleName1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("RoleName", "PermissionName");
 
-                    b.HasIndex("PermissionName1");
-
-                    b.HasIndex("RoleName1");
+                    b.HasIndex("PermissionName");
 
                     b.ToTable("RolePermissions");
                 });
@@ -84,20 +76,25 @@ namespace manager_artefaktow.Migrations
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.RolePermission", b =>
                 {
-                    b.HasOne("manager_artefaktow.Data.Models.Permission", null)
+                    b.HasOne("manager_artefaktow.Data.Models.Permission", "Permission")
                         .WithMany("Roles")
-                        .HasForeignKey("PermissionName1");
+                        .HasForeignKey("PermissionName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("manager_artefaktow.Data.Models.Role", null)
+                    b.HasOne("manager_artefaktow.Data.Models.Role", "Role")
                         .WithMany("Permissions")
-                        .HasForeignKey("RoleName1");
+                        .HasForeignKey("RoleName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.User", b =>
                 {
                     b.HasOne("manager_artefaktow.Data.Models.Role", "Role")
                         .WithMany("Users")
-                        .HasForeignKey("RoleName");
+                        .HasForeignKey("RoleName")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

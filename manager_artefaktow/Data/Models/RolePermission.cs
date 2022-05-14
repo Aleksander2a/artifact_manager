@@ -8,7 +8,9 @@ namespace manager_artefaktow.Data.Models
 {
     public class RolePermission
     {
-        public string RoleName { get; set; }
-        public string PermissionName { get; set; }
+        public string RoleName { get; set; } // Role PK
+        public Role Role { get; set; } // Role Refference
+        public string PermissionName { get; set; } // Permission PK
+        public Permission Permission { get; set; } // Permission Refference
     }
 }

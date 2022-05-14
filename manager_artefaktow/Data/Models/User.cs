@@ -12,28 +12,13 @@ namespace manager_artefaktow.Data.Models
     public class User
     {
         //public int UserId { get; set; }
-        [Key]
-        public string UserName { get; set; }
+        public string UserName { get; set; } // PK
 
-        //string _password;
         //[Required]
         public string Password { get; set; }
-            /*
-        { 
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = BCrypt.Net.BCrypt.HashPassword(value);
-            } 
-        }
-        */
         
         public string RoleName { get; set; } // Role PK
 
-        [ForeignKey(nameof(RoleName))]
         public Role Role { get; set; } // Role Reference
     }
 }

@@ -11,8 +11,7 @@ namespace manager_artefaktow.Data.Models
     public class Permission
     {
         //public int PermitionId { get; set; }
-        [Key]
-        public string PermissionName { get; set; }
+        public string PermissionName { get; set; } // PK
         public string Description { get; set; }
         public ICollection<RolePermission> Roles { get; set; }
     }
