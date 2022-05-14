@@ -104,5 +104,34 @@ namespace manager_artefaktow.BusinessLogic
                 Console.WriteLine(exception.Message);
             }
         }
+
+        public static bool CanDeleteRole(string roleName)
+        {
+            var dbContext = new ManagerContext();
+            int roleCount = dbContext.Roles.Count();
+            if (roleCount <= 2 || roleName == "Admin")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static void SetRandomDefaultRRoleExcept(string roleName)
+        {
+            var dbContext = new ManagerContext();
+            var roles = (from r in dbContext.Roles
+                         select r.RoleName).ToList();
+            foreach (var role in roles)
+            {
+                if (role != "Admin" && role != roleName)
+                {
+                    AppPropertiesManagement.SetOrCreatePropertyWithValue("DefaultRole", role);
+                    return;
+                }
+            }
+        }
     }
 }

@@ -1,1 +1,1 @@
-DefaultRole:User
+DefaultRole:BaseUser

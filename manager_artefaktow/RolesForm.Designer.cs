@@ -83,6 +83,7 @@
             this.Roles_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Roles_dataGridView_CellClick);
             this.Roles_dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Roles_dataGridView_DataError);
             this.Roles_dataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Roles_dataGridView_RowValidating);
+            this.Roles_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Roles_dataGridView_UserDeletedRow);
             this.Roles_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Roles_dataGridView_UserDeletingRow);
             // 
             // dataGridViewTextBoxColumn2

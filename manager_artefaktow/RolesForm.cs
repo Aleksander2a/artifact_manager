@@ -140,15 +140,39 @@ namespace manager_artefaktow
 
         private void Roles_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
+            string roleName = e.Row.Cells[0].Value.ToString();
+            if (!RoleManagement.CanDeleteRole(roleName))
+            {
+                MessageBox.Show("You cannot delete this role");
+                e.Cancel = true;
+                return;
+            }
+
             DialogResult dr = MessageBox.Show("Are you sure to delete this row", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
-                Roles_dataGridView.Rows.Remove(e.Row);
-                this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                Roles_dataGridView.Refresh();
-                MessageBox.Show("Row deleted");
+                // check for default role
+                if (roleName == AppPropertiesManagement.GetPropertyValue("DefaultRole"))
+                {
+                    RoleManagement.SetRandomDefaultRRoleExcept(roleName);
+                }
+                return;
+                //Roles_dataGridView.Rows.Remove(e.Row);
+                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
+                //Roles_dataGridView.Refresh();
+                //MessageBox.Show("Row deleted");
             }
-            e.Cancel = true;
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Roles_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
+            Roles_dataGridView.Refresh();
+            MessageBox.Show("Row deleted");
         }
     }
 }
