@@ -44,36 +44,18 @@ namespace manager_artefaktow
         private void SaveChanges_button_Click(object sender, EventArgs e)
         {
             //Update button update dataset after insertion,upadtion or deletion
-            DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            /*
-            string message = "OK";
-            for (int i = 0; i < Roles_dataGridView.Columns.Count; i++)
-            {
-                for (int j = 0; j < Roles_dataGridView.Rows.Count-1; j++)
-                {
-                    string cell = Roles_dataGridView.Rows[j].Cells[i].Value as string;
-                    if (cell == null || (cell.Trim()).Length == 0)
-                    {
-                        //MessageBox.Show("Wrong input values. Press ESC to discard or input new value");
-                        message = "An error occured\nrow " + j + ", column " + i;
-                        Roles_dataGridView.Rows[j].Cells[i].Value = "Wrong!"; // WORKS !!!!
-
-                    }
-                }
-            }
-            */
+            DialogResult dr = MessageBox.Show("Are you sure to save changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            
             if (dr == DialogResult.Yes)
             {
-                //if(message == "OK")
-                //{
-                    this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                    Roles_dataGridView.Refresh();
-                    MessageBox.Show("Changes Saved");
-                //}
-                //else
-                //{
-                //    MessageBox.Show(message);
-                //}
+                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
+                //Roles_dataGridView.Refresh();
+                List<string> newPermissions = new List<string>();
+                foreach (var item in Permissions_checkedListBox.CheckedItems) {
+                    newPermissions.Add(item.ToString());
+                }
+                RoleManagement.SetPermissionsToRole(RoleName_textBox.Text, newPermissions);
+                MessageBox.Show("Changes Saved");
             }
         }
 
@@ -105,7 +87,7 @@ namespace manager_artefaktow
         {
             int row = e.RowIndex;
             int column = e.ColumnIndex;
-            if(row >= 0 && row < Roles_dataGridView.RowCount-1)
+            if(row >= 0 && row < Roles_dataGridView.RowCount)
             {
                 RoleName_textBox.Text = Roles_dataGridView.Rows[row].Cells[0].Value.ToString();
                 string roleName = RoleName_textBox.Text;
@@ -126,6 +108,47 @@ namespace manager_artefaktow
                 }
                 
             }
+        }
+
+        private void AddRole_button_Click(object sender, EventArgs e)
+        {
+            string roleName = NewRole_textBox.Text.Trim();
+            if (roleName.Length > 0)
+            {
+                if (!RoleManagement.RoleExists(roleName))
+                {
+                    DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.Yes)
+                    {
+                        RoleManagement.AddRoleOnlyRoleName(roleName);
+                        this.rolesTableAdapter3.Fill(artifactManagerDatabaseDataSet3.Roles);
+                        Roles_dataGridView.Refresh();
+                        NewRole_textBox.Clear();
+                        MessageBox.Show("Role added");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Role with this name already exists");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid role name");
+            }
+        }
+
+        private void Roles_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure to delete this row", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                Roles_dataGridView.Rows.Remove(e.Row);
+                this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
+                Roles_dataGridView.Refresh();
+                MessageBox.Show("Row deleted");
+            }
+            e.Cancel = true;
         }
     }
 }

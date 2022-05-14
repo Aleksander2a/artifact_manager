@@ -21,5 +21,88 @@ namespace manager_artefaktow.BusinessLogic
                                select p.PermissionName).ToList();
             return permissions;
         }
+
+        public static bool RoleExists(string roleName)
+        {
+            try
+            {
+                using (var dbContext = new ManagerContext())
+                {
+                    Role role = dbContext.Roles.Find(roleName);
+                    if (role != null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception("Exception while checking if role exists");
+            }
+        }
+
+        public static void AddRoleOnlyRoleName(string roleName)
+        {
+            Role role = new Role();
+            role.RoleName = roleName;
+            try
+            {
+                using (var dbContext = new ManagerContext())
+                {
+                    dbContext.Roles.Add(role);
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+
+        public static void SetPermissionsToRole(string roleName, List<string> permissionsNames)
+        {
+            try
+            {
+                using (var dbContext = new ManagerContext())
+                {
+                    Role role = dbContext.Roles.Find(roleName);
+                    if (role != null)
+                    {
+                        var previousPermissions = (from p in dbContext.RolePermissions
+                                                   where p.RoleName == roleName
+                                                   select p).ToList();
+                        if (previousPermissions.Count() > 0)
+                        {
+                            foreach (var previous in previousPermissions)
+                            {
+                                dbContext.Remove(previous);
+                                dbContext.SaveChanges();
+                            }
+                        }
+                        foreach (var permission in permissionsNames)
+                        {
+                            RolePermission rolePermission = new RolePermission();
+                            rolePermission.RoleName = roleName;
+                            rolePermission.PermissionName = permission;
+                            dbContext.RolePermissions.Add(rolePermission);
+                            dbContext.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Role does not exist");
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
     }
 }

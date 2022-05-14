@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Roles_dataGridView = new System.Windows.Forms.DataGridView();
-            this.SaveChanges_button = new System.Windows.Forms.Button();
-            this.artifactManagerDatabaseDataSet3 = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artifactManagerDatabaseDataSet3 = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.SaveChanges_button = new System.Windows.Forms.Button();
             this.rolesTableAdapter3 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
             this.RoleDetails_label = new System.Windows.Forms.Label();
             this.RoleName_label = new System.Windows.Forms.Label();
@@ -42,10 +43,11 @@
             this.Permissions_label = new System.Windows.Forms.Label();
             this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permissionsTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddRole_button = new System.Windows.Forms.Button();
+            this.NewRole_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,7 @@
             // 
             // Roles_dataGridView
             // 
+            this.Roles_dataGridView.AllowUserToAddRows = false;
             this.Roles_dataGridView.AutoGenerateColumns = false;
             this.Roles_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Roles_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -72,36 +75,47 @@
             this.Roles_dataGridView.DataSource = this.rolesBindingSource;
             this.Roles_dataGridView.Location = new System.Drawing.Point(12, 12);
             this.Roles_dataGridView.Name = "Roles_dataGridView";
+            this.Roles_dataGridView.ReadOnly = true;
             this.Roles_dataGridView.RowHeadersWidth = 62;
             this.Roles_dataGridView.RowTemplate.Height = 28;
-            this.Roles_dataGridView.Size = new System.Drawing.Size(338, 334);
+            this.Roles_dataGridView.Size = new System.Drawing.Size(338, 278);
             this.Roles_dataGridView.TabIndex = 20;
             this.Roles_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Roles_dataGridView_CellClick);
             this.Roles_dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Roles_dataGridView_DataError);
             this.Roles_dataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Roles_dataGridView_RowValidating);
+            this.Roles_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Roles_dataGridView_UserDeletingRow);
             // 
-            // SaveChanges_button
+            // dataGridViewTextBoxColumn2
             // 
-            this.SaveChanges_button.BackColor = System.Drawing.Color.LimeGreen;
-            this.SaveChanges_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SaveChanges_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.SaveChanges_button.Location = new System.Drawing.Point(576, 367);
-            this.SaveChanges_button.Name = "SaveChanges_button";
-            this.SaveChanges_button.Size = new System.Drawing.Size(212, 71);
-            this.SaveChanges_button.TabIndex = 21;
-            this.SaveChanges_button.Text = "Save Changes";
-            this.SaveChanges_button.UseVisualStyleBackColor = false;
-            this.SaveChanges_button.Click += new System.EventHandler(this.SaveChanges_button_Click);
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "RoleName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "RoleName";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.artifactManagerDatabaseDataSet3;
             // 
             // artifactManagerDatabaseDataSet3
             // 
             this.artifactManagerDatabaseDataSet3.DataSetName = "ArtifactManagerDatabaseDataSet";
             this.artifactManagerDatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // rolesBindingSource
+            // SaveChanges_button
             // 
-            this.rolesBindingSource.DataMember = "Roles";
-            this.rolesBindingSource.DataSource = this.artifactManagerDatabaseDataSet3;
+            this.SaveChanges_button.BackColor = System.Drawing.Color.LimeGreen;
+            this.SaveChanges_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SaveChanges_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.SaveChanges_button.Location = new System.Drawing.Point(606, 296);
+            this.SaveChanges_button.Name = "SaveChanges_button";
+            this.SaveChanges_button.Size = new System.Drawing.Size(141, 50);
+            this.SaveChanges_button.TabIndex = 21;
+            this.SaveChanges_button.Text = "Save";
+            this.SaveChanges_button.UseVisualStyleBackColor = false;
+            this.SaveChanges_button.Click += new System.EventHandler(this.SaveChanges_button_Click);
             // 
             // rolesTableAdapter3
             // 
@@ -160,19 +174,33 @@
             // 
             this.permissionsTableAdapter2.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // AddRole_button
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "RoleName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "RoleName";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.AddRole_button.BackColor = System.Drawing.Color.Blue;
+            this.AddRole_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddRole_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.AddRole_button.Location = new System.Drawing.Point(12, 308);
+            this.AddRole_button.Name = "AddRole_button";
+            this.AddRole_button.Size = new System.Drawing.Size(87, 38);
+            this.AddRole_button.TabIndex = 27;
+            this.AddRole_button.Text = "Add Role";
+            this.AddRole_button.UseVisualStyleBackColor = false;
+            this.AddRole_button.Click += new System.EventHandler(this.AddRole_button_Click);
+            // 
+            // NewRole_textBox
+            // 
+            this.NewRole_textBox.Location = new System.Drawing.Point(105, 316);
+            this.NewRole_textBox.Name = "NewRole_textBox";
+            this.NewRole_textBox.Size = new System.Drawing.Size(245, 26);
+            this.NewRole_textBox.TabIndex = 28;
             // 
             // RolesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NewRole_textBox);
+            this.Controls.Add(this.AddRole_button);
             this.Controls.Add(this.Permissions_label);
             this.Controls.Add(this.Permissions_checkedListBox);
             this.Controls.Add(this.RoleName_textBox);
@@ -186,8 +214,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RolesForm_FormClosing);
             this.Load += new System.EventHandler(this.RolesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,5 +248,7 @@
         private System.Windows.Forms.BindingSource permissionsBindingSource;
         private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button AddRole_button;
+        private System.Windows.Forms.TextBox NewRole_textBox;
     }
 }
