@@ -279,6 +279,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Models\Category.cs" />
+    <Compile Include="Data\Models\Instance.cs" />
     <Compile Include="Forms\AdminPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,7 +304,6 @@
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\RolePermission.cs" />
     <Compile Include="Data\Models\User.cs" />
-    <Compile Include="Data\Models\UserRole.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

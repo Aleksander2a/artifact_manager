@@ -15,10 +15,12 @@ namespace manager_artefaktow.Data
     public class ManagerContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        //public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<Permission> Permissions { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Instance> Instances { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -32,10 +34,12 @@ namespace manager_artefaktow.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Define Primary Keys
-            modelBuilder.Entity<User>().HasKey(vf => new { vf.UserName });
-            modelBuilder.Entity<Role>().HasKey(vf => new { vf.RoleName });
-            modelBuilder.Entity<Permission>().HasKey(vf => new { vf.PermissionName });
-            modelBuilder.Entity<RolePermission>().HasKey(vf => new { vf.RoleName, vf.PermissionName });
+            modelBuilder.Entity<User>().HasKey(u => new { u.UserName });
+            modelBuilder.Entity<Role>().HasKey(r => new { r.RoleName });
+            modelBuilder.Entity<Permission>().HasKey(p => new { p.PermissionName });
+            modelBuilder.Entity<RolePermission>().HasKey(rp => new { rp.RoleName, rp.PermissionName });
+            modelBuilder.Entity<Category>().HasKey(c => new { c.CategoryName });
+            modelBuilder.Entity<Instance>().HasKey(i => new { i.InstanceName });
 
 
             // Define constraints on fields
@@ -50,6 +54,17 @@ namespace manager_artefaktow.Data
                 .Property(p => p.Description)
                 .IsRequired();
 
+            modelBuilder.Entity<Category>()
+                .Property(c => c.CreatorName)
+                .IsRequired();
+
+            modelBuilder.Entity<Instance>()
+                .Property(i => i.CategoryName)
+                .IsRequired();
+            modelBuilder.Entity<Instance>()
+                .Property(i => i.CreatorName)
+                .IsRequired();
+
 
             // Define relations between tables
             modelBuilder.Entity<Role>()
@@ -57,18 +72,32 @@ namespace manager_artefaktow.Data
                 .WithOne(u => u.Role)
                 .HasForeignKey(u => u.RoleName)
                 .OnDelete(DeleteBehavior.Cascade);
-           
 
             modelBuilder.Entity<RolePermission>()
                 .HasOne<Role>(rp => rp.Role)
                 .WithMany(r => r.Permissions)
                 .HasForeignKey(rp => rp.RoleName);
-
             modelBuilder.Entity<RolePermission>()
                 .HasOne<Permission>(rp => rp.Permission)
                 .WithMany(p => p.Roles)
                 .HasForeignKey(rp => rp.PermissionName);
 
+            modelBuilder.Entity<User>()
+                .HasMany<Category>(u => u.Categories)
+                .WithOne(c => c.Creator)
+                .HasForeignKey(c => c.CreatorName)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .HasMany<Instance>(u => u.Instances)
+                .WithOne(i => i.Creator)
+                .HasForeignKey(i => i.CreatorName)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Category>()
+                .HasMany<Instance>(c => c.Instances)
+                .WithOne(i => i.Category)
+                .HasForeignKey(i => i.CategoryName)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -20,5 +20,8 @@ namespace manager_artefaktow.Data.Models
         public string RoleName { get; set; } // Role PK
 
         public Role Role { get; set; } // Role Reference
+
+        public ICollection<Category> Categories { get; set; }
+        public ICollection<Instance> Instances { get; set; }
     }
 }
