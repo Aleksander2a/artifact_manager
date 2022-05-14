@@ -81,6 +81,7 @@ namespace manager_artefaktow.BusinessLogic
             User user = new User();
             user.UserName = name;
             user.Password = BCrypt.Net.BCrypt.HashPassword(password);
+            user.RoleName = AppPropertiesManagement.GetPropertyValue("DefaultRole");
             try
             {
                 using (var dbContext = new ManagerContext())

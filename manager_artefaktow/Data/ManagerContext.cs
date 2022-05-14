@@ -37,6 +37,20 @@ namespace manager_artefaktow.Data
             modelBuilder.Entity<Permission>().HasKey(vf => new { vf.PermissionName });
             modelBuilder.Entity<RolePermission>().HasKey(vf => new { vf.RoleName, vf.PermissionName });
 
+
+            // Define constraints on fields
+            modelBuilder.Entity<User>()
+                .Property(u => u.Password)
+                .IsRequired();
+            modelBuilder.Entity<User>()
+                .Property(u => u.RoleName)
+                .IsRequired();
+
+            modelBuilder.Entity<Permission>()
+                .Property(p => p.Description)
+                .IsRequired();
+
+
             // Define relations between tables
             modelBuilder.Entity<Role>()
                 .HasMany<User>(r => r.Users)

@@ -40,7 +40,7 @@ namespace manager_artefaktow
             if (registrationMessage == Registration.SuccessMessage)
             {
                 MessageBox.Show(registrationMessage);
-                if (username == "Admin")
+                if (AppPropertiesManagement.GetPropertyValue("DefaultRole") == "Admin")
                 {
                     // navigate to home page
                     this.FindForm().Hide();

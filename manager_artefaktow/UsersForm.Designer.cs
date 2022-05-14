@@ -37,15 +37,20 @@
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter();
             this.rolesTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
+            this.Encrypt_textBox = new System.Windows.Forms.TextBox();
+            this.Encrypt_button = new System.Windows.Forms.Button();
+            this.PasswordEncrypto_label = new System.Windows.Forms.Label();
+            this.DefaultRole_label = new System.Windows.Forms.Label();
+            this.DefaultRole_comboBox = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Encrypt_textBox = new System.Windows.Forms.TextBox();
-            this.Encrypt_button = new System.Windows.Forms.Button();
+            this.rolesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveChanges_button
@@ -88,7 +93,7 @@
             this.Users_dataGridView.Name = "Users_dataGridView";
             this.Users_dataGridView.RowHeadersWidth = 62;
             this.Users_dataGridView.RowTemplate.Height = 28;
-            this.Users_dataGridView.Size = new System.Drawing.Size(588, 293);
+            this.Users_dataGridView.Size = new System.Drawing.Size(775, 270);
             this.Users_dataGridView.TabIndex = 24;
             this.Users_dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Users_dataGridView_DataError);
             this.Users_dataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Users_dataGridView_RowValidating);
@@ -116,13 +121,63 @@
             // 
             this.rolesTableAdapter2.ClearBeforeFill = true;
             // 
+            // Encrypt_textBox
+            // 
+            this.Encrypt_textBox.Location = new System.Drawing.Point(168, 297);
+            this.Encrypt_textBox.Name = "Encrypt_textBox";
+            this.Encrypt_textBox.Size = new System.Drawing.Size(508, 26);
+            this.Encrypt_textBox.TabIndex = 25;
+            // 
+            // Encrypt_button
+            // 
+            this.Encrypt_button.BackColor = System.Drawing.Color.Blue;
+            this.Encrypt_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Encrypt_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.Encrypt_button.Location = new System.Drawing.Point(682, 288);
+            this.Encrypt_button.Name = "Encrypt_button";
+            this.Encrypt_button.Size = new System.Drawing.Size(105, 41);
+            this.Encrypt_button.TabIndex = 26;
+            this.Encrypt_button.Text = "Encrypt";
+            this.Encrypt_button.UseVisualStyleBackColor = false;
+            this.Encrypt_button.Click += new System.EventHandler(this.Encrypt_button_Click);
+            // 
+            // PasswordEncrypto_label
+            // 
+            this.PasswordEncrypto_label.AutoSize = true;
+            this.PasswordEncrypto_label.Location = new System.Drawing.Point(12, 300);
+            this.PasswordEncrypto_label.Name = "PasswordEncrypto_label";
+            this.PasswordEncrypto_label.Size = new System.Drawing.Size(150, 20);
+            this.PasswordEncrypto_label.TabIndex = 27;
+            this.PasswordEncrypto_label.Text = "Password Encryptor";
+            // 
+            // DefaultRole_label
+            // 
+            this.DefaultRole_label.AutoSize = true;
+            this.DefaultRole_label.Location = new System.Drawing.Point(12, 335);
+            this.DefaultRole_label.Name = "DefaultRole_label";
+            this.DefaultRole_label.Size = new System.Drawing.Size(232, 20);
+            this.DefaultRole_label.TabIndex = 28;
+            this.DefaultRole_label.Text = "Default role for user registration";
+            // 
+            // DefaultRole_comboBox
+            // 
+            this.DefaultRole_comboBox.DataSource = this.rolesBindingSource1;
+            this.DefaultRole_comboBox.DisplayMember = "RoleName";
+            this.DefaultRole_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DefaultRole_comboBox.FormattingEnabled = true;
+            this.DefaultRole_comboBox.Location = new System.Drawing.Point(250, 332);
+            this.DefaultRole_comboBox.Name = "DefaultRole_comboBox";
+            this.DefaultRole_comboBox.Size = new System.Drawing.Size(239, 28);
+            this.DefaultRole_comboBox.TabIndex = 29;
+            // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "UserName";
             this.dataGridViewTextBoxColumn1.HeaderText = "UserName";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.dataGridViewTextBoxColumn1.Width = 121;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
@@ -143,31 +198,19 @@
             this.RoleName.Name = "RoleName";
             this.RoleName.ValueMember = "RoleName";
             // 
-            // Encrypt_textBox
+            // rolesBindingSource1
             // 
-            this.Encrypt_textBox.Location = new System.Drawing.Point(12, 326);
-            this.Encrypt_textBox.Name = "Encrypt_textBox";
-            this.Encrypt_textBox.Size = new System.Drawing.Size(477, 26);
-            this.Encrypt_textBox.TabIndex = 25;
-            // 
-            // Encrypt_button
-            // 
-            this.Encrypt_button.BackColor = System.Drawing.Color.Blue;
-            this.Encrypt_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Encrypt_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.Encrypt_button.Location = new System.Drawing.Point(495, 317);
-            this.Encrypt_button.Name = "Encrypt_button";
-            this.Encrypt_button.Size = new System.Drawing.Size(105, 41);
-            this.Encrypt_button.TabIndex = 26;
-            this.Encrypt_button.Text = "Encrypt";
-            this.Encrypt_button.UseVisualStyleBackColor = false;
-            this.Encrypt_button.Click += new System.EventHandler(this.Encrypt_button_Click);
+            this.rolesBindingSource1.DataMember = "Roles";
+            this.rolesBindingSource1.DataSource = this.artifactManagerDatabaseDataSet2;
             // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 458);
+            this.Controls.Add(this.DefaultRole_comboBox);
+            this.Controls.Add(this.DefaultRole_label);
+            this.Controls.Add(this.PasswordEncrypto_label);
             this.Controls.Add(this.Encrypt_button);
             this.Controls.Add(this.Encrypt_textBox);
             this.Controls.Add(this.Users_dataGridView);
@@ -181,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,10 +248,14 @@
         private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter2;
         private System.Windows.Forms.BindingSource rolesBindingSource;
         private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter2;
+        private System.Windows.Forms.TextBox Encrypt_textBox;
+        private System.Windows.Forms.Button Encrypt_button;
+        private System.Windows.Forms.Label PasswordEncrypto_label;
+        private System.Windows.Forms.Label DefaultRole_label;
+        private System.Windows.Forms.ComboBox DefaultRole_comboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RoleName;
-        private System.Windows.Forms.TextBox Encrypt_textBox;
-        private System.Windows.Forms.Button Encrypt_button;
+        private System.Windows.Forms.BindingSource rolesBindingSource1;
     }
 }

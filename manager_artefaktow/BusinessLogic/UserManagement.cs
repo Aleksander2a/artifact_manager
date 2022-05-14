@@ -36,6 +36,23 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
+        public static User FindUser(string username)
+        {
+            try
+            {
+                using (var dbContext = new ManagerContext())
+                {
+                    User user = dbContext.Users.Find(username);
+                        return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw new Exception("Exception while checking if user exists");
+            }
+        }
+
         public static string encryptPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);

@@ -61,6 +61,9 @@ namespace manager_artefaktow
                 //{
                     this.usersTableAdapter2.Update(artifactManagerDatabaseDataSet2.Users);
                     Users_dataGridView.Refresh();
+                //Registration.DefaultRoleName = DefaultRole_comboBox.Text;
+                    AppPropertiesManagement.SetOrCreatePropertyWithValue("DefaultRole", DefaultRole_comboBox.Text);
+                    
                     MessageBox.Show("Changes Saved");
                 //}
                 //else
@@ -76,6 +79,23 @@ namespace manager_artefaktow
             this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Users' . Możesz go przenieść lub usunąć.
             this.usersTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Users);
+
+            //DefaultRole_label.MaximumSize = new Size(100, 0);
+            //DefaultRole_label.AutoSize = true;
+
+            // Set default role for registration
+            //if (Registration.DefaultRoleName)
+            //{
+
+            //}
+            if (AppPropertiesManagement.PropertyExists("DefaultRole"))
+            {
+                DefaultRole_comboBox.Text = AppPropertiesManagement.GetPropertyValue("DefaultRole");
+            }
+            else
+            {
+                DefaultRole_comboBox.Text = DefaultRole_comboBox.Items[0].ToString();
+            }
         }
 
         private void Users_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using manager_artefaktow.Data.Models;
 using manager_artefaktow.BusinessLogic;
 
 namespace manager_artefaktow
@@ -39,7 +40,8 @@ namespace manager_artefaktow
             if (loggingInMessage == LoggingIn.SuccessMessage)
             {
                 MessageBox.Show(loggingInMessage);
-                if(username == "Admin")
+                User user = UserManagement.FindUser(username);
+                if(user.RoleName == "Admin")
                 {
                     // navigate to home page
                     this.FindForm().Hide();
