@@ -16,6 +16,7 @@ namespace manager_artefaktow.BusinessLogic
         public static readonly string SuccessMessage = "You registered successfully!";
         public static readonly string InvalidFormMessage = "Incorectly completed form, try again";
         public static readonly string UserAlreadyExistsMessage = "User with this name already exists";
+        
 
 
         public static string Register(string name, string password, string confirmPassword)
