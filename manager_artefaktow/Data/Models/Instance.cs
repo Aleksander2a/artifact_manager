@@ -13,5 +13,6 @@ namespace manager_artefaktow.Data.Models
         public Category Category { get; set; } // Category Reference
         public string CreatorName { get; set; } // User PK
         public User Creator { get; set; } // User Reference 
+        public ICollection<InstancePropertyValue> PropertyValues { get; set; }
     }
 }

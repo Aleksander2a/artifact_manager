@@ -21,6 +21,8 @@ namespace manager_artefaktow.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Instance> Instances { get; set; }
+        public DbSet<CategoryProperty> CategoryProperties { get; set; }
+        public DbSet<InstancePropertyValue> InstanceProperties { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -40,6 +42,8 @@ namespace manager_artefaktow.Data
             modelBuilder.Entity<RolePermission>().HasKey(rp => new { rp.RoleName, rp.PermissionName });
             modelBuilder.Entity<Category>().HasKey(c => new { c.CategoryName });
             modelBuilder.Entity<Instance>().HasKey(i => new { i.InstanceName });
+            modelBuilder.Entity<CategoryProperty>().HasKey(cp => new { cp.PropertyName, cp.CategoryName });
+            modelBuilder.Entity<InstancePropertyValue>().HasKey(ipv => new { ipv.PropertyValue, ipv.PropertyName, ipv.InstanceName });
 
 
             // Define constraints on fields
@@ -86,17 +90,29 @@ namespace manager_artefaktow.Data
                 .HasMany<Category>(u => u.Categories)
                 .WithOne(c => c.Creator)
                 .HasForeignKey(c => c.CreatorName)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction); //  x
             modelBuilder.Entity<User>()
                 .HasMany<Instance>(u => u.Instances)
                 .WithOne(i => i.Creator)
                 .HasForeignKey(i => i.CreatorName)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction); // x
 
             modelBuilder.Entity<Category>()
                 .HasMany<Instance>(c => c.Instances)
                 .WithOne(i => i.Category)
                 .HasForeignKey(i => i.CategoryName)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Category>()
+                .HasMany<CategoryProperty>(c => c.Properties)
+                .WithOne(cp => cp.Category)
+                .HasForeignKey(cp => cp.CategoryName)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Instance>()
+                .HasMany<InstancePropertyValue>(i => i.PropertyValues)
+                .WithOne(ipv => ipv.Instance)
+                .HasForeignKey(ipv => ipv.InstanceName)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

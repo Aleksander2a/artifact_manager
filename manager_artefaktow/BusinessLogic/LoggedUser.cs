@@ -13,6 +13,6 @@ namespace manager_artefaktow.BusinessLogic
         public static int UserId { get; set; }
         public static string UserName { get; set; }
         public static string Password { get; set; }
-        public static ICollection<UserRole> Roles { get; set; }
+        //public static ICollection<UserRole> Roles { get; set; }
     }
 }

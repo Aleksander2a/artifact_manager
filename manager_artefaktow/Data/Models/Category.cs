@@ -15,5 +15,6 @@ namespace manager_artefaktow.Data.Models
         public string CreatorName { get; set; } // User PK
         public User Creator { get; set; } // User Reference 
         public ICollection<Instance> Instances { get; set; }
+        public ICollection<CategoryProperty> Properties { get; set; }
     }
 }
