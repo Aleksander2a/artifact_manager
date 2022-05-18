@@ -59,7 +59,7 @@ namespace manager_artefaktow.Forms
             {
                 for (int col = 0; col < Properties_dataGridView.ColumnCount; col++)
                 {
-                    if (Properties_dataGridView.Rows[row].Cells[1].Value.ToString().Trim().Length == 0)
+                    if (Properties_dataGridView.Rows[row].Cells[1].Value == null || Properties_dataGridView.Rows[row].Cells[1].Value.ToString().Trim().Length == 0)
                     {
                         MessageBox.Show("Invalid value in the properties section");
                         return;

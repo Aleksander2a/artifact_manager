@@ -27,8 +27,10 @@ namespace manager_artefaktow.Forms
 
         private void ArtifactDetailsForm_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.CategoryProperties' . Możesz go przenieść lub usunąć.
+            this.categoryPropertiesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.CategoryProperties);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.InstanceProperties' . Możesz go przenieść lub usunąć.
-            this.instancePropertiesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.InstanceProperties);
+            //this.instancePropertiesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.InstanceProperties);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Instances' . Możesz go przenieść lub usunąć.
             this.instancesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Instances);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Categories' . Możesz go przenieść lub usunąć.
@@ -40,7 +42,21 @@ namespace manager_artefaktow.Forms
                 ArtifactName_textBox.Text = instance.InstanceName;
                 Creator_textBox.Text = instance.CreatorName;
                 Overall_numericUpDown.Value = instance.Overall;
+
                 Category_textBox.Text = CATEGORY_NAME;
+                Properties_dataGridView.Refresh();
+                //Category_comboBox.Enabled = false;
+
+                // fill dataGrid with values
+                List<string> properties = CategoryManagement.FindPropertiesForCategoryName(CATEGORY_NAME);
+                for (int row = 0; row < properties.Count; row++)
+                {
+                    Properties_dataGridView.Rows.Add(properties[row], InstanceManagement.GetValueByInstancePropertyNames(instance.InstanceName, properties[row]));
+                    //Properties_dataGridView.Rows[row].Cells[0].Value = properties[row];
+
+                    //Properties_dataGridView.Rows[row].Cells[1].Value = InstanceManagement.GetValueByInstancePropertyNames(instance.InstanceName, properties[row]);
+                }
+
             }
             if (String.IsNullOrEmpty(LoggedUser.UserName))
             {
@@ -82,9 +98,20 @@ namespace manager_artefaktow.Forms
             {
                 instance.Overall = overall;
                 InstanceManagement.AddOrUpdateInstance(instance);
-                this.instancesTableAdapter.Update(artifactManagerDatabaseDataSet.Instances);
-                this.instancePropertiesTableAdapter.Update(artifactManagerDatabaseDataSet.InstanceProperties);
-                this.categoriesTableAdapter.Update(artifactManagerDatabaseDataSet.Categories);
+
+                InstanceManagement.RemoveAllPropertyValuesForInstanceName(instance.InstanceName);
+
+                for (int row = 0; row < Properties_dataGridView.RowCount; row++)
+                {
+                    string propertyName = Properties_dataGridView.Rows[row].Cells[0].Value.ToString().Trim();
+                    string propertyValue = Properties_dataGridView.Rows[row].Cells[1].Value.ToString().Trim();
+
+                    InstanceManagement.AddPropertyValueToInstance(instance.InstanceName, propertyName, propertyValue);
+                }
+
+                // this.instancesTableAdapter.Update(artifactManagerDatabaseDataSet.Instances);
+                //this.instancePropertiesTableAdapter.Update(artifactManagerDatabaseDataSet.InstanceProperties);
+                // this.categoriesTableAdapter.Update(artifactManagerDatabaseDataSet.Categories);
                 Properties_dataGridView.Refresh();
 
                 MessageBox.Show("Changes Saved");
@@ -97,5 +124,6 @@ namespace manager_artefaktow.Forms
             Form artifactsForm = new InstancesForm();
             artifactsForm.ShowDialog();
         }
+
     }
 }

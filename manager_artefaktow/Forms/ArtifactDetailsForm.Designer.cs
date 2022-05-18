@@ -33,7 +33,6 @@
             this.Add_button = new System.Windows.Forms.Button();
             this.BrowseArtifacts_button = new System.Windows.Forms.Button();
             this.Properties_label = new System.Windows.Forms.Label();
-            this.Properties_dataGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.Creator_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,19 +44,17 @@
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter();
             this.instancesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.InstancesTableAdapter();
-            this.instancePropertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.instancePropertiesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.InstancePropertiesTableAdapter();
+            this.Category_textBox = new System.Windows.Forms.TextBox();
+            this.Properties_dataGridView = new System.Windows.Forms.DataGridView();
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryPropertiesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoryPropertiesTableAdapter();
             this.PropertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.propertyValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.propertyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instanceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Overall_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Properties_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instancePropertiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Properties_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKCategoryPropertiesCategoriesCategoryNameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Overall_numericUpDown
@@ -96,31 +93,11 @@
             // Properties_label
             // 
             this.Properties_label.AutoSize = true;
-            this.Properties_label.Location = new System.Drawing.Point(422, 56);
+            this.Properties_label.Location = new System.Drawing.Point(479, 56);
             this.Properties_label.Name = "Properties_label";
             this.Properties_label.Size = new System.Drawing.Size(81, 20);
             this.Properties_label.TabIndex = 67;
             this.Properties_label.Text = "Properties";
-            // 
-            // Properties_dataGridView
-            // 
-            this.Properties_dataGridView.AllowUserToAddRows = false;
-            this.Properties_dataGridView.AllowUserToDeleteRows = false;
-            this.Properties_dataGridView.AutoGenerateColumns = false;
-            this.Properties_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Properties_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PropertyName,
-            this.Value,
-            this.propertyValueDataGridViewTextBoxColumn,
-            this.propertyNameDataGridViewTextBoxColumn,
-            this.instanceNameDataGridViewTextBoxColumn});
-            this.Properties_dataGridView.DataSource = this.instancePropertiesBindingSource;
-            this.Properties_dataGridView.Location = new System.Drawing.Point(279, 79);
-            this.Properties_dataGridView.Name = "Properties_dataGridView";
-            this.Properties_dataGridView.RowHeadersWidth = 62;
-            this.Properties_dataGridView.RowTemplate.Height = 28;
-            this.Properties_dataGridView.Size = new System.Drawing.Size(509, 224);
-            this.Properties_dataGridView.TabIndex = 66;
             // 
             // label3
             // 
@@ -202,56 +179,6 @@
             // 
             this.instancesTableAdapter.ClearBeforeFill = true;
             // 
-            // instancePropertiesBindingSource
-            // 
-            this.instancePropertiesBindingSource.DataMember = "InstanceProperties";
-            this.instancePropertiesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
-            // 
-            // instancePropertiesTableAdapter
-            // 
-            this.instancePropertiesTableAdapter.ClearBeforeFill = true;
-            // 
-            // PropertyName
-            // 
-            this.PropertyName.DataPropertyName = "PropertyName";
-            this.PropertyName.HeaderText = "PropertyName";
-            this.PropertyName.MinimumWidth = 8;
-            this.PropertyName.Name = "PropertyName";
-            this.PropertyName.ReadOnly = true;
-            this.PropertyName.Width = 150;
-            // 
-            // Value
-            // 
-            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Value.DataPropertyName = "PropertyValue";
-            this.Value.HeaderText = "Value";
-            this.Value.MinimumWidth = 8;
-            this.Value.Name = "Value";
-            // 
-            // propertyValueDataGridViewTextBoxColumn
-            // 
-            this.propertyValueDataGridViewTextBoxColumn.DataPropertyName = "PropertyValue";
-            this.propertyValueDataGridViewTextBoxColumn.HeaderText = "PropertyValue";
-            this.propertyValueDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.propertyValueDataGridViewTextBoxColumn.Name = "propertyValueDataGridViewTextBoxColumn";
-            this.propertyValueDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // propertyNameDataGridViewTextBoxColumn
-            // 
-            this.propertyNameDataGridViewTextBoxColumn.DataPropertyName = "PropertyName";
-            this.propertyNameDataGridViewTextBoxColumn.HeaderText = "PropertyName";
-            this.propertyNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.propertyNameDataGridViewTextBoxColumn.Name = "propertyNameDataGridViewTextBoxColumn";
-            this.propertyNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // instanceNameDataGridViewTextBoxColumn
-            // 
-            this.instanceNameDataGridViewTextBoxColumn.DataPropertyName = "InstanceName";
-            this.instanceNameDataGridViewTextBoxColumn.HeaderText = "InstanceName";
-            this.instanceNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.instanceNameDataGridViewTextBoxColumn.Name = "instanceNameDataGridViewTextBoxColumn";
-            this.instanceNameDataGridViewTextBoxColumn.Width = 150;
-            // 
             // Category_textBox
             // 
             this.Category_textBox.Location = new System.Drawing.Point(17, 140);
@@ -260,17 +187,56 @@
             this.Category_textBox.Size = new System.Drawing.Size(207, 26);
             this.Category_textBox.TabIndex = 71;
             // 
+            // Properties_dataGridView
+            // 
+            this.Properties_dataGridView.AllowUserToAddRows = false;
+            this.Properties_dataGridView.AllowUserToDeleteRows = false;
+            this.Properties_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Properties_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PropertyName,
+            this.Value});
+            this.Properties_dataGridView.Location = new System.Drawing.Point(316, 79);
+            this.Properties_dataGridView.Name = "Properties_dataGridView";
+            this.Properties_dataGridView.RowHeadersWidth = 62;
+            this.Properties_dataGridView.RowTemplate.Height = 28;
+            this.Properties_dataGridView.Size = new System.Drawing.Size(426, 228);
+            this.Properties_dataGridView.TabIndex = 72;
+            // 
+            // fKCategoryPropertiesCategoriesCategoryNameBindingSource
+            // 
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataMember = "FK_CategoryProperties_Categories_CategoryName";
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataSource = this.categoriesBindingSource;
+            // 
+            // categoryPropertiesTableAdapter
+            // 
+            this.categoryPropertiesTableAdapter.ClearBeforeFill = true;
+            // 
+            // PropertyName
+            // 
+            this.PropertyName.HeaderText = "Property Name";
+            this.PropertyName.MinimumWidth = 8;
+            this.PropertyName.Name = "PropertyName";
+            this.PropertyName.ReadOnly = true;
+            this.PropertyName.Width = 150;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Value.HeaderText = "Value";
+            this.Value.MinimumWidth = 8;
+            this.Value.Name = "Value";
+            // 
             // ArtifactDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Properties_dataGridView);
             this.Controls.Add(this.Category_textBox);
             this.Controls.Add(this.Overall_numericUpDown);
             this.Controls.Add(this.Add_button);
             this.Controls.Add(this.BrowseArtifacts_button);
             this.Controls.Add(this.Properties_label);
-            this.Controls.Add(this.Properties_dataGridView);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Creator_textBox);
             this.Controls.Add(this.label2);
@@ -282,10 +248,10 @@
             this.Text = "Artifact Details";
             this.Load += new System.EventHandler(this.ArtifactDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Overall_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Properties_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instancePropertiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Properties_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKCategoryPropertiesCategoriesCategoryNameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +263,6 @@
         private System.Windows.Forms.Button Add_button;
         private System.Windows.Forms.Button BrowseArtifacts_button;
         private System.Windows.Forms.Label Properties_label;
-        private System.Windows.Forms.DataGridView Properties_dataGridView;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Creator_textBox;
         private System.Windows.Forms.Label label2;
@@ -309,13 +274,11 @@
         private System.Windows.Forms.BindingSource categoriesBindingSource;
         private ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
         private ArtifactManagerDatabaseDataSetTableAdapters.InstancesTableAdapter instancesTableAdapter;
-        private System.Windows.Forms.BindingSource instancePropertiesBindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.InstancePropertiesTableAdapter instancePropertiesTableAdapter;
+        private System.Windows.Forms.TextBox Category_textBox;
+        private System.Windows.Forms.DataGridView Properties_dataGridView;
+        private System.Windows.Forms.BindingSource fKCategoryPropertiesCategoriesCategoryNameBindingSource;
+        private ArtifactManagerDatabaseDataSetTableAdapters.CategoryPropertiesTableAdapter categoryPropertiesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn PropertyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn propertyValueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn propertyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn instanceNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox Category_textBox;
     }
 }

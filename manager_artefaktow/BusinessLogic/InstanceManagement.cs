@@ -146,5 +146,31 @@ namespace manager_artefaktow.BusinessLogic
             dbContext.InstanceProperties.Remove(instancePropertyValue);
             dbContext.SaveChanges();
         }
+
+        public static void RemoveAllPropertyValuesForInstanceName(string instanceName)
+        {
+            var dbContext = new ManagerContext();
+            var propVals = (from ipv in dbContext.InstanceProperties
+                            where ipv.InstanceName == instanceName
+                            select ipv).ToList();
+            dbContext.InstanceProperties.RemoveRange(propVals);
+            dbContext.SaveChanges();
+        }
+
+        public static string GetValueByInstancePropertyNames(string instanceName, string propertyName)
+        {
+            var dbContext = new ManagerContext();
+            var value = (from ipv in dbContext.InstanceProperties
+                            where ipv.InstanceName == instanceName && ipv.PropertyName == propertyName
+                            select ipv.PropertyValue).ToList();
+            if (value.Count > 0)
+            {
+                return value[0];
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }
