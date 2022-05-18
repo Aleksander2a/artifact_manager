@@ -229,11 +229,16 @@ namespace manager_artefaktow.Forms
 
         private void AddInstance_button_Click(object sender, EventArgs e)
         {
-            if (!CategoryManagement.CategoryExists(CategoryName_textBox.Text.Trim()))
-            {
-                MessageBox.Show("Can not add artifact to this category");
-                return;
-            }
+            this.FindForm().Hide();
+            Form addArtifactForm = new AddInstanceForm();
+            addArtifactForm.ShowDialog();
+        }
+
+        private void CategoryArtifacts_button_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Hide();
+            Form artifactsForm = new InstancesForm();
+            artifactsForm.ShowDialog();
         }
     }
 }

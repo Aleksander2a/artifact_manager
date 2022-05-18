@@ -290,6 +290,12 @@
     <Compile Include="Data\Models\CategoryProperty.cs" />
     <Compile Include="Data\Models\Instance.cs" />
     <Compile Include="Data\Models\InstancePropertyValue.cs" />
+    <Compile Include="Forms\AddInstanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddInstanceForm.Designer.cs">
+      <DependentUpon>AddInstanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,12 @@
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\RolePermission.cs" />
     <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Forms\ArtifactDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArtifactDetailsForm.Designer.cs">
+      <DependentUpon>ArtifactDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BrowseArtifactsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,8 +387,14 @@
     <Compile Include="Forms\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddInstanceForm.resx">
+      <DependentUpon>AddInstanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArtifactDetailsForm.resx">
+      <DependentUpon>ArtifactDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BrowseArtifactsForm.resx">
       <DependentUpon>BrowseArtifactsForm.cs</DependentUpon>

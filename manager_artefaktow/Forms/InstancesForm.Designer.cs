@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.BrowseArtifacts_button = new System.Windows.Forms.Button();
             this.Instances_dataGridView = new System.Windows.Forms.DataGridView();
-            this.instancesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
-            this.instancesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.InstancesTableAdapter();
             this.instanceNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overallDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creatorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.instancesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.instancesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.InstancesTableAdapter();
+            this.ArtifactDetails_button = new System.Windows.Forms.Button();
             this.CategoryName_textBox = new System.Windows.Forms.TextBox();
             this.RoleName_label = new System.Windows.Forms.Label();
             this.RoleDetails_label = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.AddInstance_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Instances_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instancesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
@@ -84,22 +85,9 @@
             this.Instances_dataGridView.RowTemplate.Height = 28;
             this.Instances_dataGridView.Size = new System.Drawing.Size(563, 312);
             this.Instances_dataGridView.TabIndex = 24;
+            this.Instances_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Instances_dataGridView_CellClick);
             this.Instances_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Instances_dataGridView_UserDeletedRow);
             this.Instances_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Instances_dataGridView_UserDeletingRow);
-            // 
-            // instancesBindingSource
-            // 
-            this.instancesBindingSource.DataMember = "Instances";
-            this.instancesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
-            // 
-            // artifactManagerDatabaseDataSet
-            // 
-            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
-            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // instancesTableAdapter
-            // 
-            this.instancesTableAdapter.ClearBeforeFill = true;
             // 
             // instanceNameDataGridViewTextBoxColumn
             // 
@@ -140,17 +128,32 @@
             this.creatorNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.creatorNameDataGridViewTextBoxColumn.Width = 140;
             // 
-            // button1
+            // instancesBindingSource
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(643, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 59);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Artifact Details";
-            this.button1.UseVisualStyleBackColor = false;
+            this.instancesBindingSource.DataMember = "Instances";
+            this.instancesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // artifactManagerDatabaseDataSet
+            // 
+            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
+            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // instancesTableAdapter
+            // 
+            this.instancesTableAdapter.ClearBeforeFill = true;
+            // 
+            // ArtifactDetails_button
+            // 
+            this.ArtifactDetails_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ArtifactDetails_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ArtifactDetails_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.ArtifactDetails_button.Location = new System.Drawing.Point(581, 278);
+            this.ArtifactDetails_button.Name = "ArtifactDetails_button";
+            this.ArtifactDetails_button.Size = new System.Drawing.Size(207, 46);
+            this.ArtifactDetails_button.TabIndex = 27;
+            this.ArtifactDetails_button.Text = "Artifact Details";
+            this.ArtifactDetails_button.UseVisualStyleBackColor = false;
+            this.ArtifactDetails_button.Click += new System.EventHandler(this.ArtifactDetails_button_Click);
             // 
             // CategoryName_textBox
             // 
@@ -230,11 +233,25 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Overall";
             // 
+            // AddInstance_button
+            // 
+            this.AddInstance_button.BackColor = System.Drawing.Color.Teal;
+            this.AddInstance_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddInstance_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.AddInstance_button.Location = new System.Drawing.Point(612, 400);
+            this.AddInstance_button.Name = "AddInstance_button";
+            this.AddInstance_button.Size = new System.Drawing.Size(176, 38);
+            this.AddInstance_button.TabIndex = 44;
+            this.AddInstance_button.Text = "Add Artifact";
+            this.AddInstance_button.UseVisualStyleBackColor = false;
+            this.AddInstance_button.Click += new System.EventHandler(this.AddInstance_button_Click);
+            // 
             // InstancesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AddInstance_button);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -244,7 +261,7 @@
             this.Controls.Add(this.CategoryName_textBox);
             this.Controls.Add(this.RoleName_label);
             this.Controls.Add(this.RoleDetails_label);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ArtifactDetails_button);
             this.Controls.Add(this.Instances_dataGridView);
             this.Controls.Add(this.BrowseArtifacts_button);
             this.Name = "InstancesForm";
@@ -270,7 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn overallDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn creatorNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ArtifactDetails_button;
         private System.Windows.Forms.TextBox CategoryName_textBox;
         private System.Windows.Forms.Label RoleName_label;
         private System.Windows.Forms.Label RoleDetails_label;
@@ -280,5 +297,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button AddInstance_button;
     }
 }

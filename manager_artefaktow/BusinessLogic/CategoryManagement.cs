@@ -11,6 +11,13 @@ namespace manager_artefaktow.BusinessLogic
 {
     public static class CategoryManagement
     {
+        public static List<String> FindAllCategories()
+        {
+            var dbContext = new ManagerContext();
+            var categories = (from c in dbContext.Categories
+                                   select c.CategoryName).ToList();
+            return categories;
+        }
         public static List<String> FindPropertiesForCategoryName(string categoryName)
         {
             var dbContext = new ManagerContext();

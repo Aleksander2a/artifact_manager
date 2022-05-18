@@ -47,6 +47,28 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
+        public static Instance FindInstanceByName(string instanceName)
+        {
+            var dbContext = new ManagerContext();
+            Instance instance = dbContext.Instances.Find(instanceName);
+            return instance;
+        }
+
+        public static void AddOrUpdateInstance(Instance instance)
+        {
+            var dbContext = new ManagerContext();
+            if (InstanceExists(instance.InstanceName))
+            {
+                dbContext.Instances.Update(instance);
+                dbContext.SaveChanges();
+            }
+            else
+            {
+                dbContext.Instances.Add(instance);
+                dbContext.SaveChanges();
+            }
+        }
+
         public static bool InstancePropertyValueExists(string instanceName, string propertyName, string propertyValue)
         {
             try

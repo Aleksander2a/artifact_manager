@@ -251,8 +251,9 @@
             this.CategoryArtifacts_button.Name = "CategoryArtifacts_button";
             this.CategoryArtifacts_button.Size = new System.Drawing.Size(194, 38);
             this.CategoryArtifacts_button.TabIndex = 41;
-            this.CategoryArtifacts_button.Text = "Category Artifacts";
+            this.CategoryArtifacts_button.Text = "All Artifacts";
             this.CategoryArtifacts_button.UseVisualStyleBackColor = false;
+            this.CategoryArtifacts_button.Click += new System.EventHandler(this.CategoryArtifacts_button_Click);
             // 
             // Categories
             // 

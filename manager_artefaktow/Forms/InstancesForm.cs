@@ -33,6 +33,11 @@ namespace manager_artefaktow.Forms
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Instances' . Możesz go przenieść lub usunąć.
             this.instancesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Instances);
 
+            if (String.IsNullOrEmpty(LoggedUser.UserName))
+            {
+                AddInstance_button.Enabled = false;
+                Instances_dataGridView.AllowUserToDeleteRows = false;
+            }
         }
 
         private void SaveChanges_button_Click(object sender, EventArgs e)
@@ -117,6 +122,47 @@ namespace manager_artefaktow.Forms
         private void InstancesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void AddInstance_button_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Hide();
+            Form addArtifactForm = new AddInstanceForm();
+            addArtifactForm.ShowDialog();
+        }
+
+        private void ArtifactDetails_button_Click(object sender, EventArgs e)
+        {
+            if (CategoryName_textBox.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Invalid artifact");
+                return;
+            }
+            this.FindForm().Hide();
+            Form artifactDetailsForm = new ArtifactDetailsForm(CategoryName_textBox.Text, textBox1.Text); // Artifact Name, Category Name
+            artifactDetailsForm.ShowDialog();
+        }
+
+        private void Instances_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int column = e.ColumnIndex;
+            if (row >= 0 && row < Instances_dataGridView.RowCount)
+            {
+                CategoryName_textBox.Text = Instances_dataGridView.Rows[row].Cells[0].Value.ToString();
+                string artifactName = CategoryName_textBox.Text; // Yes, it is correct! 
+
+                Instance instance = InstanceManagement.FindInstanceByName(artifactName);
+                if (instance == null)
+                {
+                    return;
+                }
+
+                textBox1.Text = Instances_dataGridView.Rows[row].Cells[2].Value.ToString();
+                textBox2.Text = Instances_dataGridView.Rows[row].Cells[3].Value.ToString();
+                textBox3.Text = Instances_dataGridView.Rows[row].Cells[1].Value.ToString();
+
+            }
         }
     }
 }
