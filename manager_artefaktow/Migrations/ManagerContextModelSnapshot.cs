@@ -23,9 +23,6 @@ namespace manager_artefaktow.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AncestoresNames")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CreatorName")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -64,6 +61,9 @@ namespace manager_artefaktow.Migrations
                     b.Property<string>("CreatorName")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Overall")
+                        .HasColumnType("int");
 
                     b.HasKey("InstanceName");
 

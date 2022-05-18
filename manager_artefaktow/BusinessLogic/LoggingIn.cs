@@ -25,6 +25,8 @@ namespace manager_artefaktow.BusinessLogic
                 if (UserPasswordIsCorrect(name, password))
                 {
                     LoggedUser.UserName = name;
+                    User user = UserManagement.FindUser(name);
+                    LoggedUser.RoleName = user.RoleName;
                     return SuccessMessage;
                 }
                 else

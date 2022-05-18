@@ -29,6 +29,9 @@ namespace manager_artefaktow
 
         private void SaveChanges_button_Click(object sender, EventArgs e)
         {
+            // Check if all fields are filled
+
+
             //Update button update dataset after insertion,upadtion or deletion
             DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             /*

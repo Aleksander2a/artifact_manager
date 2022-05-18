@@ -25,8 +25,18 @@ namespace manager_artefaktow.BusinessLogic
             {
                 if(!UserExists(name))
                 {
-                    AddUser(name, password);
                     LoggedUser.UserName = name;
+                    if (name == "Admin")
+                    {
+                        AddUser(name, password, "Admin");
+                        LoggedUser.RoleName = "Admin";
+                    }
+                    else
+                    {
+                        string role = AppPropertiesManagement.GetPropertyValue("DefaultRole");
+                        AddUser(name, password, role);
+                        LoggedUser.RoleName = role;
+                    }
                     return SuccessMessage;
                 }
                 else
@@ -76,12 +86,12 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
-        private static void AddUser(string name, string password)
+        private static void AddUser(string name, string password, string role)
         {
             User user = new User();
             user.UserName = name;
             user.Password = BCrypt.Net.BCrypt.HashPassword(password);
-            user.RoleName = AppPropertiesManagement.GetPropertyValue("DefaultRole");
+            user.RoleName = role;
             try
             {
                 using (var dbContext = new ManagerContext())

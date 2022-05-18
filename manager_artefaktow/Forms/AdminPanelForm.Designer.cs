@@ -95,6 +95,7 @@
             this.Browse_Artifacts_button.TabIndex = 21;
             this.Browse_Artifacts_button.Text = "Browse Artifacts";
             this.Browse_Artifacts_button.UseVisualStyleBackColor = false;
+            this.Browse_Artifacts_button.Click += new System.EventHandler(this.Browse_Artifacts_button_Click);
             // 
             // AdminPanelForm
             // 

@@ -68,6 +68,9 @@ namespace manager_artefaktow.Data
             modelBuilder.Entity<Instance>()
                 .Property(i => i.CreatorName)
                 .IsRequired();
+            modelBuilder.Entity<Instance>()
+                .Property(i => i.Overall)
+                .IsRequired();
 
 
             // Define relations between tables

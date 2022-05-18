@@ -77,7 +77,6 @@ namespace manager_artefaktow.Migrations
                 columns: table => new
                 {
                     CategoryName = table.Column<string>(nullable: false),
-                    AncestoresNames = table.Column<string>(nullable: true),
                     CreatorName = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -113,6 +112,7 @@ namespace manager_artefaktow.Migrations
                 columns: table => new
                 {
                     InstanceName = table.Column<string>(nullable: false),
+                    Overall = table.Column<int>(nullable: false),
                     CategoryName = table.Column<string>(nullable: false),
                     CreatorName = table.Column<string>(nullable: false)
                 },

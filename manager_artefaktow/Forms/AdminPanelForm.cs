@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using manager_artefaktow.Forms;
+
 namespace manager_artefaktow
 {
     public partial class AdminPanelForm : Form
@@ -41,6 +43,13 @@ namespace manager_artefaktow
             this.FindForm().Hide();
             Form permissionForm = new PermissionForm();
             permissionForm.ShowDialog();
+        }
+
+        private void Browse_Artifacts_button_Click(object sender, EventArgs e)
+        {
+            this.FindForm().Hide();
+            Form browseArtifactsForm = new BrowseArtifactsForm();
+            browseArtifactsForm.ShowDialog();
         }
 
         private void AdminPanelForm_FormClosing(object sender, FormClosingEventArgs e)

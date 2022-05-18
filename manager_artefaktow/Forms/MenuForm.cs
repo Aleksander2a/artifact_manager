@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using manager_artefaktow.Forms;
+
 namespace manager_artefaktow
 {
     public partial class MenuForm : Form
@@ -43,7 +45,9 @@ namespace manager_artefaktow
 
         private void Browse_Artifacts_button_Click(object sender, EventArgs e)
         {
-
+            this.FindForm().Hide();
+            Form browseArtifactsForm = new BrowseArtifactsForm();
+            browseArtifactsForm.ShowDialog();
         }
 
         private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)

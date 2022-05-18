@@ -279,6 +279,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtifactManagerDatabaseDataSetFull.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLogic\CategoryManagement.cs" />
     <Compile Include="Data\Models\Category.cs" />
     <Compile Include="Data\Models\CategoryProperty.cs" />
     <Compile Include="Data\Models\Instance.cs" />
@@ -306,6 +312,24 @@
     <Compile Include="Data\Models\Role.cs" />
     <Compile Include="Data\Models\RolePermission.cs" />
     <Compile Include="Data\Models\User.cs" />
+    <Compile Include="Forms\BrowseArtifactsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BrowseArtifactsForm.Designer.cs">
+      <DependentUpon>BrowseArtifactsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InstancesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InstancesForm.Designer.cs">
+      <DependentUpon>InstancesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,9 +348,9 @@
     <Compile Include="Forms\PermissionForm.Designer.cs">
       <DependentUpon>PermissionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220515175920_ArtifactManagerDatabase.cs" />
-    <Compile Include="Migrations\20220515175920_ArtifactManagerDatabase.designer.cs">
-      <DependentUpon>20220515175920_ArtifactManagerDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\20220518062554_ArtifactManagerDatabase.cs" />
+    <Compile Include="Migrations\20220518062554_ArtifactManagerDatabase.designer.cs">
+      <DependentUpon>20220518062554_ArtifactManagerDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ManagerContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -357,6 +381,15 @@
     </Compile>
     <EmbeddedResource Include="Forms\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BrowseArtifactsForm.resx">
+      <DependentUpon>BrowseArtifactsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InstancesForm.resx">
+      <DependentUpon>InstancesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -398,6 +431,17 @@
     </None>
     <None Include="ArtifactManagerDatabaseDataSet.xss">
       <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ArtifactManagerDatabaseDataSetFull.xsc">
+      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
+    </None>
+    <None Include="ArtifactManagerDatabaseDataSetFull.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ArtifactManagerDatabaseDataSetFull.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ArtifactManagerDatabaseDataSetFull.xss">
+      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

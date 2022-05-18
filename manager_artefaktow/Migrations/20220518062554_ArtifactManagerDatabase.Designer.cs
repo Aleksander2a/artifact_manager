@@ -9,7 +9,7 @@ using manager_artefaktow.Data;
 namespace manager_artefaktow.Migrations
 {
     [DbContext(typeof(ManagerContext))]
-    [Migration("20220515175920_ArtifactManagerDatabase")]
+    [Migration("20220518062554_ArtifactManagerDatabase")]
     partial class ArtifactManagerDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,6 @@ namespace manager_artefaktow.Migrations
                 {
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AncestoresNames")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatorName")
                         .IsRequired()
@@ -66,6 +63,9 @@ namespace manager_artefaktow.Migrations
                     b.Property<string>("CreatorName")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Overall")
+                        .HasColumnType("int");
 
                     b.HasKey("InstanceName");
 

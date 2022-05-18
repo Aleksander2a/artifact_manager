@@ -22,6 +22,10 @@ namespace manager_artefaktow
 
         private void RolesForm_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.RolePermissions' . Możesz go przenieść lub usunąć.
+            this.rolePermissionsTableAdapter.Fill(this.artifactManagerDatabaseDataSet3.RolePermissions);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSetFull.Roles' . Możesz go przenieść lub usunąć.
+            this.rolesTableAdapter4.Fill(this.artifactManagerDatabaseDataSetFull.Roles);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Permissions' . Możesz go przenieść lub usunąć.
             this.permissionsTableAdapter2.Fill(this.artifactManagerDatabaseDataSet3.Permissions);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Roles' . Możesz go przenieść lub usunąć.

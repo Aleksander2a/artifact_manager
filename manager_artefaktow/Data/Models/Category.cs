@@ -11,7 +11,7 @@ namespace manager_artefaktow.Data.Models
     public class Category
     {
         public string CategoryName { get; set; } // PK
-        public string AncestoresNames { get; set; } // eg. Root/Parent1/Parent2
+        //public string AncestoresNames { get; set; } // eg. Root/Parent1/Parent2
         public string CreatorName { get; set; } // User PK
         public User Creator { get; set; } // User Reference 
         public ICollection<Instance> Instances { get; set; }
