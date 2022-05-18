@@ -16,6 +16,7 @@ namespace manager_artefaktow.Forms
 {
     public partial class InstancesForm : Form
     {
+        //private List<string> filterStrings = new List<string>(2); // 1st - category, 2nd - creator
         public InstancesForm()
         {
             InitializeComponent();
@@ -30,6 +31,10 @@ namespace manager_artefaktow.Forms
 
         private void InstancesForm_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Users' . Możesz go przenieść lub usunąć.
+            this.usersTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Users);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Categories' . Możesz go przenieść lub usunąć.
+            this.categoriesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Categories);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Instances' . Możesz go przenieść lub usunąć.
             this.instancesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Instances);
 
@@ -38,6 +43,10 @@ namespace manager_artefaktow.Forms
                 AddInstance_button.Enabled = false;
                 Instances_dataGridView.AllowUserToDeleteRows = false;
             }
+
+            CategoryFilter_comboBox.SelectedIndex = -1;
+            CreatorFilter_comboBox.SelectedIndex = -1;
+            Filter_button.Enabled = false;
         }
 
         private void SaveChanges_button_Click(object sender, EventArgs e)
@@ -162,6 +171,71 @@ namespace manager_artefaktow.Forms
                 textBox2.Text = Instances_dataGridView.Rows[row].Cells[3].Value.ToString();
                 textBox3.Text = Instances_dataGridView.Rows[row].Cells[1].Value.ToString();
 
+            }
+        }
+
+        private void RemoveCategoryFilter_button_Click(object sender, EventArgs e)
+        {
+            CategoryFilter_comboBox.SelectedIndex = -1;
+            //filterStrings[0] = "";
+            this.categoriesBindingSource.RemoveFilter();
+            Filter_button_Click(sender, e);
+        }
+
+        private void RemoveCreatorFilter_button_Click(object sender, EventArgs e)
+        {
+            CreatorFilter_comboBox.SelectedIndex = -1;
+            //filterStrings[1] = "";
+            this.categoriesBindingSource.RemoveFilter();
+            Filter_button_Click(sender, e);
+        }
+
+        private void Filter_button_Click(object sender, EventArgs e)
+        {
+            string filter = "";
+            string categoryFilter = CategoryFilter_comboBox.Text;
+            string creatorFilter = CreatorFilter_comboBox.Text;
+            if (String.IsNullOrEmpty(categoryFilter))
+            {
+                if (String.IsNullOrEmpty(creatorFilter))
+                {
+                    this.instancesBindingSource.RemoveFilter();
+                    Filter_button.Enabled = false;
+                    return;
+                }
+                else
+                {
+                    filter = "CreatorName='" + creatorFilter + "'";
+                }
+            }
+            else
+            {
+                filter = "CategoryName='" + categoryFilter + "'";
+                if (String.IsNullOrEmpty(creatorFilter))
+                {
+                    // nothing...
+                }
+                else
+                {
+                    filter += " AND CreatorName='" + creatorFilter + "'";
+                }
+            }
+            this.instancesBindingSource.Filter = filter;
+        }
+
+        private void CategoryFilter_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Filter_button.Enabled==false)
+            {
+                Filter_button.Enabled = true;
+            }
+        }
+
+        private void CreatorFilter_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Filter_button.Enabled==false)
+            {
+                Filter_button.Enabled = true;
             }
         }
     }

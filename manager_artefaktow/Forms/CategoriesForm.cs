@@ -21,6 +21,8 @@ namespace manager_artefaktow.Forms
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Users' . Możesz go przenieść lub usunąć.
+            this.usersTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Users);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Categories' . Możesz go przenieść lub usunąć.
             this.categoriesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Categories);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSetFull.Categories' . Możesz go przenieść lub usunąć.
@@ -35,6 +37,8 @@ namespace manager_artefaktow.Forms
                 Properties_checkedListBox.Enabled = false;
                 AddInstance_button.Enabled = false;
             }
+            Filter_comboBox.SelectedIndex = -1;
+            Filter_button.Enabled = false;
         }
 
         private void BrowseArtifacts_button_Click(object sender, EventArgs e)
@@ -239,6 +243,30 @@ namespace manager_artefaktow.Forms
             this.FindForm().Hide();
             Form artifactsForm = new InstancesForm();
             artifactsForm.ShowDialog();
+        }
+
+        private void Filter_button_Click(object sender, EventArgs e)
+        {
+            this.categoriesBindingSource.Filter = "CreatorName='" + Filter_comboBox.Text + "'";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.categoriesBindingSource.RemoveFilter();
+            Filter_comboBox.SelectedIndex = -1;
+            Filter_button.Enabled = false;
+        }
+
+        private void Filter_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(Filter_comboBox.SelectedIndex != -1)
+            {
+                Filter_button.Enabled = true;
+            }
+            else
+            {
+                Filter_button.Enabled = false;
+            }
         }
     }
 }

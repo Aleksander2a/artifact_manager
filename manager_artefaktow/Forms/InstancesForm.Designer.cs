@@ -49,9 +49,22 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AddInstance_button = new System.Windows.Forms.Button();
+            this.RemoveCategoryFilter_button = new System.Windows.Forms.Button();
+            this.Filter_button = new System.Windows.Forms.Button();
+            this.CategoryFilter_comboBox = new System.Windows.Forms.ComboBox();
+            this.CategoryFilter_label = new System.Windows.Forms.Label();
+            this.CreatorFilter_label = new System.Windows.Forms.Label();
+            this.CreatorFilter_comboBox = new System.Windows.Forms.ComboBox();
+            this.RemoveCreatorFilter_button = new System.Windows.Forms.Button();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Instances_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instancesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BrowseArtifacts_button
@@ -59,9 +72,9 @@
             this.BrowseArtifacts_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.BrowseArtifacts_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BrowseArtifacts_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.BrowseArtifacts_button.Location = new System.Drawing.Point(12, 367);
+            this.BrowseArtifacts_button.Location = new System.Drawing.Point(12, 400);
             this.BrowseArtifacts_button.Name = "BrowseArtifacts_button";
-            this.BrowseArtifacts_button.Size = new System.Drawing.Size(212, 71);
+            this.BrowseArtifacts_button.Size = new System.Drawing.Size(212, 38);
             this.BrowseArtifacts_button.TabIndex = 23;
             this.BrowseArtifacts_button.Text = "Back to Menu";
             this.BrowseArtifacts_button.UseVisualStyleBackColor = false;
@@ -246,11 +259,117 @@
             this.AddInstance_button.UseVisualStyleBackColor = false;
             this.AddInstance_button.Click += new System.EventHandler(this.AddInstance_button_Click);
             // 
+            // RemoveCategoryFilter_button
+            // 
+            this.RemoveCategoryFilter_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.RemoveCategoryFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RemoveCategoryFilter_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.RemoveCategoryFilter_button.Location = new System.Drawing.Point(416, 334);
+            this.RemoveCategoryFilter_button.Name = "RemoveCategoryFilter_button";
+            this.RemoveCategoryFilter_button.Size = new System.Drawing.Size(159, 30);
+            this.RemoveCategoryFilter_button.TabIndex = 47;
+            this.RemoveCategoryFilter_button.Text = "Remove Filter";
+            this.RemoveCategoryFilter_button.UseVisualStyleBackColor = false;
+            this.RemoveCategoryFilter_button.Click += new System.EventHandler(this.RemoveCategoryFilter_button_Click);
+            // 
+            // Filter_button
+            // 
+            this.Filter_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Filter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Filter_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.Filter_button.Location = new System.Drawing.Point(12, 336);
+            this.Filter_button.Name = "Filter_button";
+            this.Filter_button.Size = new System.Drawing.Size(92, 58);
+            this.Filter_button.TabIndex = 46;
+            this.Filter_button.Text = "Filter";
+            this.Filter_button.UseVisualStyleBackColor = false;
+            this.Filter_button.Click += new System.EventHandler(this.Filter_button_Click);
+            // 
+            // CategoryFilter_comboBox
+            // 
+            this.CategoryFilter_comboBox.DataSource = this.categoriesBindingSource;
+            this.CategoryFilter_comboBox.DisplayMember = "CategoryName";
+            this.CategoryFilter_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryFilter_comboBox.FormattingEnabled = true;
+            this.CategoryFilter_comboBox.Location = new System.Drawing.Point(248, 336);
+            this.CategoryFilter_comboBox.Name = "CategoryFilter_comboBox";
+            this.CategoryFilter_comboBox.Size = new System.Drawing.Size(162, 28);
+            this.CategoryFilter_comboBox.TabIndex = 45;
+            this.CategoryFilter_comboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryFilter_comboBox_SelectedIndexChanged);
+            // 
+            // CategoryFilter_label
+            // 
+            this.CategoryFilter_label.AutoSize = true;
+            this.CategoryFilter_label.Location = new System.Drawing.Point(110, 339);
+            this.CategoryFilter_label.Name = "CategoryFilter_label";
+            this.CategoryFilter_label.Size = new System.Drawing.Size(132, 20);
+            this.CategoryFilter_label.TabIndex = 48;
+            this.CategoryFilter_label.Text = "Filter by Category";
+            // 
+            // CreatorFilter_label
+            // 
+            this.CreatorFilter_label.AutoSize = true;
+            this.CreatorFilter_label.Location = new System.Drawing.Point(110, 367);
+            this.CreatorFilter_label.Name = "CreatorFilter_label";
+            this.CreatorFilter_label.Size = new System.Drawing.Size(121, 20);
+            this.CreatorFilter_label.TabIndex = 49;
+            this.CreatorFilter_label.Text = "Filter by Creator";
+            // 
+            // CreatorFilter_comboBox
+            // 
+            this.CreatorFilter_comboBox.DataSource = this.usersBindingSource;
+            this.CreatorFilter_comboBox.DisplayMember = "UserName";
+            this.CreatorFilter_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CreatorFilter_comboBox.FormattingEnabled = true;
+            this.CreatorFilter_comboBox.Location = new System.Drawing.Point(248, 364);
+            this.CreatorFilter_comboBox.Name = "CreatorFilter_comboBox";
+            this.CreatorFilter_comboBox.Size = new System.Drawing.Size(162, 28);
+            this.CreatorFilter_comboBox.TabIndex = 50;
+            this.CreatorFilter_comboBox.SelectedIndexChanged += new System.EventHandler(this.CreatorFilter_comboBox_SelectedIndexChanged);
+            // 
+            // RemoveCreatorFilter_button
+            // 
+            this.RemoveCreatorFilter_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.RemoveCreatorFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RemoveCreatorFilter_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.RemoveCreatorFilter_button.Location = new System.Drawing.Point(416, 362);
+            this.RemoveCreatorFilter_button.Name = "RemoveCreatorFilter_button";
+            this.RemoveCreatorFilter_button.Size = new System.Drawing.Size(159, 30);
+            this.RemoveCreatorFilter_button.TabIndex = 51;
+            this.RemoveCreatorFilter_button.Text = "Remove Filter";
+            this.RemoveCreatorFilter_button.UseVisualStyleBackColor = false;
+            this.RemoveCreatorFilter_button.Click += new System.EventHandler(this.RemoveCreatorFilter_button_Click);
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // categoriesTableAdapter
+            // 
+            this.categoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
             // InstancesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RemoveCreatorFilter_button);
+            this.Controls.Add(this.CreatorFilter_comboBox);
+            this.Controls.Add(this.CreatorFilter_label);
+            this.Controls.Add(this.CategoryFilter_label);
+            this.Controls.Add(this.RemoveCategoryFilter_button);
+            this.Controls.Add(this.Filter_button);
+            this.Controls.Add(this.CategoryFilter_comboBox);
             this.Controls.Add(this.AddInstance_button);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -271,6 +390,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Instances_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instancesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +419,16 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddInstance_button;
+        private System.Windows.Forms.Button RemoveCategoryFilter_button;
+        private System.Windows.Forms.Button Filter_button;
+        private System.Windows.Forms.ComboBox CategoryFilter_comboBox;
+        private System.Windows.Forms.Label CategoryFilter_label;
+        private System.Windows.Forms.Label CreatorFilter_label;
+        private System.Windows.Forms.ComboBox CreatorFilter_comboBox;
+        private System.Windows.Forms.Button RemoveCreatorFilter_button;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
     }
 }
