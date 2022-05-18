@@ -42,7 +42,7 @@
             this.Top_Artifacts_button.Name = "Top_Artifacts_button";
             this.Top_Artifacts_button.Size = new System.Drawing.Size(212, 71);
             this.Top_Artifacts_button.TabIndex = 7;
-            this.Top_Artifacts_button.Text = "Top Characters";
+            this.Top_Artifacts_button.Text = "Top Artifacts";
             this.Top_Artifacts_button.UseVisualStyleBackColor = false;
             // 
             // Artifacts_button

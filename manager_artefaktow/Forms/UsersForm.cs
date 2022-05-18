@@ -62,7 +62,7 @@ namespace manager_artefaktow
             {
                 //if (message == "OK")
                 //{
-                    this.usersTableAdapter2.Update(artifactManagerDatabaseDataSet2.Users);
+                    this.usersTableAdapter.Update(artifactManagerDatabaseDataSet.Users);
                     Users_dataGridView.Refresh();
                 //Registration.DefaultRoleName = DefaultRole_comboBox.Text;
                     AppPropertiesManagement.SetOrCreatePropertyWithValue("DefaultRole", DefaultRole_comboBox.Text);
@@ -78,10 +78,14 @@ namespace manager_artefaktow
 
         private void UsersForm_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Roles' . Możesz go przenieść lub usunąć.
+            this.rolesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Roles);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Users' . Możesz go przenieść lub usunąć.
+            this.usersTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Users);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Roles' . Możesz go przenieść lub usunąć.
-            this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
+            //this.rolesTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Roles);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet2.Users' . Możesz go przenieść lub usunąć.
-            this.usersTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Users);
+            //this.usersTableAdapter2.Fill(this.artifactManagerDatabaseDataSet2.Users);
 
             //DefaultRole_label.MaximumSize = new Size(100, 0);
             //DefaultRole_label.AutoSize = true;

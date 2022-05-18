@@ -31,32 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Roles_dataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artifactManagerDatabaseDataSet3 = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
-            this.rolesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.artifactManagerDatabaseDataSetFull = new manager_artefaktow.ArtifactManagerDatabaseDataSetFull();
             this.SaveChanges_button = new System.Windows.Forms.Button();
-            this.rolesTableAdapter3 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
             this.RoleDetails_label = new System.Windows.Forms.Label();
             this.RoleName_label = new System.Windows.Forms.Label();
             this.RoleName_textBox = new System.Windows.Forms.TextBox();
             this.Permissions_checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.Permissions_label = new System.Windows.Forms.Label();
             this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.permissionsTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter();
             this.AddRole_button = new System.Windows.Forms.Button();
             this.NewRole_textBox = new System.Windows.Forms.TextBox();
-            this.rolesTableAdapter4 = new manager_artefaktow.ArtifactManagerDatabaseDataSetFullTableAdapters.RolesTableAdapter();
-            this.fKRolePermissionsRolesRoleName1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolePermissionsTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolePermissionsTableAdapter();
+            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSetFull)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKRolePermissionsRolesRoleName1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminPanel_button
@@ -78,9 +69,9 @@
             this.Roles_dataGridView.AutoGenerateColumns = false;
             this.Roles_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Roles_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
-            this.Roles_dataGridView.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.rolesBindingSource, "RoleName", true));
-            this.Roles_dataGridView.DataSource = this.fKRolePermissionsRolesRoleName1BindingSource;
+            this.dataGridViewTextBoxColumn3});
+            this.Roles_dataGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Roles_dataGridView.DataSource = this.bindingSource1;
             this.Roles_dataGridView.Location = new System.Drawing.Point(12, 12);
             this.Roles_dataGridView.Name = "Roles_dataGridView";
             this.Roles_dataGridView.ReadOnly = true;
@@ -94,35 +85,6 @@
             this.Roles_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Roles_dataGridView_UserDeletedRow);
             this.Roles_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Roles_dataGridView_UserDeletingRow);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "RoleName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "RoleName";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "Roles";
-            this.rolesBindingSource.DataSource = this.artifactManagerDatabaseDataSet3;
-            // 
-            // artifactManagerDatabaseDataSet3
-            // 
-            this.artifactManagerDatabaseDataSet3.DataSetName = "ArtifactManagerDatabaseDataSetFull";
-            this.artifactManagerDatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolesBindingSource1
-            // 
-            this.rolesBindingSource1.DataMember = "Roles";
-            this.rolesBindingSource1.DataSource = this.artifactManagerDatabaseDataSetFull;
-            // 
-            // artifactManagerDatabaseDataSetFull
-            // 
-            this.artifactManagerDatabaseDataSetFull.DataSetName = "ArtifactManagerDatabaseDataSetFull";
-            this.artifactManagerDatabaseDataSetFull.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // SaveChanges_button
             // 
             this.SaveChanges_button.BackColor = System.Drawing.Color.LimeGreen;
@@ -135,10 +97,6 @@
             this.SaveChanges_button.Text = "Save";
             this.SaveChanges_button.UseVisualStyleBackColor = false;
             this.SaveChanges_button.Click += new System.EventHandler(this.SaveChanges_button_Click);
-            // 
-            // rolesTableAdapter3
-            // 
-            this.rolesTableAdapter3.ClearBeforeFill = true;
             // 
             // RoleDetails_label
             // 
@@ -184,15 +142,6 @@
             this.Permissions_label.TabIndex = 26;
             this.Permissions_label.Text = "Permissions";
             // 
-            // permissionsBindingSource
-            // 
-            this.permissionsBindingSource.DataMember = "Permissions";
-            this.permissionsBindingSource.DataSource = this.artifactManagerDatabaseDataSet3;
-            // 
-            // permissionsTableAdapter2
-            // 
-            this.permissionsTableAdapter2.ClearBeforeFill = true;
-            // 
             // AddRole_button
             // 
             this.AddRole_button.BackColor = System.Drawing.Color.Blue;
@@ -213,18 +162,28 @@
             this.NewRole_textBox.Size = new System.Drawing.Size(245, 26);
             this.NewRole_textBox.TabIndex = 28;
             // 
-            // rolesTableAdapter4
+            // artifactManagerDatabaseDataSet
             // 
-            this.rolesTableAdapter4.ClearBeforeFill = true;
+            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
+            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fKRolePermissionsRolesRoleName1BindingSource
+            // bindingSource1
             // 
-            this.fKRolePermissionsRolesRoleName1BindingSource.DataMember = "FK_RolePermissions_Roles_RoleName1";
-            this.fKRolePermissionsRolesRoleName1BindingSource.DataSource = this.rolesBindingSource;
+            this.bindingSource1.DataMember = "Roles";
+            this.bindingSource1.DataSource = this.artifactManagerDatabaseDataSet;
             // 
-            // rolePermissionsTableAdapter
+            // rolesTableAdapter
             // 
-            this.rolePermissionsTableAdapter.ClearBeforeFill = true;
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "RoleName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "RoleName";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // RolesForm
             // 
@@ -246,12 +205,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RolesForm_FormClosing);
             this.Load += new System.EventHandler(this.RolesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSetFull)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKRolePermissionsRolesRoleName1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,33 +218,33 @@
         private System.Windows.Forms.Button AdminPanel_button;
         private System.Windows.Forms.DataGridView Roles_dataGridView;
         private System.Windows.Forms.Button SaveChanges_button;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet1;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter1;
-        private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet1;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter1;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleNameDataGridViewTextBoxColumn;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet2;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter2;
-        private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter1;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet2;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter2;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet3;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter3;
         private System.Windows.Forms.Label RoleDetails_label;
         private System.Windows.Forms.Label RoleName_label;
         private System.Windows.Forms.TextBox RoleName_textBox;
         private System.Windows.Forms.CheckedListBox Permissions_checkedListBox;
         private System.Windows.Forms.Label Permissions_label;
         private System.Windows.Forms.BindingSource permissionsBindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter2;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter permissionsTableAdapter2;
         private System.Windows.Forms.Button AddRole_button;
         private System.Windows.Forms.TextBox NewRole_textBox;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolePermissionsTableAdapter rolePermissionsTableAdapter;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet3;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private ArtifactManagerDatabaseDataSetFull artifactManagerDatabaseDataSetFull;
-        private System.Windows.Forms.BindingSource rolesBindingSource1;
-        private ArtifactManagerDatabaseDataSetFullTableAdapters.RolesTableAdapter rolesTableAdapter4;
-        private System.Windows.Forms.BindingSource fKRolePermissionsRolesRoleName1BindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolePermissionsTableAdapter rolePermissionsTableAdapter;
+        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

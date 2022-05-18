@@ -48,7 +48,7 @@ namespace manager_artefaktow.Forms
         private void Categories_button_Click(object sender, EventArgs e)
         {
             this.FindForm().Hide();
-            Form categoriesForm = new CategoriesForm();
+            Form categoriesForm = new Categories();
             categoriesForm.ShowDialog();
         }
 

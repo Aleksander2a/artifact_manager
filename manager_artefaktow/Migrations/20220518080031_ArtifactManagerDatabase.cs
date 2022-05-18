@@ -77,7 +77,7 @@ namespace manager_artefaktow.Migrations
                 columns: table => new
                 {
                     CategoryName = table.Column<string>(nullable: false),
-                    CreatorName = table.Column<string>(nullable: false)
+                    CreatorName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -86,7 +86,8 @@ namespace manager_artefaktow.Migrations
                         name: "FK_Categories_Users_CreatorName",
                         column: x => x.CreatorName,
                         principalTable: "Users",
-                        principalColumn: "UserName");
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,7 +115,7 @@ namespace manager_artefaktow.Migrations
                     InstanceName = table.Column<string>(nullable: false),
                     Overall = table.Column<int>(nullable: false),
                     CategoryName = table.Column<string>(nullable: false),
-                    CreatorName = table.Column<string>(nullable: false)
+                    CreatorName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -129,7 +130,8 @@ namespace manager_artefaktow.Migrations
                         name: "FK_Instances_Users_CreatorName",
                         column: x => x.CreatorName,
                         principalTable: "Users",
-                        principalColumn: "UserName");
+                        principalColumn: "UserName",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(

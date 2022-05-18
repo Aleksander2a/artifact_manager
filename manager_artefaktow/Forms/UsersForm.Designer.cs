@@ -32,24 +32,24 @@
             this.SaveChanges_button = new System.Windows.Forms.Button();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Users_dataGridView = new System.Windows.Forms.DataGridView();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artifactManagerDatabaseDataSet2 = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter();
-            this.rolesTableAdapter2 = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
             this.Encrypt_textBox = new System.Windows.Forms.TextBox();
             this.Encrypt_button = new System.Windows.Forms.Button();
             this.PasswordEncrypto_label = new System.Windows.Forms.Label();
             this.DefaultRole_label = new System.Windows.Forms.Label();
             this.DefaultRole_comboBox = new System.Windows.Forms.ComboBox();
+            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usersTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
+            this.rolesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.rolesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.dataGridViewTextBoxColumn1,
             this.passwordDataGridViewTextBoxColumn,
             this.RoleName});
-            this.Users_dataGridView.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.rolesBindingSource, "RoleName", true));
+            this.Users_dataGridView.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.usersBindingSource, "UserName", true));
             this.Users_dataGridView.DataSource = this.usersBindingSource;
             this.Users_dataGridView.Location = new System.Drawing.Point(12, 12);
             this.Users_dataGridView.Name = "Users_dataGridView";
@@ -97,29 +97,6 @@
             this.Users_dataGridView.TabIndex = 24;
             this.Users_dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Users_dataGridView_DataError);
             this.Users_dataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Users_dataGridView_RowValidating);
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "Roles";
-            this.rolesBindingSource.DataSource = this.artifactManagerDatabaseDataSet2;
-            // 
-            // artifactManagerDatabaseDataSet2
-            // 
-            this.artifactManagerDatabaseDataSet2.DataSetName = "ArtifactManagerDatabaseDataSet";
-            this.artifactManagerDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.artifactManagerDatabaseDataSet2;
-            // 
-            // usersTableAdapter2
-            // 
-            this.usersTableAdapter2.ClearBeforeFill = true;
-            // 
-            // rolesTableAdapter2
-            // 
-            this.rolesTableAdapter2.ClearBeforeFill = true;
             // 
             // Encrypt_textBox
             // 
@@ -170,14 +147,41 @@
             this.DefaultRole_comboBox.Size = new System.Drawing.Size(239, 28);
             this.DefaultRole_comboBox.TabIndex = 29;
             // 
+            // artifactManagerDatabaseDataSet
+            // 
+            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
+            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // rolesBindingSource1
+            // 
+            this.rolesBindingSource1.DataMember = "Roles";
+            this.rolesBindingSource1.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "UserName";
             this.dataGridViewTextBoxColumn1.HeaderText = "UserName";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 121;
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
@@ -198,11 +202,6 @@
             this.RoleName.Name = "RoleName";
             this.RoleName.ValueMember = "RoleName";
             // 
-            // rolesBindingSource1
-            // 
-            this.rolesBindingSource1.DataMember = "Roles";
-            this.rolesBindingSource1.DataSource = this.artifactManagerDatabaseDataSet2;
-            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -221,9 +220,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UsersForm_FormClosing);
             this.Load += new System.EventHandler(this.UsersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,27 +234,27 @@
         private System.Windows.Forms.Button SaveChanges_button;
         private System.Windows.Forms.Button AdminPanel_button;
         private System.Windows.Forms.DataGridView Users_dataGridView;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
-        private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet1;
-        private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter1;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
+        //private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet1;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
+        //private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn roleNameDataGridViewTextBoxColumn;
-        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet2;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter2;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
-        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter2;
         private System.Windows.Forms.TextBox Encrypt_textBox;
         private System.Windows.Forms.Button Encrypt_button;
         private System.Windows.Forms.Label PasswordEncrypto_label;
         private System.Windows.Forms.Label DefaultRole_label;
         private System.Windows.Forms.ComboBox DefaultRole_comboBox;
+        private ArtifactManagerDatabaseDataSet artifactManagerDatabaseDataSet;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.BindingSource rolesBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn RoleName;
-        private System.Windows.Forms.BindingSource rolesBindingSource1;
     }
 }

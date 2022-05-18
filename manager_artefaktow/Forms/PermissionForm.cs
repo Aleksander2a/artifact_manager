@@ -29,6 +29,8 @@ namespace manager_artefaktow
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Permissions' . Możesz go przenieść lub usunąć.
             this.permissionsTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Permissions);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Permissions' . Możesz go przenieść lub usunąć.
+            //this.permissionsTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Permissions);
 
         }
 

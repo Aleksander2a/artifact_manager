@@ -58,16 +58,20 @@ namespace manager_artefaktow.Data
                 .Property(p => p.Description)
                 .IsRequired();
 
+            /*
             modelBuilder.Entity<Category>()
                 .Property(c => c.CreatorName)
                 .IsRequired();
+            */
 
             modelBuilder.Entity<Instance>()
                 .Property(i => i.CategoryName)
                 .IsRequired();
+            /*
             modelBuilder.Entity<Instance>()
                 .Property(i => i.CreatorName)
                 .IsRequired();
+            */
             modelBuilder.Entity<Instance>()
                 .Property(i => i.Overall)
                 .IsRequired();
@@ -93,12 +97,12 @@ namespace manager_artefaktow.Data
                 .HasMany<Category>(u => u.Categories)
                 .WithOne(c => c.Creator)
                 .HasForeignKey(c => c.CreatorName)
-                .OnDelete(DeleteBehavior.NoAction); //  x
+                .OnDelete(DeleteBehavior.SetNull); //  x
             modelBuilder.Entity<User>()
                 .HasMany<Instance>(u => u.Instances)
                 .WithOne(i => i.Creator)
                 .HasForeignKey(i => i.CreatorName)
-                .OnDelete(DeleteBehavior.NoAction); // x
+                .OnDelete(DeleteBehavior.SetNull); // x
 
             modelBuilder.Entity<Category>()
                 .HasMany<Instance>(c => c.Instances)

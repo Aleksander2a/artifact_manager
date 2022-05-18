@@ -24,7 +24,6 @@ namespace manager_artefaktow.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatorName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CategoryName");
@@ -59,7 +58,6 @@ namespace manager_artefaktow.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatorName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Overall")
@@ -156,8 +154,7 @@ namespace manager_artefaktow.Migrations
                     b.HasOne("manager_artefaktow.Data.Models.User", "Creator")
                         .WithMany("Categories")
                         .HasForeignKey("CreatorName")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.CategoryProperty", b =>
@@ -180,8 +177,7 @@ namespace manager_artefaktow.Migrations
                     b.HasOne("manager_artefaktow.Data.Models.User", "Creator")
                         .WithMany("Instances")
                         .HasForeignKey("CreatorName")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("manager_artefaktow.Data.Models.InstancePropertyValue", b =>

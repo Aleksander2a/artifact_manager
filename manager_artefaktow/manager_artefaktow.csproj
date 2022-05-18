@@ -279,10 +279,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtifactManagerDatabaseDataSetFull.Designer.cs">
+    <Compile Include="ArtifactManagerDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
+      <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\CategoryManagement.cs" />
     <Compile Include="Data\Models\Category.cs" />
@@ -294,11 +294,6 @@
     </Compile>
     <Compile Include="Forms\AdminPanelForm.Designer.cs">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ArtifactManagerDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\AppPropertiesManagement.cs" />
     <Compile Include="BusinessLogic\LoggedUser.cs" />
@@ -348,9 +343,9 @@
     <Compile Include="Forms\PermissionForm.Designer.cs">
       <DependentUpon>PermissionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20220518062554_ArtifactManagerDatabase.cs" />
-    <Compile Include="Migrations\20220518062554_ArtifactManagerDatabase.designer.cs">
-      <DependentUpon>20220518062554_ArtifactManagerDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\20220518080031_ArtifactManagerDatabase.cs" />
+    <Compile Include="Migrations\20220518080031_ArtifactManagerDatabase.designer.cs">
+      <DependentUpon>20220518080031_ArtifactManagerDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ManagerContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -431,17 +426,6 @@
     </None>
     <None Include="ArtifactManagerDatabaseDataSet.xss">
       <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ArtifactManagerDatabaseDataSetFull.xsc">
-      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
-    </None>
-    <None Include="ArtifactManagerDatabaseDataSetFull.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ArtifactManagerDatabaseDataSetFull.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ArtifactManagerDatabaseDataSetFull.xss">
-      <DependentUpon>ArtifactManagerDatabaseDataSetFull.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -32,14 +32,14 @@
             this.SaveChanges_button = new System.Windows.Forms.Button();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Permissions_dataGridView = new System.Windows.Forms.DataGridView();
-            this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
+            this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permissionsTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter();
             this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Permissions_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveChanges_button
@@ -75,7 +75,6 @@
             this.Permissions_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.permissionNameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
-            this.Permissions_dataGridView.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.permissionsBindingSource, "PermissionName", true));
             this.Permissions_dataGridView.DataSource = this.permissionsBindingSource;
             this.Permissions_dataGridView.Location = new System.Drawing.Point(13, 13);
             this.Permissions_dataGridView.Name = "Permissions_dataGridView";
@@ -85,15 +84,15 @@
             this.Permissions_dataGridView.TabIndex = 25;
             this.Permissions_dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Permissions_dataGridView_DataError);
             // 
-            // permissionsBindingSource
-            // 
-            this.permissionsBindingSource.DataMember = "Permissions";
-            this.permissionsBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
-            // 
             // artifactManagerDatabaseDataSet
             // 
             this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
             this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // permissionsBindingSource
+            // 
+            this.permissionsBindingSource.DataMember = "Permissions";
+            this.permissionsBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
             // 
             // permissionsTableAdapter
             // 
@@ -127,8 +126,8 @@
             this.Text = "PermissionForm";
             this.Load += new System.EventHandler(this.PermissionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Permissions_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,13 +28,30 @@ namespace manager_artefaktow.BusinessLogic
                     LoggedUser.UserName = name;
                     if (name == "Admin")
                     {
-                        AddUser(name, password, "Admin");
+                        if (RoleManagement.RoleExists(name))
+                        {
+                            AddUser(name, password, name);
+                        }
+                        else
+                        {
+                            RoleManagement.AddRoleOnlyRoleName(name);
+                            AddUser(name, password, name);
+                        }
+                        
                         LoggedUser.RoleName = "Admin";
                     }
                     else
                     {
                         string role = AppPropertiesManagement.GetPropertyValue("DefaultRole");
-                        AddUser(name, password, role);
+                        if (RoleManagement.RoleExists(role))
+                        {
+                            AddUser(name, password, role);
+                        }
+                        else
+                        {
+                            RoleManagement.AddRoleOnlyRoleName(role);
+                            AddUser(name, password, role);
+                        }
                         LoggedUser.RoleName = role;
                     }
                     return SuccessMessage;
