@@ -285,6 +285,7 @@
       <DependentUpon>ArtifactManagerDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\CategoryManagement.cs" />
+    <Compile Include="BusinessLogic\InstanceManagement.cs" />
     <Compile Include="Data\Models\Category.cs" />
     <Compile Include="Data\Models\CategoryProperty.cs" />
     <Compile Include="Data\Models\Instance.cs" />

@@ -33,6 +33,7 @@ namespace manager_artefaktow.Forms
                 DeleteChecked_button.Enabled = false;
                 Reset_button.Enabled = false;
                 Properties_checkedListBox.Enabled = false;
+                AddInstance_button.Enabled = false;
             }
         }
 
@@ -129,7 +130,7 @@ namespace manager_artefaktow.Forms
             string categoryName = e.Row.Cells[0].Value.ToString();
             if (!CategoryManagement.CategoryExists(categoryName))
             {
-                MessageBox.Show("You cannot delete this role");
+                MessageBox.Show("You cannot delete this row");
                 e.Cancel = true;
                 return;
             }
@@ -223,6 +224,15 @@ namespace manager_artefaktow.Forms
             foreach (var property in allProperties)
             {
                 Properties_checkedListBox.Items.Add(property);
+            }
+        }
+
+        private void AddInstance_button_Click(object sender, EventArgs e)
+        {
+            if (!CategoryManagement.CategoryExists(CategoryName_textBox.Text.Trim()))
+            {
+                MessageBox.Show("Can not add artifact to this category");
+                return;
             }
         }
     }

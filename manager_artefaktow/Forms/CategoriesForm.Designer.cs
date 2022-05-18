@@ -47,6 +47,8 @@
             this.DeleteChecked_button = new System.Windows.Forms.Button();
             this.NewProperty_textBox = new System.Windows.Forms.TextBox();
             this.Reset_button = new System.Windows.Forms.Button();
+            this.AddInstance_button = new System.Windows.Forms.Button();
+            this.CategoryArtifacts_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Categories_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
@@ -188,7 +190,7 @@
             this.SaveChanges_button.ForeColor = System.Drawing.SystemColors.Control;
             this.SaveChanges_button.Location = new System.Drawing.Point(412, 306);
             this.SaveChanges_button.Name = "SaveChanges_button";
-            this.SaveChanges_button.Size = new System.Drawing.Size(176, 38);
+            this.SaveChanges_button.Size = new System.Drawing.Size(194, 38);
             this.SaveChanges_button.TabIndex = 31;
             this.SaveChanges_button.Text = "Add Property";
             this.SaveChanges_button.UseVisualStyleBackColor = false;
@@ -201,7 +203,7 @@
             this.DeleteChecked_button.ForeColor = System.Drawing.SystemColors.Control;
             this.DeleteChecked_button.Location = new System.Drawing.Point(412, 350);
             this.DeleteChecked_button.Name = "DeleteChecked_button";
-            this.DeleteChecked_button.Size = new System.Drawing.Size(176, 38);
+            this.DeleteChecked_button.Size = new System.Drawing.Size(194, 38);
             this.DeleteChecked_button.TabIndex = 37;
             this.DeleteChecked_button.Text = "Delete checked";
             this.DeleteChecked_button.UseVisualStyleBackColor = false;
@@ -209,9 +211,9 @@
             // 
             // NewProperty_textBox
             // 
-            this.NewProperty_textBox.Location = new System.Drawing.Point(594, 314);
+            this.NewProperty_textBox.Location = new System.Drawing.Point(612, 314);
             this.NewProperty_textBox.Name = "NewProperty_textBox";
-            this.NewProperty_textBox.Size = new System.Drawing.Size(194, 26);
+            this.NewProperty_textBox.Size = new System.Drawing.Size(176, 26);
             this.NewProperty_textBox.TabIndex = 38;
             // 
             // Reset_button
@@ -219,7 +221,7 @@
             this.Reset_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Reset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Reset_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.Reset_button.Location = new System.Drawing.Point(594, 350);
+            this.Reset_button.Location = new System.Drawing.Point(612, 350);
             this.Reset_button.Name = "Reset_button";
             this.Reset_button.Size = new System.Drawing.Size(176, 38);
             this.Reset_button.TabIndex = 39;
@@ -227,11 +229,38 @@
             this.Reset_button.UseVisualStyleBackColor = false;
             this.Reset_button.Click += new System.EventHandler(this.Reset_button_Click);
             // 
+            // AddInstance_button
+            // 
+            this.AddInstance_button.BackColor = System.Drawing.Color.Teal;
+            this.AddInstance_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AddInstance_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.AddInstance_button.Location = new System.Drawing.Point(612, 394);
+            this.AddInstance_button.Name = "AddInstance_button";
+            this.AddInstance_button.Size = new System.Drawing.Size(176, 38);
+            this.AddInstance_button.TabIndex = 40;
+            this.AddInstance_button.Text = "Add Artifact";
+            this.AddInstance_button.UseVisualStyleBackColor = false;
+            this.AddInstance_button.Click += new System.EventHandler(this.AddInstance_button_Click);
+            // 
+            // CategoryArtifacts_button
+            // 
+            this.CategoryArtifacts_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.CategoryArtifacts_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CategoryArtifacts_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.CategoryArtifacts_button.Location = new System.Drawing.Point(412, 394);
+            this.CategoryArtifacts_button.Name = "CategoryArtifacts_button";
+            this.CategoryArtifacts_button.Size = new System.Drawing.Size(194, 38);
+            this.CategoryArtifacts_button.TabIndex = 41;
+            this.CategoryArtifacts_button.Text = "Category Artifacts";
+            this.CategoryArtifacts_button.UseVisualStyleBackColor = false;
+            // 
             // Categories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CategoryArtifacts_button);
+            this.Controls.Add(this.AddInstance_button);
             this.Controls.Add(this.Reset_button);
             this.Controls.Add(this.NewProperty_textBox);
             this.Controls.Add(this.DeleteChecked_button);
@@ -278,5 +307,7 @@
         private System.Windows.Forms.Button DeleteChecked_button;
         private System.Windows.Forms.TextBox NewProperty_textBox;
         private System.Windows.Forms.Button Reset_button;
+        private System.Windows.Forms.Button AddInstance_button;
+        private System.Windows.Forms.Button CategoryArtifacts_button;
     }
 }

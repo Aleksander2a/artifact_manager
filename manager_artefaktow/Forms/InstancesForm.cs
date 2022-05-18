@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using manager_artefaktow.Data;
+using manager_artefaktow.Data.Models;
+using manager_artefaktow.BusinessLogic;
+
 namespace manager_artefaktow.Forms
 {
     public partial class InstancesForm : Form
@@ -76,6 +80,43 @@ namespace manager_artefaktow.Forms
                 //    MessageBox.Show(message);
                 //}
             }
+        }
+
+        private void Instances_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            string instanceName = e.Row.Cells[0].Value.ToString();
+            if (!InstanceManagement.InstanceExists(instanceName))
+            {
+                MessageBox.Show("You cannot delete this row");
+                e.Cancel = true;
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("Are you sure to delete this row", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                return;
+                //Roles_dataGridView.Rows.Remove(e.Row);
+                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
+                //Roles_dataGridView.Refresh();
+                //MessageBox.Show("Row deleted");
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Instances_dataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            this.instancesTableAdapter.Update(artifactManagerDatabaseDataSet.Instances);
+            Instances_dataGridView.Refresh();
+            MessageBox.Show("Row deleted");
+        }
+
+        private void InstancesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
