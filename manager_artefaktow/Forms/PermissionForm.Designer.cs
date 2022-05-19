@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Permissions_dataGridView = new System.Windows.Forms.DataGridView();
+            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
             this.permissionsTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.PermissionsTableAdapter();
@@ -45,8 +47,6 @@
             this.Description_label = new System.Windows.Forms.Label();
             this.Owner_comboBox = new System.Windows.Forms.ComboBox();
             this.Owner_label = new System.Windows.Forms.Label();
-            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Permissions_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
@@ -85,6 +85,25 @@
             this.Permissions_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Permissions_dataGridView_UserDeletedRow);
             this.Permissions_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Permissions_dataGridView_UserDeletingRow);
             // 
+            // permissionNameDataGridViewTextBoxColumn
+            // 
+            this.permissionNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "PermissionName";
+            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "PermissionName";
+            this.permissionNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
+            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.permissionNameDataGridViewTextBoxColumn.Width = 164;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // permissionsBindingSource
             // 
             this.permissionsBindingSource.DataMember = "Permissions";
@@ -104,11 +123,11 @@
             this.AddRole_button.BackColor = System.Drawing.Color.Blue;
             this.AddRole_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AddRole_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddRole_button.Location = new System.Drawing.Point(13, 259);
+            this.AddRole_button.Location = new System.Drawing.Point(13, 251);
             this.AddRole_button.Name = "AddRole_button";
-            this.AddRole_button.Size = new System.Drawing.Size(89, 45);
+            this.AddRole_button.Size = new System.Drawing.Size(167, 102);
             this.AddRole_button.TabIndex = 28;
-            this.AddRole_button.Text = "Add";
+            this.AddRole_button.Text = "Add or Update";
             this.AddRole_button.UseVisualStyleBackColor = false;
             this.AddRole_button.Click += new System.EventHandler(this.AddRole_button_Click);
             // 
@@ -116,7 +135,7 @@
             // 
             this.Type_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Type_comboBox.FormattingEnabled = true;
-            this.Type_comboBox.Location = new System.Drawing.Point(108, 270);
+            this.Type_comboBox.Location = new System.Drawing.Point(198, 265);
             this.Type_comboBox.Name = "Type_comboBox";
             this.Type_comboBox.Size = new System.Drawing.Size(121, 28);
             this.Type_comboBox.TabIndex = 29;
@@ -125,7 +144,7 @@
             // Type_label
             // 
             this.Type_label.AutoSize = true;
-            this.Type_label.Location = new System.Drawing.Point(146, 236);
+            this.Type_label.Location = new System.Drawing.Point(236, 231);
             this.Type_label.Name = "Type_label";
             this.Type_label.Size = new System.Drawing.Size(43, 20);
             this.Type_label.TabIndex = 30;
@@ -135,7 +154,7 @@
             // 
             this.CatORIns_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CatORIns_comboBox.FormattingEnabled = true;
-            this.CatORIns_comboBox.Location = new System.Drawing.Point(245, 270);
+            this.CatORIns_comboBox.Location = new System.Drawing.Point(335, 265);
             this.CatORIns_comboBox.Name = "CatORIns_comboBox";
             this.CatORIns_comboBox.Size = new System.Drawing.Size(121, 28);
             this.CatORIns_comboBox.TabIndex = 31;
@@ -144,7 +163,7 @@
             // Subject_label
             // 
             this.Subject_label.AutoSize = true;
-            this.Subject_label.Location = new System.Drawing.Point(273, 236);
+            this.Subject_label.Location = new System.Drawing.Point(363, 231);
             this.Subject_label.Name = "Subject_label";
             this.Subject_label.Size = new System.Drawing.Size(63, 20);
             this.Subject_label.TabIndex = 32;
@@ -154,7 +173,7 @@
             // 
             this.Scope_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Scope_comboBox.FormattingEnabled = true;
-            this.Scope_comboBox.Location = new System.Drawing.Point(384, 270);
+            this.Scope_comboBox.Location = new System.Drawing.Point(474, 265);
             this.Scope_comboBox.Name = "Scope_comboBox";
             this.Scope_comboBox.Size = new System.Drawing.Size(121, 28);
             this.Scope_comboBox.TabIndex = 33;
@@ -162,7 +181,7 @@
             // Scope_label
             // 
             this.Scope_label.AutoSize = true;
-            this.Scope_label.Location = new System.Drawing.Point(414, 236);
+            this.Scope_label.Location = new System.Drawing.Point(504, 231);
             this.Scope_label.Name = "Scope_label";
             this.Scope_label.Size = new System.Drawing.Size(55, 20);
             this.Scope_label.TabIndex = 34;
@@ -170,7 +189,7 @@
             // 
             // Description_textBox
             // 
-            this.Description_textBox.Location = new System.Drawing.Point(108, 335);
+            this.Description_textBox.Location = new System.Drawing.Point(198, 330);
             this.Description_textBox.Name = "Description_textBox";
             this.Description_textBox.Size = new System.Drawing.Size(535, 26);
             this.Description_textBox.TabIndex = 35;
@@ -178,7 +197,7 @@
             // Description_label
             // 
             this.Description_label.AutoSize = true;
-            this.Description_label.Location = new System.Drawing.Point(329, 312);
+            this.Description_label.Location = new System.Drawing.Point(419, 307);
             this.Description_label.Name = "Description_label";
             this.Description_label.Size = new System.Drawing.Size(89, 20);
             this.Description_label.TabIndex = 36;
@@ -188,7 +207,7 @@
             // 
             this.Owner_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Owner_comboBox.FormattingEnabled = true;
-            this.Owner_comboBox.Location = new System.Drawing.Point(522, 270);
+            this.Owner_comboBox.Location = new System.Drawing.Point(612, 265);
             this.Owner_comboBox.Name = "Owner_comboBox";
             this.Owner_comboBox.Size = new System.Drawing.Size(121, 28);
             this.Owner_comboBox.TabIndex = 37;
@@ -196,30 +215,11 @@
             // Owner_label
             // 
             this.Owner_label.AutoSize = true;
-            this.Owner_label.Location = new System.Drawing.Point(556, 236);
+            this.Owner_label.Location = new System.Drawing.Point(646, 231);
             this.Owner_label.Name = "Owner_label";
             this.Owner_label.Size = new System.Drawing.Size(55, 20);
             this.Owner_label.TabIndex = 38;
             this.Owner_label.Text = "Owner";
-            // 
-            // permissionNameDataGridViewTextBoxColumn
-            // 
-            this.permissionNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "PermissionName";
-            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "PermissionName";
-            this.permissionNameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
-            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.permissionNameDataGridViewTextBoxColumn.Width = 164;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // PermissionForm
             // 

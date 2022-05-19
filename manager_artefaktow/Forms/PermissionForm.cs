@@ -155,16 +155,16 @@ namespace manager_artefaktow
             {
                 return;
             }
-            string permissionName = type + ";" + subject + ";" + scope + ";" + owner;
-            if (PermissionManagement.PermissionExists(permissionName))
+            if (scope.Trim().Length == 0)
             {
-                MessageBox.Show("Such permission already exists");
-                return;
+                scope = "None";
             }
-            PermissionManagement.AddPermission(permissionName, description);
+            string permissionName = type + ";" + subject + ";" + scope + ";" + owner;
+            
+            PermissionManagement.AddOrUpdatePermission(permissionName, description);
             this.permissionsTableAdapter.Fill(artifactManagerDatabaseDataSet.Permissions);
             Permissions_dataGridView.Refresh();
-            MessageBox.Show("Permission added successfully");
+            MessageBox.Show("Changes saved");
         }
 
         private void Permissions_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)

@@ -84,6 +84,28 @@ namespace manager_artefaktow.BusinessLogic
             dbContext.SaveChanges();
         }
 
+        public static void AddOrUpdatePermission(string permissionName, string description)
+        {
+            var dbContext = new ManagerContext();
+            Permission oldPerm = dbContext.Permissions.Find(permissionName);
+            if (oldPerm != null)
+            {
+                oldPerm.Description = description;
+                dbContext.Permissions.Update(oldPerm);
+                dbContext.SaveChanges();
+                return;
+            }
+            else
+            {
+                Permission newPerm = new Permission();
+                newPerm.PermissionName = permissionName;
+                newPerm.Description = description;
+                dbContext.Permissions.Add(newPerm);
+                dbContext.SaveChanges();
+                return;
+            }
+        }
+
 
 
     }
