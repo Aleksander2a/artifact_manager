@@ -53,11 +53,42 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
+        public static List<string> GetAllUserNames()
+        {
+            var dbContext = new ManagerContext();
+            var users = (from u in dbContext.Users
+                         select u.UserName).ToList();
+            return users;
+        }
+
+        public static void EditUser(string oldUserName, string userName, string password, string roleName)
+        {
+            var dbContext = new ManagerContext();
+            User user = FindUser(oldUserName);
+            user.UserName = userName;
+            user.Password = password;
+            user.RoleName = roleName;
+            dbContext.Users.Update(user);
+            dbContext.SaveChanges();
+        }
+
+        public static void AddUser(string username, string password, string role)
+        {
+            var dbContext = new ManagerContext();
+            User user = new User();
+            user.UserName = username;
+            user.Password = password;
+            user.RoleName = role;
+            dbContext.Users.Add(user);
+            dbContext.SaveChanges();
+        }
+
         public static void ChangeUserPassword(string userName, string password)
         {
             var dbContext = new ManagerContext();
             User user = dbContext.Users.Find(userName);
             user.Password = encryptPassword(password);
+            dbContext.Users.Update(user);
             dbContext.SaveChanges();
         }
 

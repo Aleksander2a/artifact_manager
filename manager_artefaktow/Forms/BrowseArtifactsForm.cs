@@ -17,6 +17,7 @@ namespace manager_artefaktow.Forms
 {
     public partial class BrowseArtifactsForm : Form
     {
+        private int ADMIN_LOGGEDIN_UNLOGGED; // 0-Admin, 1-logged, 2-unlogged
         public BrowseArtifactsForm()
         {
             InitializeComponent();
@@ -24,6 +25,21 @@ namespace manager_artefaktow.Forms
 
         private void BrowseArtifactsForm_Load(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(LoggedUser.UserName))
+            {
+                if (LoggedUser.UserName == "Admin")
+                {
+                    ADMIN_LOGGEDIN_UNLOGGED = 0;
+                }
+                else
+                {
+                    ADMIN_LOGGEDIN_UNLOGGED = 1;
+                }
+            }
+            else
+            {
+                ADMIN_LOGGEDIN_UNLOGGED = 2;
+            }
         }
 
         private void Categories_button_Click(object sender, EventArgs e)
@@ -43,6 +59,28 @@ namespace manager_artefaktow.Forms
         private void BrowseArtifactsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (ADMIN_LOGGEDIN_UNLOGGED == 0)
+            {
+                this.FindForm().Hide();
+                Form adminPanelForm = new AdminPanelForm();
+                adminPanelForm.ShowDialog();
+            }
+            else if (ADMIN_LOGGEDIN_UNLOGGED == 1)
+            {
+                this.FindForm().Hide();
+                Form userHomePageForm = new UserHomePageForm();
+                userHomePageForm.ShowDialog();
+            }
+            else
+            {
+                this.FindForm().Hide();
+                Form menuForm = new MenuForm();
+                menuForm.ShowDialog();
+            }
         }
     }
 }

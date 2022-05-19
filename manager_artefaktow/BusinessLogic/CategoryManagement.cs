@@ -86,7 +86,7 @@ namespace manager_artefaktow.BusinessLogic
         {
             var dbContext = new ManagerContext();
             var properties = (from cp in dbContext.CategoryProperties
-                              where cp.CategoryName == categoryName
+                              where cp.CategoryName == categoryName && propertiesNames.Contains(cp.PropertyName)
                               select cp).ToList();
             dbContext.CategoryProperties.RemoveRange(properties);
             dbContext.SaveChanges();

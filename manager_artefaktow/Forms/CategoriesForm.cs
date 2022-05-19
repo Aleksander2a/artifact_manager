@@ -181,10 +181,12 @@ namespace manager_artefaktow.Forms
             var allProperties = CategoryManagement.FindPropertiesForCategoryName(CategoryName_textBox.Text.ToString());
 
             Properties_checkedListBox.Items.Clear();
+            Properties_checkedListBox.ClearSelected();
             foreach (var property in allProperties)
             {
                 Properties_checkedListBox.Items.Add(property);
             }
+            Properties_checkedListBox.ClearSelected();
         }
 
         private void AddInstance_button_Click(object sender, EventArgs e)

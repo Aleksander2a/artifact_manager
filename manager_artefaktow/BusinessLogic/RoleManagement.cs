@@ -133,5 +133,13 @@ namespace manager_artefaktow.BusinessLogic
                 }
             }
         }
+
+        public static List<string> GetAllRolesNames()
+        {
+            var dbContext = new ManagerContext();
+            var roles = (from r in dbContext.Roles
+                         select r.RoleName).ToList();
+            return roles;
+        }
     }
 }
