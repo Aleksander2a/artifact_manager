@@ -154,6 +154,7 @@
             this.Controls.Add(this.UserName_textBox);
             this.Controls.Add(this.UserName_label);
             this.Controls.Add(this.Register_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RegisterForm";
             this.Text = "Register";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);

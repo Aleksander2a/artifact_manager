@@ -92,6 +92,7 @@
             this.Controls.Add(this.Browse_Artifacts_button);
             this.Controls.Add(this.Register_button);
             this.Controls.Add(this.Login_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuForm";
             this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);

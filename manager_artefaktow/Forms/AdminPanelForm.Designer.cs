@@ -107,6 +107,7 @@
             this.Controls.Add(this.Roles_button);
             this.Controls.Add(this.Users_button);
             this.Controls.Add(this.Register_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminPanelForm";
             this.Text = "Admin Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPanelForm_FormClosing);

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.AdminPanel_button = new System.Windows.Forms.Button();
             this.Roles_dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
             this.SaveChanges_button = new System.Windows.Forms.Button();
             this.RoleDetails_label = new System.Windows.Forms.Label();
             this.RoleName_label = new System.Windows.Forms.Label();
@@ -40,14 +43,11 @@
             this.permissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddRole_button = new System.Windows.Forms.Button();
             this.NewRole_textBox = new System.Windows.Forms.TextBox();
-            this.artifactManagerDatabaseDataSet = new manager_artefaktow.ArtifactManagerDatabaseDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.rolesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.RolesTableAdapter();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminPanel_button
@@ -84,6 +84,25 @@
             this.Roles_dataGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Roles_dataGridView_RowValidating);
             this.Roles_dataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.Roles_dataGridView_UserDeletedRow);
             this.Roles_dataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.Roles_dataGridView_UserDeletingRow);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "RoleName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "RoleName";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Roles";
+            this.bindingSource1.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
+            // artifactManagerDatabaseDataSet
+            // 
+            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
+            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SaveChanges_button
             // 
@@ -162,28 +181,9 @@
             this.NewRole_textBox.Size = new System.Drawing.Size(245, 26);
             this.NewRole_textBox.TabIndex = 28;
             // 
-            // artifactManagerDatabaseDataSet
-            // 
-            this.artifactManagerDatabaseDataSet.DataSetName = "ArtifactManagerDatabaseDataSet";
-            this.artifactManagerDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Roles";
-            this.bindingSource1.DataSource = this.artifactManagerDatabaseDataSet;
-            // 
             // rolesTableAdapter
             // 
             this.rolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "RoleName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "RoleName";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // RolesForm
             // 
@@ -200,14 +200,15 @@
             this.Controls.Add(this.SaveChanges_button);
             this.Controls.Add(this.Roles_dataGridView);
             this.Controls.Add(this.AdminPanel_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RolesForm";
             this.Text = "Roles";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RolesForm_FormClosing);
             this.Load += new System.EventHandler(this.RolesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Roles_dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permissionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

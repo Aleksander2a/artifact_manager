@@ -331,6 +331,7 @@
             this.Controls.Add(this.AddCategory_button);
             this.Controls.Add(this.BrowseArtifacts_button);
             this.Controls.Add(this.Categories_dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Categories";
             this.Text = "CategoriesForm";
             this.Load += new System.EventHandler(this.CategoriesForm_Load);

@@ -71,6 +71,12 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
+        public static string FindCategoryCreator(string categoryName)
+        {
+            var dbContext = new ManagerContext();
+            return dbContext.Categories.Find(categoryName).CreatorName;
+        }
+
         public static void AddPropertyToCategory(string propertyName, string categoryName)
         {
             var dbContext = new ManagerContext();

@@ -141,5 +141,18 @@ namespace manager_artefaktow.BusinessLogic
                          select r.RoleName).ToList();
             return roles;
         }
+
+        public static bool isRoleOk(string roleName, string type, string subject, string scope)
+        {
+            var rolePerms = findPermissionsForRoleName(roleName);
+            foreach (var permission in rolePerms)
+            {
+                if (PermissionManagement.isPermissionOk(permission, type, subject, scope))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

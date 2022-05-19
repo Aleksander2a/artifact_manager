@@ -43,6 +43,12 @@ namespace manager_artefaktow.BusinessLogic
             return instance;
         }
 
+        public static string FindInstanceCreator(string instanceName)
+        {
+            var dbContext = new ManagerContext();
+            return dbContext.Instances.Find(instanceName).CreatorName;
+        }
+
         public static List<string> FindAllInstancesNames()
         {
             var dbContext = new ManagerContext();

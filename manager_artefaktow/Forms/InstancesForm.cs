@@ -69,6 +69,37 @@ namespace manager_artefaktow.Forms
             string instanceName = e.Row.Cells[0].Value.ToString();
             if (!InstanceManagement.InstanceExists(instanceName))
             {
+                MessageBox.Show("Instance does not exist");
+                e.Cancel = true;
+                return;
+            }
+            string instanceCreator = InstanceManagement.FindInstanceCreator(instanceName);
+            // Check permissions !
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_instances, PermissionManagement.scopes_all))
+            {
+                if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_instances, instanceName))
+                {
+                    if (instanceCreator == LoggedUser.UserName)
+                    {
+                        if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_instances, PermissionManagement.scopes_own))
+                        {
+                            MessageBox.Show("You do not have permission to perform this action");
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have permission to perform this action");
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+            }
+            
+
+            if (!InstanceManagement.InstanceExists(instanceName))
+            {
                 MessageBox.Show("You cannot delete this row");
                 e.Cancel = true;
                 return;
@@ -99,6 +130,11 @@ namespace manager_artefaktow.Forms
 
         private void AddInstance_button_Click(object sender, EventArgs e)
         {
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_create, PermissionManagement.subject_instances, "None"))
+            {
+                MessageBox.Show("You do not have permission to perform this action");
+                return;
+            }
             this.FindForm().Hide();
             Form addArtifactForm = new AddInstanceForm();
             addArtifactForm.ShowDialog();

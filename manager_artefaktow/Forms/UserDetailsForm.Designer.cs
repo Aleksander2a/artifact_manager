@@ -209,6 +209,7 @@
             this.Controls.Add(this.UserName_textBox);
             this.Controls.Add(this.RoleName_label);
             this.Controls.Add(this.UserDetails_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UserDetailsForm";
             this.Text = "UserDetailsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserDetailsForm_FormClosing);

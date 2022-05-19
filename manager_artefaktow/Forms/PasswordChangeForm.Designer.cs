@@ -140,6 +140,7 @@
             this.Controls.Add(this.CurrentPass_textBox);
             this.Controls.Add(this.currPass_label);
             this.Controls.Add(this.Register_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PasswordChangeForm";
             this.Text = "Password Change";
             this.ResumeLayout(false);

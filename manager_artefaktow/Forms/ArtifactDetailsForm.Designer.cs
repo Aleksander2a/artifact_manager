@@ -46,10 +46,10 @@
             this.instancesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.InstancesTableAdapter();
             this.Category_textBox = new System.Windows.Forms.TextBox();
             this.Properties_dataGridView = new System.Windows.Forms.DataGridView();
-            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryPropertiesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoryPropertiesTableAdapter();
             this.PropertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryPropertiesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoryPropertiesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Overall_numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artifactManagerDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
@@ -202,15 +202,6 @@
             this.Properties_dataGridView.Size = new System.Drawing.Size(426, 228);
             this.Properties_dataGridView.TabIndex = 72;
             // 
-            // fKCategoryPropertiesCategoriesCategoryNameBindingSource
-            // 
-            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataMember = "FK_CategoryProperties_Categories_CategoryName";
-            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataSource = this.categoriesBindingSource;
-            // 
-            // categoryPropertiesTableAdapter
-            // 
-            this.categoryPropertiesTableAdapter.ClearBeforeFill = true;
-            // 
             // PropertyName
             // 
             this.PropertyName.HeaderText = "Property Name";
@@ -225,6 +216,15 @@
             this.Value.HeaderText = "Value";
             this.Value.MinimumWidth = 8;
             this.Value.Name = "Value";
+            // 
+            // fKCategoryPropertiesCategoriesCategoryNameBindingSource
+            // 
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataMember = "FK_CategoryProperties_Categories_CategoryName";
+            this.fKCategoryPropertiesCategoriesCategoryNameBindingSource.DataSource = this.categoriesBindingSource;
+            // 
+            // categoryPropertiesTableAdapter
+            // 
+            this.categoryPropertiesTableAdapter.ClearBeforeFill = true;
             // 
             // ArtifactDetailsForm
             // 
@@ -244,6 +244,7 @@
             this.Controls.Add(this.ArtifactName_textBox);
             this.Controls.Add(this.RoleName_label);
             this.Controls.Add(this.RoleDetails_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ArtifactDetailsForm";
             this.Text = "Artifact Details";
             this.Load += new System.EventHandler(this.ArtifactDetailsForm_Load);

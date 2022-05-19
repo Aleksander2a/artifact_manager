@@ -63,6 +63,29 @@ namespace manager_artefaktow.Forms
 
         private void Add_button_Click(object sender, EventArgs e)
         {
+            string instanceName = ArtifactName_textBox.Text.Trim();
+            string categoryCreator = InstanceManagement.FindInstanceCreator(instanceName);
+            // Check permissions !
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_instances, PermissionManagement.scopes_all))
+            {
+                if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_instances, instanceName))
+                {
+                    if (categoryCreator == LoggedUser.UserName)
+                    {
+                        if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_instances, PermissionManagement.scopes_own))
+                        {
+                            MessageBox.Show("You do not have permission to perform this action");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have permission to perform this action");
+                        return;
+                    }
+                }
+            }
+
             // check if all fields are ok
             string artifactName = ArtifactName_textBox.Text.Trim();
             string categoryName = Category_textBox.Text.Trim();

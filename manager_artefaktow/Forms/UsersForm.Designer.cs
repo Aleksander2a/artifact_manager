@@ -50,8 +50,8 @@
             this.NewUserName_textBox = new System.Windows.Forms.TextBox();
             this.NewUserPassword_textBox = new System.Windows.Forms.TextBox();
             this.NewUserRole_comboBox = new System.Windows.Forms.ComboBox();
-            this.UserDetails_button = new System.Windows.Forms.Button();
             this.rolesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.UserDetails_button = new System.Windows.Forms.Button();
             this.NewUserClear_button = new System.Windows.Forms.Button();
             this.UserDetails_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Users_dataGridView)).BeginInit();
@@ -257,6 +257,11 @@
             this.NewUserRole_comboBox.Size = new System.Drawing.Size(171, 28);
             this.NewUserRole_comboBox.TabIndex = 33;
             // 
+            // rolesBindingSource2
+            // 
+            this.rolesBindingSource2.DataMember = "Roles";
+            this.rolesBindingSource2.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
             // UserDetails_button
             // 
             this.UserDetails_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -269,11 +274,6 @@
             this.UserDetails_button.Text = "Edit User";
             this.UserDetails_button.UseVisualStyleBackColor = false;
             this.UserDetails_button.Click += new System.EventHandler(this.UserDetails_button_Click);
-            // 
-            // rolesBindingSource2
-            // 
-            this.rolesBindingSource2.DataMember = "Roles";
-            this.rolesBindingSource2.DataSource = this.artifactManagerDatabaseDataSet;
             // 
             // NewUserClear_button
             // 
@@ -316,6 +316,7 @@
             this.Controls.Add(this.Users_dataGridView);
             this.Controls.Add(this.SaveChanges_button);
             this.Controls.Add(this.AdminPanel_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UsersForm";
             this.Text = "Users";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UsersForm_FormClosing);

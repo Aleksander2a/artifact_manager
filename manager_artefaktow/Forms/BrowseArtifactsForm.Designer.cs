@@ -80,6 +80,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Artifacts_button);
             this.Controls.Add(this.Categories_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BrowseArtifactsForm";
             this.Text = "Browse Artifacts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BrowseArtifactsForm_FormClosing);

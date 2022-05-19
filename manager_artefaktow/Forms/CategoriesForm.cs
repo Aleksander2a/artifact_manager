@@ -49,6 +49,34 @@ namespace manager_artefaktow.Forms
 
         private void SaveChanges_button_Click(object sender, EventArgs e)
         {
+            string categoryName = CategoryName_textBox.Text.Trim();
+            if (!CategoryManagement.CategoryExists(categoryName))
+            {
+                MessageBox.Show("Category does not exist");
+                return;
+            }
+            string categoryCreator = CategoryManagement.FindCategoryCreator(categoryName);
+            // Check permissions !
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, PermissionManagement.scopes_all))
+            {
+                if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, categoryName))
+                {
+                    if (categoryCreator == LoggedUser.UserName)
+                    {
+                        if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, PermissionManagement.scopes_own))
+                        {
+                            MessageBox.Show("You do not have permission to perform this action");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have permission to perform this action");
+                        return;
+                    }
+                }
+            }
+
             // Check if field is filled
             if (NewProperty_textBox.Text.Trim().Length == 0 || !CategoryManagement.CategoryExists(CategoryName_textBox.Text.Trim()))
             {
@@ -72,6 +100,11 @@ namespace manager_artefaktow.Forms
 
         private void AddCategory_button_Click(object sender, EventArgs e)
         {
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_create, PermissionManagement.subject_categories, "None"))
+            {
+                MessageBox.Show("You do not have permission to perform this action");
+                return;
+            }
             string categoryName = NewCategory_textBox.Text.Trim();
             if (categoryName.Length > 0)
             {
@@ -101,6 +134,38 @@ namespace manager_artefaktow.Forms
         private void Categories_dataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             string categoryName = e.Row.Cells[0].Value.ToString();
+            if (!CategoryManagement.CategoryExists(categoryName))
+            {
+                MessageBox.Show("Category does not exist");
+                e.Cancel = true;
+                return;
+            }
+            string categoryCreator = CategoryManagement.FindCategoryCreator(categoryName);
+            // Check permissions !
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_categories, PermissionManagement.scopes_all))
+            {
+                if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_categories, categoryName))
+                {
+                    if (categoryCreator == LoggedUser.UserName)
+                    {
+                        if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_delete, PermissionManagement.subject_categories, PermissionManagement.scopes_own))
+                        {
+                            MessageBox.Show("You do not have permission to perform this action");
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have permission to perform this action");
+                        e.Cancel = true;
+                        return;
+                    }
+                }
+            }
+
+
+            
             if (!CategoryManagement.CategoryExists(categoryName))
             {
                 MessageBox.Show("You cannot delete this row");
@@ -150,6 +215,34 @@ namespace manager_artefaktow.Forms
 
         private void DeleteChecked_button_Click(object sender, EventArgs e)
         {
+            string categoryName = CategoryName_textBox.Text.Trim();
+            if (!CategoryManagement.CategoryExists(categoryName))
+            {
+                MessageBox.Show("Category does not exist");
+                return;
+            }
+            string categoryCreator = CategoryManagement.FindCategoryCreator(categoryName);
+            // Check permissions !
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, PermissionManagement.scopes_all))
+            {
+                if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, categoryName))
+                {
+                    if (categoryCreator == LoggedUser.UserName)
+                    {
+                        if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_update, PermissionManagement.subject_categories, PermissionManagement.scopes_own))
+                        {
+                            MessageBox.Show("You do not have permission to perform this action");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You do not have permission to perform this action");
+                        return;
+                    }
+                }
+            }
+
             List<string> checkedProperties = new List<string>();
             foreach (var checkedProp in Properties_checkedListBox.CheckedItems)
             {
@@ -191,6 +284,11 @@ namespace manager_artefaktow.Forms
 
         private void AddInstance_button_Click(object sender, EventArgs e)
         {
+            if (!RoleManagement.isRoleOk(LoggedUser.RoleName, PermissionManagement.type_create, PermissionManagement.subject_instances, "None"))
+            {
+                MessageBox.Show("You do not have permission to perform this action");
+                return;
+            }
             this.FindForm().Hide();
             Form addArtifactForm = new AddInstanceForm();
             addArtifactForm.ShowDialog();

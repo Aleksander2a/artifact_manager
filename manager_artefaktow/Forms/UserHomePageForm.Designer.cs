@@ -65,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Browse_Artifacts_button);
             this.Controls.Add(this.ChangePassword_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UserHomePageForm";
             this.Text = "Home Page";
             this.Load += new System.EventHandler(this.UserHomePageForm_Load);

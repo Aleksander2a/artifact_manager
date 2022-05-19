@@ -52,13 +52,13 @@
             this.RemoveCategoryFilter_button = new System.Windows.Forms.Button();
             this.Filter_button = new System.Windows.Forms.Button();
             this.CategoryFilter_comboBox = new System.Windows.Forms.ComboBox();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CategoryFilter_label = new System.Windows.Forms.Label();
             this.CreatorFilter_label = new System.Windows.Forms.Label();
             this.CreatorFilter_comboBox = new System.Windows.Forms.ComboBox();
-            this.RemoveCreatorFilter_button = new System.Windows.Forms.Button();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RemoveCreatorFilter_button = new System.Windows.Forms.Button();
+            this.categoriesTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.CategoriesTableAdapter();
             this.usersTableAdapter = new manager_artefaktow.ArtifactManagerDatabaseDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Instances_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instancesBindingSource)).BeginInit();
@@ -297,6 +297,11 @@
             this.CategoryFilter_comboBox.TabIndex = 45;
             this.CategoryFilter_comboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryFilter_comboBox_SelectedIndexChanged);
             // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
             // CategoryFilter_label
             // 
             this.CategoryFilter_label.AutoSize = true;
@@ -327,6 +332,11 @@
             this.CreatorFilter_comboBox.TabIndex = 50;
             this.CreatorFilter_comboBox.SelectedIndexChanged += new System.EventHandler(this.CreatorFilter_comboBox_SelectedIndexChanged);
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
+            // 
             // RemoveCreatorFilter_button
             // 
             this.RemoveCreatorFilter_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -340,19 +350,9 @@
             this.RemoveCreatorFilter_button.UseVisualStyleBackColor = false;
             this.RemoveCreatorFilter_button.Click += new System.EventHandler(this.RemoveCreatorFilter_button_Click);
             // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
-            // 
             // categoriesTableAdapter
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.artifactManagerDatabaseDataSet;
             // 
             // usersTableAdapter
             // 
@@ -383,6 +383,7 @@
             this.Controls.Add(this.ArtifactDetails_button);
             this.Controls.Add(this.Instances_dataGridView);
             this.Controls.Add(this.BrowseArtifacts_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InstancesForm";
             this.Text = "InstancesForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InstancesForm_FormClosing);

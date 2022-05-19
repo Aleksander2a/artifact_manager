@@ -244,6 +244,7 @@
             this.Controls.Add(this.ArtifactName_textBox);
             this.Controls.Add(this.RoleName_label);
             this.Controls.Add(this.RoleDetails_label);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AddInstanceForm";
             this.Text = "Add Artifact";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddInstanceForm_FormClosing);

@@ -55,7 +55,7 @@ namespace manager_artefaktow
             {
                 Owner_comboBox.Items.Add(owner);
             }
-            CatORIns_comboBox.SelectedIndex = -1;
+            Owner_comboBox.SelectedIndex = -1;
         }
 
         private void SaveChanges_button_Click(object sender, EventArgs e)
@@ -107,14 +107,21 @@ namespace manager_artefaktow
             {
                 Scope_comboBox.Items.Clear();
                 Scope_comboBox.SelectedIndex = -1;
-                //Scope_comboBox.Text = "None";
                 Scope_comboBox.Enabled = false;
+
+                Owner_comboBox.Items.Clear();
+                Owner_comboBox.SelectedIndex = -1;
+                Owner_comboBox.Enabled = false;
             }
             else
             {
                 Scope_comboBox.Items.Clear();
                 Scope_comboBox.SelectedIndex = -1;
                 Scope_comboBox.Enabled = true;
+
+                Owner_comboBox.Items.Clear();
+                Owner_comboBox.SelectedIndex = -1;
+                Owner_comboBox.Enabled = true;
 
                 if (CatORIns_comboBox.SelectedIndex != -1)
                 {
@@ -123,6 +130,12 @@ namespace manager_artefaktow
                         Scope_comboBox.Items.Add(scope);
                     }
                 }
+
+                foreach (var owner in PermissionManagement.GetAllPermissionOwners())
+                {
+                    Owner_comboBox.Items.Add(owner);
+                }
+                Owner_comboBox.SelectedIndex = -1;
             }
         }
 
@@ -143,7 +156,7 @@ namespace manager_artefaktow
             }
             else
             {
-                if (type.Length == 0 || subject.Length == 0 || owner.Length == 0 || description.Length == 0)
+                if (type.Length == 0 || subject.Length == 0 || description.Length == 0)
                 {
                     MessageBox.Show("Invalid input");
                     return;
@@ -158,8 +171,9 @@ namespace manager_artefaktow
             if (scope.Trim().Length == 0)
             {
                 scope = "None";
+                owner = "None";
             }
-            string permissionName = type + ";" + subject + ";" + scope + ";" + owner;
+            string permissionName = type + ";" + subject + ";" + scope;// + ";" + owner;
             
             PermissionManagement.AddOrUpdatePermission(permissionName, description);
             this.permissionsTableAdapter.Fill(artifactManagerDatabaseDataSet.Permissions);

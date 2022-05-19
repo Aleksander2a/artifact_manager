@@ -239,6 +239,7 @@
             this.Controls.Add(this.AddRole_button);
             this.Controls.Add(this.Permissions_dataGridView);
             this.Controls.Add(this.AdminPanel_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PermissionForm";
             this.Text = "PermissionForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PermissionForm_FormClosing);

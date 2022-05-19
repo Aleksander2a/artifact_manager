@@ -19,6 +19,7 @@ namespace manager_artefaktow.BusinessLogic
         public static string subject_instances = "Instances";
 
         public static string scopes_all = "All";
+        public static string scopes_own = "Own";
 
         public static string owner_all = "All";
         public static string owner_own = "Own";
@@ -41,7 +42,7 @@ namespace manager_artefaktow.BusinessLogic
 
         public static List<string> GetAllPermissionScopesForSubject(string subject)
         {
-            List<string> scopes = new List<string>() { scopes_all};
+            List<string> scopes = new List<string>() { scopes_all, scopes_own};
             if (subject == subject_categories)
             {
                 scopes.AddRange(CategoryManagement.FindAllCategories());
@@ -103,6 +104,19 @@ namespace manager_artefaktow.BusinessLogic
                 dbContext.Permissions.Add(newPerm);
                 dbContext.SaveChanges();
                 return;
+            }
+        }
+
+        public static bool isPermissionOk(string permissionName, string type, string subject, string scope)//, string owner)
+        {
+            string toChecked = type + ";" + subject + ";" + scope;// + ";" + owner;
+            if (permissionName == toChecked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
