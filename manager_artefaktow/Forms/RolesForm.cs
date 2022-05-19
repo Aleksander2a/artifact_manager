@@ -24,12 +24,6 @@ namespace manager_artefaktow
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Roles' . Możesz go przenieść lub usunąć.
             this.rolesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Roles);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSetFull.Roles' . Możesz go przenieść lub usunąć.
-            //this.rolesTableAdapter4.Fill(this.artifactManagerDatabaseDataSetFull.Roles);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Permissions' . Możesz go przenieść lub usunąć.
-            //this.permissionsTableAdapter2.Fill(this.artifactManagerDatabaseDataSet3.Permissions);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet3.Roles' . Możesz go przenieść lub usunąć.
-            //this.rolesTableAdapter3.Fill(this.artifactManagerDatabaseDataSet3.Roles);
         }
 
         private void Roles_dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -70,21 +64,6 @@ namespace manager_artefaktow
 
         private void Roles_dataGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
         {
-            //for (int i = 0; i < Roles_dataGridView.Columns.Count; i++)
-            //{
-            /*
-                for (int j = 0; j < Roles_dataGridView.Columns.Count; j++)
-                {
-                    string cell = Roles_dataGridView.Rows[e.RowIndex].Cells[j].Value as string;
-                    if (cell == null || (cell.Trim()).Length == 0)
-                    {
-                        MessageBox.Show("RowValidating: An error occured\nrow " + e.RowIndex + ", column " + j);
-                        e.Cancel = true;
-
-                    }
-                }
-            */
-            //}
         }
 
         private void Roles_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,10 +140,6 @@ namespace manager_artefaktow
                     RoleManagement.SetRandomDefaultRRoleExcept(roleName);
                 }
                 return;
-                //Roles_dataGridView.Rows.Remove(e.Row);
-                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                //Roles_dataGridView.Refresh();
-                //MessageBox.Show("Row deleted");
             }
             else
             {

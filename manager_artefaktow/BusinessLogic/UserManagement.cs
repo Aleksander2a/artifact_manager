@@ -53,6 +53,14 @@ namespace manager_artefaktow.BusinessLogic
             }
         }
 
+        public static void ChangeUserPassword(string userName, string password)
+        {
+            var dbContext = new ManagerContext();
+            User user = dbContext.Users.Find(userName);
+            user.Password = encryptPassword(password);
+            dbContext.SaveChanges();
+        }
+
         public static string encryptPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);

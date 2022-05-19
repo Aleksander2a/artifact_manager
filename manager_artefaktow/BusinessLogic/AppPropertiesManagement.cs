@@ -20,10 +20,7 @@ namespace manager_artefaktow.BusinessLogic
             foreach (string record in records)
             {
                 string[] elements = record.Split(':');
-                //if (!PropertiesValues.ContainsKey(elements[0]))
-                //{
-                    PropertiesValues[elements[0]] = elements[1];
-                //}
+                PropertiesValues[elements[0]] = elements[1];
             }
         }
 
@@ -57,16 +54,13 @@ namespace manager_artefaktow.BusinessLogic
         {
             LoadPropertiesFromFile();
             PropertiesValues[propertyName] = value;
-            //string[] properties = new string[PropertiesValues.Count];
-            //int index = 0;
+
             StreamWriter sw = new StreamWriter(PropertiesFilePath);
             foreach (var prop in PropertiesValues.Keys)
             {
-                //properties[index++] = propertyName + ":" + PropertiesValues[prop];
                 sw.WriteLine(propertyName + ":" + PropertiesValues[prop]);
             }
             sw.Close();
-            //StreamWriter sw = File.WriteAllLines(PropertiesFilePath, properties);
         }
     }
 }

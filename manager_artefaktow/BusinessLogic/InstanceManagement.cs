@@ -11,17 +11,6 @@ namespace manager_artefaktow.BusinessLogic
 {
     public static class InstanceManagement
     {
-        /*
-        public static List<String> FindPropertiesForCategoryName(string categoryName)
-        {
-            var dbContext = new ManagerContext();
-            var propertiesNames = (from p
-                               in dbContext.CategoryProperties
-                                   where p.CategoryName == categoryName
-                                   select p.PropertyName).ToList();
-            return propertiesNames;
-        }
-        */
 
         public static bool InstanceExists(string instanceName)
         {

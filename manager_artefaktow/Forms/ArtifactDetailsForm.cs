@@ -29,8 +29,6 @@ namespace manager_artefaktow.Forms
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.CategoryProperties' . Możesz go przenieść lub usunąć.
             this.categoryPropertiesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.CategoryProperties);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.InstanceProperties' . Możesz go przenieść lub usunąć.
-            //this.instancePropertiesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.InstanceProperties);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Instances' . Możesz go przenieść lub usunąć.
             this.instancesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Instances);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Categories' . Możesz go przenieść lub usunąć.
@@ -45,16 +43,12 @@ namespace manager_artefaktow.Forms
 
                 Category_textBox.Text = CATEGORY_NAME;
                 Properties_dataGridView.Refresh();
-                //Category_comboBox.Enabled = false;
 
                 // fill dataGrid with values
                 List<string> properties = CategoryManagement.FindPropertiesForCategoryName(CATEGORY_NAME);
                 for (int row = 0; row < properties.Count; row++)
                 {
                     Properties_dataGridView.Rows.Add(properties[row], InstanceManagement.GetValueByInstancePropertyNames(instance.InstanceName, properties[row]));
-                    //Properties_dataGridView.Rows[row].Cells[0].Value = properties[row];
-
-                    //Properties_dataGridView.Rows[row].Cells[1].Value = InstanceManagement.GetValueByInstancePropertyNames(instance.InstanceName, properties[row]);
                 }
 
             }
@@ -109,9 +103,6 @@ namespace manager_artefaktow.Forms
                     InstanceManagement.AddPropertyValueToInstance(instance.InstanceName, propertyName, propertyValue);
                 }
 
-                // this.instancesTableAdapter.Update(artifactManagerDatabaseDataSet.Instances);
-                //this.instancePropertiesTableAdapter.Update(artifactManagerDatabaseDataSet.InstanceProperties);
-                // this.categoriesTableAdapter.Update(artifactManagerDatabaseDataSet.Categories);
                 Properties_dataGridView.Refresh();
 
                 MessageBox.Show("Changes Saved");

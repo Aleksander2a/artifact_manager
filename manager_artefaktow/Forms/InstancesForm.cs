@@ -16,7 +16,6 @@ namespace manager_artefaktow.Forms
 {
     public partial class InstancesForm : Form
     {
-        //private List<string> filterStrings = new List<string>(2); // 1st - category, 2nd - creator
         public InstancesForm()
         {
             InitializeComponent();
@@ -56,43 +55,12 @@ namespace manager_artefaktow.Forms
 
             //Update button update dataset after insertion,upadtion or deletion
             DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            /*
-            string message = "OK";
-            for (int i = 0; i < Users_dataGridView.Columns.Count; i++)
-            {
-                for (int j = 0; j < Users_dataGridView.Rows.Count - 1; j++)
-                {
-                    string cell = Users_dataGridView.Rows[j].Cells[i].Value as string;
-                    if (cell == null || (cell.Trim()).Length == 0)
-                    {
-                        //MessageBox.Show("Wrong input values. Press ESC to discard or input new value");
-                        message = "An error occured\nrow " + j + ", column " + i;
-                        Users_dataGridView.Rows[j].Cells[i].Value = "Wrong!"; // WORKS !!!!
-
-                    }
-                    else
-                    {
-                        if (i==1)
-                        {
-                            Users_dataGridView.Rows[j].Cells[i].Value = UserManagement.encryptPassword(cell);
-                        }
-                    }
-                }
-            }
-            */
+            
             if (dr == DialogResult.Yes)
             {
-                //if (message == "OK")
-                //{
                 this.instancesTableAdapter.Update(artifactManagerDatabaseDataSet.Instances);
                 Instances_dataGridView.Refresh();
-
                 MessageBox.Show("Changes Saved");
-                //}
-                //else
-                //{
-                //    MessageBox.Show(message);
-                //}
             }
         }
 
@@ -110,10 +78,6 @@ namespace manager_artefaktow.Forms
             if (dr == DialogResult.Yes)
             {
                 return;
-                //Roles_dataGridView.Rows.Remove(e.Row);
-                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                //Roles_dataGridView.Refresh();
-                //MessageBox.Show("Row deleted");
             }
             else
             {
@@ -177,7 +141,6 @@ namespace manager_artefaktow.Forms
         private void RemoveCategoryFilter_button_Click(object sender, EventArgs e)
         {
             CategoryFilter_comboBox.SelectedIndex = -1;
-            //filterStrings[0] = "";
             this.categoriesBindingSource.RemoveFilter();
             Filter_button_Click(sender, e);
         }
@@ -185,7 +148,6 @@ namespace manager_artefaktow.Forms
         private void RemoveCreatorFilter_button_Click(object sender, EventArgs e)
         {
             CreatorFilter_comboBox.SelectedIndex = -1;
-            //filterStrings[1] = "";
             this.categoriesBindingSource.RemoveFilter();
             Filter_button_Click(sender, e);
         }

@@ -25,8 +25,7 @@ namespace manager_artefaktow.Forms
             this.usersTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Users);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSet.Categories' . Możesz go przenieść lub usunąć.
             this.categoriesTableAdapter.Fill(this.artifactManagerDatabaseDataSet.Categories);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'artifactManagerDatabaseDataSetFull.Categories' . Możesz go przenieść lub usunąć.
-            //this.categoriesTableAdapter.Fill(this.artifactManagerDatabaseDataSetFull.Categories);
+
             if(String.IsNullOrEmpty(LoggedUser.UserName))
             {
                 AddCategory_button.Enabled = false;
@@ -59,45 +58,15 @@ namespace manager_artefaktow.Forms
 
             //Update button update dataset after insertion,upadtion or deletion
             DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            /*
-            string message = "OK";
-            for (int i = 0; i < Users_dataGridView.Columns.Count; i++)
-            {
-                for (int j = 0; j < Users_dataGridView.Rows.Count - 1; j++)
-                {
-                    string cell = Users_dataGridView.Rows[j].Cells[i].Value as string;
-                    if (cell == null || (cell.Trim()).Length == 0)
-                    {
-                        //MessageBox.Show("Wrong input values. Press ESC to discard or input new value");
-                        message = "An error occured\nrow " + j + ", column " + i;
-                        Users_dataGridView.Rows[j].Cells[i].Value = "Wrong!"; // WORKS !!!!
-
-                    }
-                    else
-                    {
-                        if (i==1)
-                        {
-                            Users_dataGridView.Rows[j].Cells[i].Value = UserManagement.encryptPassword(cell);
-                        }
-                    }
-                }
-            }
-            */
+            
             if (dr == DialogResult.Yes)
             {
-                //if (message == "OK")
-                //{
                 CategoryManagement.AddPropertyToCategory(NewProperty_textBox.Text, CategoryName_textBox.Text);
                 this.categoriesTableAdapter.Update(artifactManagerDatabaseDataSet.Categories);
                 Properties_checkedListBox.Items.Add(NewProperty_textBox.Text);
                 Categories_dataGridView.Refresh();
                 NewProperty_textBox.Clear();
                 MessageBox.Show("Changes Saved");
-                //}
-                //else
-                //{
-                //    MessageBox.Show(message);
-                //}
             }
         }
 
@@ -143,10 +112,6 @@ namespace manager_artefaktow.Forms
             if (dr == DialogResult.Yes)
             {
                 return;
-                //Roles_dataGridView.Rows.Remove(e.Row);
-                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                //Roles_dataGridView.Refresh();
-                //MessageBox.Show("Row deleted");
             }
             else
             {
@@ -171,17 +136,12 @@ namespace manager_artefaktow.Forms
                 string categoryName = CategoryName_textBox.Text;
 
                 var allProperties = CategoryManagement.FindPropertiesForCategoryName(categoryName);
-                //var rolePermissions = RoleManagement.findPermissionsForRoleName(roleName);
 
                 Properties_checkedListBox.Items.Clear();
                 int index = 0;
                 foreach (var property in allProperties)
                 {
                     Properties_checkedListBox.Items.Add(property);
-                    //if (rolePermissions.Contains(permission))
-                    //{
-                    //    Permissions_checkedListBox.SetItemChecked(index, true);
-                    //}
                     index++;
                 }
 
@@ -204,10 +164,6 @@ namespace manager_artefaktow.Forms
             if (dr != DialogResult.Yes)
             {
                 return;
-                //Roles_dataGridView.Rows.Remove(e.Row);
-                //this.rolesTableAdapter3.Update(artifactManagerDatabaseDataSet3.Roles);
-                //Roles_dataGridView.Refresh();
-                //MessageBox.Show("Row deleted");
             }
             CategoryManagement.RemovePropertiesFromCategory(checkedProperties, CategoryName_textBox.Text.ToString());
             var newProperties = CategoryManagement.FindPropertiesForCategoryName(CategoryName_textBox.Text.ToString());

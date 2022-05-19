@@ -47,7 +47,9 @@ namespace manager_artefaktow
 
         private void ChangePassword_button_Click(object sender, EventArgs e)
         {
-
+            this.FindForm().Hide();
+            Form passwordChangeForm = new PasswordChangeForm();
+            passwordChangeForm.ShowDialog();
         }
     }
 }
