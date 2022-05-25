@@ -5,7 +5,7 @@ Ważniejsze elementy
 |\
 | README.md
 |\
-  manager_artefaktow
+| manager_artefaktow
   |\
   | Program.cs
   |\
