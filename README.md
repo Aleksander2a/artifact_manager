@@ -1,26 +1,26 @@
 # Struktura projektu
 Ważniejsze elementy
-&#124;
-&#124;\
-&#124; README.md
-&#124;\
+<code>&#124;</code>
+<code>&#124;</code>\
+<code>&#124;</code> README.md
+<code>&#124;</code>\
   manager_artefaktow
   <code>&#124;</code>\
-  &#124; Program.cs
-  &#124;\
-  &#124; AppProperties.txt - plik konfiguracyjny
-  &#124;\
-  &#124; Forms - katalog zawierający warstwę wizualną
-  &#124;\
-  &#124; BusinessLogic - katalog zawierający klasy dostępu i operacji na danych
-  &#124;\
-  &#124; Migrations - katalog wygenerowany przez Entity Framework
-  &#124;\
-  &#124; Data
-    &#124;\
-    &#124; Models - katalog z klasami reprezentującymi tabele w bazie danych
-    &#124;\
-    &#124; ManagerContext.cs - klasa dziedzicząca po DbContext (zawiera parametry połączenia z bazą danych)
+  <code>&#124;</code> Program.cs
+  <code>&#124;</code>\
+  <code>&#124;</code> AppProperties.txt - plik konfiguracyjny
+  <code>&#124;</code>\
+  <code>&#124;</code> Forms - katalog zawierający warstwę wizualną
+  <code>&#124;</code>\
+  <code>&#124;</code> BusinessLogic - katalog zawierający klasy dostępu i operacji na danych
+  <code>&#124;</code>\
+  <code>&#124;</code> Migrations - katalog wygenerowany przez Entity Framework
+  <code>&#124;</code>\
+  <code>&#124;</code> Data
+    <code>&#124;</code>\
+    <code>&#124;</code> Models - katalog z klasami reprezentującymi tabele w bazie danych
+    <code>&#124;</code>\
+    <code>&#124;</code> ManagerContext.cs - klasa dziedzicząca po DbContext (zawiera parametry połączenia z bazą danych)
 
 # Utworzenie lokalnej bazy danych
 Przed pierwszym uruchomieniem nalezy stworzyc lokalna baze danych poprzez polecenia:
