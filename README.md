@@ -1,27 +1,28 @@
 # Struktura projektu
 Ważniejsze elementy
-<code>&#124;</code>
-<code>&#124;</code>\
-<code>&#124;</code> README.md
-<code>&#124;</code>\
+```text
+|
+|\
+| README.md
+|\
   manager_artefaktow
-  <code>&#124;</code>\
-  <code>&#124;</code> Program.cs
-  <code>&#124;</code>\
-  <code>&#124;</code> AppProperties.txt - plik konfiguracyjny
-  <code>&#124;</code>\
-  <code>&#124;</code> Forms - katalog zawierający warstwę wizualną
-  <code>&#124;</code>\
-  <code>&#124;</code> BusinessLogic - katalog zawierający klasy dostępu i operacji na danych
-  <code>&#124;</code>\
-  <code>&#124;</code> Migrations - katalog wygenerowany przez Entity Framework
-  <code>&#124;</code>\
-  <code>&#124;</code> Data
-    <code>&#124;</code>\
-    <code>&#124;</code> Models - katalog z klasami reprezentującymi tabele w bazie danych
-    <code>&#124;</code>\
-    <code>&#124;</code> ManagerContext.cs - klasa dziedzicząca po DbContext (zawiera parametry połączenia z bazą danych)
-
+  |\
+  | Program.cs
+  |\
+  | AppProperties.txt - plik konfiguracyjny
+  |\
+  | Forms - katalog zawierający warstwę wizualną
+  |\
+  | BusinessLogic - katalog zawierający klasy dostępu i operacji na danych
+  |\
+  | Migrations - katalog wygenerowany przez Entity Framework
+  |\
+  | Data
+    |\
+    | Models - katalog z klasami reprezentującymi tabele w bazie danych
+    |\
+    | ManagerContext.cs - klasa dziedzicząca po DbContext (zawiera parametry połączenia z bazą danych)
+```
 # Utworzenie lokalnej bazy danych
 Przed pierwszym uruchomieniem nalezy stworzyc lokalna baze danych poprzez polecenia:
 ```
