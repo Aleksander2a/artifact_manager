@@ -5,7 +5,7 @@ Ważniejsze elementy
 &#124; README.md
 &#124;\
   manager_artefaktow
-  &#124;\
+  <code>&#124;</code>\
   &#124; Program.cs
   &#124;\
   &#124; AppProperties.txt - plik konfiguracyjny
